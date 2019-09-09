@@ -50,11 +50,12 @@ var worksUpdateView = Vue.component("worksUpdateView", {
             var workId = this.$route.params.id;
 
             workService.update({
-                "id": this.work.ownerId,
-                "이름": this.work.name,
-                "설명": this.work.description,
-                "공개여부": this.work.isActive ? "Y" : "N",
-                "상태": this.work.status ? "Y" : "N"
+                "id":workId,
+                "memberId": this.work.ownerId,
+                "workName": this.work.name,
+                "description": this.work.description,
+                "isDisclosure": this.work.isActive ? "Y" : "N",
+                "isValid": this.work.status ? "Y" : "N"
             },
             function(){
                 alert('작품이 수정되었습니다.');
@@ -70,11 +71,11 @@ var worksUpdateView = Vue.component("worksUpdateView", {
         var workId = this.$route.params.id;
 
         workService.findById(workId, function(data){
-            scope.work.name = data["이름"];
-            scope.work.description = data["설명"];
-            scope.work.isActive = data["공개여부"] == "Y" ? true : false;
-            scope.work.status = data["상태"] == "Y" ? true : false;
-            scope.work.ownerId = data["회원id"];
+            scope.work.name = data["workName"];
+            scope.work.description = data["description"];
+            scope.work.isActive = data["isDisclosure"] == "Y" ? true : false;
+            scope.work.status = data["isValid"] == "Y" ? true : false;
+            scope.work.ownerId = data["memberId"];
         });
     }
 });

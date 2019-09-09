@@ -1,6 +1,6 @@
 pragma solidity ^0.5.2;
 
-import "./ownable.sol";
+import "./Ownable.sol";
 
 /// @title 경매
 contract Auction is Ownable{

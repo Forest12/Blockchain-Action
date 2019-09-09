@@ -59,9 +59,7 @@ var myArtworkView = Vue.component('MyArtworkView', {
                 workName:"",
                 description:"",
             }],
-            auctions: [{
-
-            }]
+            auctions: []
         }
     },
     methods: {

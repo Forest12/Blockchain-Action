@@ -77,6 +77,7 @@ public class DigitalWorkService implements IDigitalWorkService
 	{	
 		digitalWorkRepository.삭제(id);
 		DigitalWork delwork = digitalWorkRepository.조회(id);
+		logger.debug("delwork : "+delwork.toString());
 		try {
 			Ownership delowner = fabricService.소유권소멸(delwork.getMemberId(), id);
 			logger.debug("del info : " + delowner.toString());

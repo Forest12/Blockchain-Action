@@ -93,7 +93,11 @@ var myArtworkView = Vue.component('MyArtworkView', {
          */
          // 여기에 작성하세요.
         workService.findWorksByOwner(userId, function(data){
-            scope.artworks=data;
+            if(data!=null){
+                scope.artworks=data;
+            }else{
+                scope.artworks=[];
+            }
         });
         /**
          * TODO 2. 회원의 경매 목록을 가져옵니다.

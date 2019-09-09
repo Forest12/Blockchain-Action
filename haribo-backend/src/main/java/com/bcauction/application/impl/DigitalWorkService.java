@@ -89,6 +89,7 @@ public class DigitalWorkService implements IDigitalWorkService
 
 	@Override
 	public DigitalWork 작품정보수정(final DigitalWork 작품) {
+		logger.debug("작품정보수정 : "+작품.toString());
 		DigitalWork workStored = this.digitalWorkRepository.조회(작품.getId());
 		if (workStored == null)
 			throw new ApplicationException("해당 작품을 찾을 수 없습니다.");

@@ -1,1 +1,21 @@
-// TODO 완성한 솔리디티 스마트 컨트랙트를 이곳에 위치시킵니다.
+pragma solidity ^0.5.0;
+
+import "./Ownable.sol";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

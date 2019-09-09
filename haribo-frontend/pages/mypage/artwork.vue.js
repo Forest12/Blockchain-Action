@@ -18,9 +18,9 @@ var myArtworkView = Vue.component('MyArtworkView', {
                                 <div class="card">
                                     <div class="card-body">
                                         <img src="./assets/images/artworks/artwork1.jpg">
-                                        <h4>{{ item["이름"] }}</h4>
-                                        <p v-if="item['설명'] != null">{{ item["설명"] }}</p>
-                                        <p v-if="item['설명'] == null">-</p>
+                                        <h4>{{ item["workName"] }}</h4>
+                                        <p v-if="item['description'] != null">{{ item["description"] }}</p>
+                                        <p v-if="item['description'] == null">-</p>
                                         <router-link :to="{ name: 'work.detail', params: { id: item['id'] } }" class="btn btn-block btn-secondary">자세히보기</router-link>
                                     </div>
                                 </div>
@@ -55,8 +55,13 @@ var myArtworkView = Vue.component('MyArtworkView', {
     data(){
         return {
             sharedStates: store.state,
-            artworks: [],
-            auctions: []
+            artworks: [{
+                workName:"",
+                description:"",
+            }],
+            auctions: [{
+
+            }]
         }
     },
     methods: {
@@ -89,13 +94,15 @@ var myArtworkView = Vue.component('MyArtworkView', {
          * 작품 마다 소유권 이력을 보여줄 수 있어야 합니다.
          */
          // 여기에 작성하세요.
-
+        workService.findWorksByOwner(userId, function(data){
+            scope.artworks=data;
+        });
         /**
          * TODO 2. 회원의 경매 목록을 가져옵니다.
          * Backend와 API 연동합니다.
          * 경매 중인 작품 마다 소유권 이력을 보여줄 수 있어야 합니다.
          */
          // 여기에 작성하세요.
-
+       
     }
 })

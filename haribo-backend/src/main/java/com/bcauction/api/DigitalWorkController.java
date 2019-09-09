@@ -88,6 +88,7 @@ public class DigitalWorkController
 	 * @param id
 	 * @return
 	 */
+	@RequestMapping(value = "/works/owner/{id}", method = RequestMethod.GET)
 	public List<DigitalWork> 사용자별작품목록조회(@PathVariable int id){
 		List<DigitalWork> 목록 = digitalWorkService.사용자작품목록조회(id);
 

@@ -74,16 +74,9 @@ public class DigitalWorkService implements IDigitalWorkService
 	 */
 	@Override
 	public DigitalWork 작품삭제(final long id)
-	{	
-		digitalWorkRepository.삭제(id);
-		DigitalWork delwork = digitalWorkRepository.조회(id);
-		try {
-			Ownership delowner = fabricService.소유권소멸(delwork.getMemberId(), id);
-			logger.debug("del info : " + delowner.toString());
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
-		return delwork;
+	{
+		// TODO
+		return null;
 	}
 
 	@Override

@@ -363,6 +363,7 @@ public class FabricCCService implements IFabricCCService
 			}
 
 			try {
+				List<FabricAsset> falist = new ArrayList<>();
 				QueryByChaincodeRequest request = hfClient.newQueryProposalRequest();
 				ChaincodeID ccid = ChaincodeID.newBuilder().setName("asset").build();
 				request.setChaincodeID(ccid);
@@ -373,12 +374,11 @@ public class FabricCCService implements IFabricCCService
 				}
 				Collection<ProposalResponse> response = channel.queryByChaincode(request);
 				//Collection<ProposalResponse> response = channel.queryByChaincode("queryHistory",작품id+"");
-				
 				for (ProposalResponse pres : response) {
-					String stringResponse = new String(pres.getChaincodeActionResponsePayload());
-					//Logger.getLogger(response.class.getName()).log(Level.INFO, stringResponse);
-					logger.debug(stringResponse);
+					JsonReader parse = Json.createReader(new ByteArrayInputStream(pres.getChaincodeActionResponsePayload()));	
+               		falist.add(getAssetRecord(parse.readObject()));
 				}
+				return falist;
 			} catch (Exception e) {
 				//TODO: handle exception
 				e.printStackTrace();

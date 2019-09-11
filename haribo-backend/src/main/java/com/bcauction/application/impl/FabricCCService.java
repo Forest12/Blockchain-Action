@@ -367,7 +367,7 @@ public class FabricCCService implements IFabricCCService
 				QueryByChaincodeRequest request = hfClient.newQueryProposalRequest();
 				ChaincodeID ccid = ChaincodeID.newBuilder().setName("asset").build();
 				request.setChaincodeID(ccid);
-				request.setFcn("queryHistory");
+				request.setFcn("getAssetHistory");
 				String[] arguments = { 작품id + ""};
 				if (arguments != null) {
 					request.setArgs(arguments);

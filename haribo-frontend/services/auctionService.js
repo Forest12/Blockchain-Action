@@ -25,10 +25,10 @@ var auctionService = {
     // 경매 내역 저장
     saveBid: function(bidder, auctionId, bidPrice, callback){
         var data = {
-            "경매참여자id": bidder,
-            "경매id": auctionId,
-            "입찰금액": bidPrice,
-            "입찰일시": new Date()
+            "auctionPartId": bidder,
+            "auctionId": auctionId,
+            "bidAmount": bidPrice,
+            "bidDate": new Date()
         }
         $.ajax({
             type: "PUT",

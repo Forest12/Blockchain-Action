@@ -24,22 +24,37 @@ function createAuctionContract(web3, contractAddress){
 function createAuction(options, walletAddress, privateKey, onConfirm){
     var web3 = createWeb3();
     var contract = createFactoryContract(web3);
-    var createAuctionCall; // 함수 호출 Object 초기화
+    var createAuctionCall=contract.methods.createAuction(options.workId,options.minValue,options.startTime,options.endTime); // 함수 호출 Object 초기화
     var encodedABI = createAuctionCall.encodeABI();
+    console.log(encodedABI);
 
-    /**
-     * 트랜잭션 생성
-     *  var tx = {
-        from: walletAddress,
-        to: AUCTION_CONTRACT_ADDRESS,
-        gas: 2000000,
-        data: encodedABI
+    var tx={
+        from:walletAddress,
+        to:AUCTION_CONTRACT_ADDRESS,
+        gas:2000000,
+        data:encodedABI
     }
-     */  
 
-     /**
-      * 트랜잭션 전자 서명 후 트랜잭션 전송/처리
-      */
+    const signPromise = web3.eth.accounts.signTransaction(tx, privateKey);
+    console.log(signPromise);
+    signPromise.then((signedTx) => {
+        // raw transaction string may be available in .raw or 
+        // .rawTransaction depending on which signTransaction
+        // function was called
+        const sentTx = web3.eth.sendSignedTransaction(signedTx.raw || signedTx.rawTransaction);
+        console.log(sentTx);
+        sentTx.on("receipt", receipt => {
+            console.log(receipt);
+            onConfirm(receipt);
+        });
+        sentTx.on("error", err => {
+          console.log(err)
+        });
+      }).catch((err) => {
+        alert("최저가를 확인해주세요")
+      });
+
+     
 }
 
 /**

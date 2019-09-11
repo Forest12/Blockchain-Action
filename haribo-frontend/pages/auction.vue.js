@@ -60,7 +60,7 @@ var auctionView = Vue.component('AuctionView', {
                 if(start == end) {
                     scope.auctions = result;
                 } else {
-                    var id = result[start]['경매작품id'];
+                    var id = result[start]['auctionid'];
                     workService.findById(id, function(work){
                         result[start]['작품정보'] = work;
                         fetchData(start+1, end);

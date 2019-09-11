@@ -2,7 +2,7 @@
 API_BASE_URL = "http://localhost:8080";
 
 // 배포한 옥션 컨트랙트 주소를 지정합니다. 
-AUCTION_CONTRACT_ADDRESS = "0xe7516a6bb05d51084bbdd7b31f51d2c565058a49";
+AUCTION_CONTRACT_ADDRESS = "0x6bd3992cd4bb193e409d55ffd9117e15515b15c4";
 
 // 이더리움 블록체인 네트워크의 URL을 설정합니다. 
 BLOCKCHAIN_URL = "http://52.78.49.2:8545";

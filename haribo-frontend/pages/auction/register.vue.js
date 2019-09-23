@@ -139,7 +139,7 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                         "lowestPrice": Number(scope.before.input.minPrice),
                         "txsAddress": contractAddress,
                     }
-
+                    
                     // 3. 선택한 작업 정보를 가져옵니다.
                     workService.findById(scope.before.selectedWork, function(result){
                         scope.after.work = result;
@@ -149,7 +149,7 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                     auctionService.register(data, function(result){
                         alert("경매가 등록되었습니다.");
                         scope.registered = true;
-                        scope.after.result = data;
+                        scope.after.result = result;
                     });
 
                     this.isCreatingContract = false;

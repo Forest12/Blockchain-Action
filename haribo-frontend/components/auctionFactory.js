@@ -26,6 +26,16 @@ function createAuction(options, walletAddress, privateKey, onConfirm){
     var contract = createFactoryContract(web3);
     var createAuctionCall=contract.methods.createAuction(options.workId,options.minValue,options.startTime,options.endTime); // 함수 호출 Object 초기화
     var encodedABI = createAuctionCall.encodeABI();
+
+    var event = createAuctionCall.NewAuction();
+    event.watch(function(error, result) {
+        if (!error) {
+            console.log(result);
+        }else{
+            console.log("event error~!~!~!!");
+        }
+    });
+
     console.log(createAuctionCall)
     /**
      * 트랜잭션 생성

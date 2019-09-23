@@ -27,6 +27,7 @@ function createAuction(options, walletAddress, privateKey, onConfirm){
     var createAuctionCall=contract.methods.createAuction(options.workId,options.minValue,options.startTime,options.endTime); // 함수 호출 Object 초기화
     var encodedABI = createAuctionCall.encodeABI();
     console.log(createAuctionCall)
+
     /**
      * 트랜잭션 생성
      *  var tx = {
@@ -51,11 +52,9 @@ function createAuction(options, walletAddress, privateKey, onConfirm){
         // raw transaction string may be available in .raw or 
         // .rawTransaction depending on which signTransaction
         // function was called
-        var sentTx = web3.eth.sendSignedTransaction(signedTx.raw || signedTx.rawTransaction);
+        const sentTx = web3.eth.sendSignedTransaction(signedTx.raw || signedTx.rawTransaction);
         sentTx.on("receipt", receipt => {
-            console.log(receipt.contractAddress)
-
-            onConfirm(receipt);
+            console.log(receipt)
         });
         sentTx.on("error", err => {
           console.log(err)

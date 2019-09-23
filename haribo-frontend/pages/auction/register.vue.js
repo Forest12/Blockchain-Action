@@ -131,6 +131,7 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                 }, walletAddress, scope.before.input.privateKey, function(log){
                     console.log(log);
                     var contractAddress = log.newAuction;
+                
                     var data = {
                         "auctionCreatorId": scope.sharedStates.user.id,
                         "auctionId": scope.before.selectedWork,
@@ -139,7 +140,7 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                         "lowestPrice": Number(scope.before.input.minPrice),
                         "txsAddress": contractAddress,
                     }
-                    
+
                     // 3. 선택한 작업 정보를 가져옵니다.
                     workService.findById(scope.before.selectedWork, function(result){
                         scope.after.work = result;

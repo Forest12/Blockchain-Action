@@ -120,6 +120,7 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
 
         // 경매 정보 조회
         auctionService.findById(auctionId, function(auction){
+            console.log(auction)
             var amount = Number(auction['최소금액']).toLocaleString().split(",").join("")
             auction['최소금액'] = web3.utils.fromWei(amount, 'ether');
 
@@ -128,7 +129,7 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
             // 작품 정보 조회
             workService.findById(workId, function(work){
                 scope.work = work;
-                var creatorId = work['회원id'];
+                var creatorId = work['memberId'];
 
                 // 생성자 정보 조회
                 userService.findById(creatorId, function(user){

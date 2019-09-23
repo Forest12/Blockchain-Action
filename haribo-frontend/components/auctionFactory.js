@@ -40,7 +40,7 @@ function createAuction(options, walletAddress, privateKey, onConfirm){
     var tx={
         from:walletAddress,
         to:AUCTION_CONTRACT_ADDRESS,
-        gas:3000000,
+        gas:3000001,
         data:encodedABI
     }
 
@@ -54,7 +54,9 @@ function createAuction(options, walletAddress, privateKey, onConfirm){
         // function was called
         const sentTx = web3.eth.sendSignedTransaction(signedTx.raw || signedTx.rawTransaction);
         sentTx.on("receipt", receipt => {
-            console.log(receipt)
+          var newaddress = web3.eth.abi.decodeParameters(['address','uint256','uint256','uint256','uint256'], receipt.logs[0].data);
+          console.log(newaddress);
+           onConfirm(newaddress);
         });
         sentTx.on("error", err => {
           console.log(err)

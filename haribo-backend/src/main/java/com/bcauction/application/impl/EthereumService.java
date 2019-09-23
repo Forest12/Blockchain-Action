@@ -166,9 +166,10 @@ public class EthereumService implements IEthereumService {
 			if (personalUnlockAccount.accountUnlocked()) {
 				System.out.println("계좌 unlock 해제");
 			}
-
+			log.debug("ethGetTransactionCount"+web3.ethGetTransactionCount(ADMIN_ADDRESS, DefaultBlockParameterName.LATEST));
 			ethGetTransactionCount = web3.ethGetTransactionCount(ADMIN_ADDRESS, DefaultBlockParameterName.LATEST).sendAsync().get();
-			
+			log.debug("ethGetTransactionCount"+ethGetTransactionCount);
+
 			BigInteger nonce = ethGetTransactionCount.getTransactionCount();
 			Credentials credentials = CommonUtil.getCredential(ADMIN_WALLET_FILE, PASSWORD);
 

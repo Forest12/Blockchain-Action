@@ -39,8 +39,7 @@ public class AuctionController
 	@RequestMapping(value = "/auctions", method = RequestMethod.POST)
 	public Auction 생성(@RequestBody Auction auction) {
 		Auction 경매 = auctionService.생성(auction);
-		if( 경매 == null )
-			throw new ApplicationException("경매 정보를 입력할 수 없습니다!");
+		logger.debug("경매 생성 : "+ 경매.toString());
 
 		return 경매;
 	}

@@ -87,4 +87,11 @@ public class Auction
 		this.txsAddress = txsAddress;
 	}
 
+	@Override
+	public String toString() {
+		return "Auction [auctionCreatorId=" + auctionCreatorId + ", auctionId=" + auctionId + ", createTime="
+				+ createTime + ", endTime=" + endTime + ", id=" + id + ", isVaild=" + isVaild + ", lowestPrice="
+				+ lowestPrice + ", startTime=" + startTime + ", txsAddress=" + txsAddress + "]";
+	}
+
 }

@@ -148,6 +148,7 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                     
                     // 4. 생성한 경매를 등록 요청 합니다.
                     auctionService.register(data, function(result){
+                        console.log(data);
                         alert("경매가 등록되었습니다.");
                         scope.registered = true;
                         scope.after.result = data;

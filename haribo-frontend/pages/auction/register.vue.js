@@ -129,8 +129,8 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                     startTime: new Date(scope.before.input.startDate).getTime(),
                     endTime: new Date(scope.before.input.untilDate).getTime()
                 }, walletAddress, scope.before.input.privateKey, function(log){
-                    console.log(log);
-                    var contractAddress = log.newAuction;
+                    console.log(log[0]);
+                    var contractAddress = log[0];
                 
                     var data = {
                         "auctionCreatorId": scope.sharedStates.user.id,
@@ -140,7 +140,7 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                         "lowestPrice": Number(scope.before.input.minPrice),
                         "txsAddress": contractAddress,
                     }
-
+                    
                     // 3. 선택한 작업 정보를 가져옵니다.
                     workService.findById(scope.before.selectedWork, function(result){
                         scope.after.work = result;
@@ -148,6 +148,7 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                     
                     // 4. 생성한 경매를 등록 요청 합니다.
                     auctionService.register(data, function(result){
+                        console.log(data);
                         alert("경매가 등록되었습니다.");
                         scope.registered = true;
                         scope.after.result = data;

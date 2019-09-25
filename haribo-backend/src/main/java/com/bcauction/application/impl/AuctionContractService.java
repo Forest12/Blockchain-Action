@@ -68,6 +68,8 @@ public class AuctionContractService implements IAuctionContractService {
 	public AuctionInfo 경매정보조회(final String 컨트랙트주소)
 	{
 		// TODO
+		
+		// auctionFactoryContract = web3j.
 		return null;
 	}
 

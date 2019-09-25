@@ -53,12 +53,12 @@ public class AuctionRepository implements IAuctionRepository
 	}
 
 	@Override
-	public Auction 조회(final String 컨트랙트주소)
+	public Auction 조회(final String txs_address)
 	{
 		StringBuilder sbSql =  new StringBuilder("SELECT * FROM Auction WHERE txs_address=?");
 		try {
 			return this.jdbcTemplate.queryForObject(sbSql.toString(),
-			                                        new Object[] { 컨트랙트주소 }, (rs, rowNum) -> AuctionFactory.생성(rs) );
+			                                        new Object[] { txs_address }, (rs, rowNum) -> AuctionFactory.생성(rs) );
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		} catch (Exception e) {

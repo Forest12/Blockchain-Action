@@ -8,5 +8,4 @@ package com.bcauction.domain.wrapper;
  * 해당 패키지에 AuctionContract.java로 추가한다.
  */
 public class AuctionContract{
-
 }

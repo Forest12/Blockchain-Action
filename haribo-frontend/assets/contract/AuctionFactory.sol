@@ -47,7 +47,7 @@ contract Ownable {
 }
 
 /// @title AuctionFactory
-contract AuctionFactory is Ownable {
+contract AuctionFactory {
 
     // 생성된 모든 auction 리스트
     address[] public auctions;
@@ -84,7 +84,7 @@ contract AuctionFactory is Ownable {
 }
 
 /// @title Auction
-contract Auction {
+contract Auction is Ownable {
 
   // 생성자에 의해 정해지는 값
   address public owner;

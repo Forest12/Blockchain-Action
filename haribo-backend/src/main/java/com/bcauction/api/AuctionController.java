@@ -58,7 +58,7 @@ public class AuctionController
 	public AuctionInfo 조회(@PathVariable long id) {
 		Auction 경매 = this.auctionService.조회(id);
 		if (경매 == null){
-			logger.error("NOT FOUND AUCTION: ", id);
+			logger.error("NOT FOUND AUCTION: ", id); 
 			throw new NotFoundException(id + " 해당 경매를 찾을 수 없습니다.");
 		}
 

@@ -105,6 +105,22 @@ public class AuctionContractService implements IAuctionContractService {
 	public BigInteger 현재최고가(final String 컨트랙트주소)
 	{
 		// TODO
+		try {
+			log.debug("AuctionContractService - now highestBid : " + 컨트랙트주소);
+			credentials = CommonUtil.getCredential(WALLET_RESOURCE, PASSWORD);
+
+			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),
+					contractGasProvider.getGasLimit());
+
+			BigInteger highestBid = auctioncontract.highestBid().send();
+			
+			log.debug("highestBid : "+highestBid);
+
+			return highestBid;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return BigInteger.ZERO;
 	}
 
@@ -117,6 +133,22 @@ public class AuctionContractService implements IAuctionContractService {
 	public String 현재최고입찰자주소(final String 컨트랙트주소)
 	{
 		// TODO
+		try {
+			log.debug("AuctionContractService - now highestBidder : " + 컨트랙트주소);
+			credentials = CommonUtil.getCredential(WALLET_RESOURCE, PASSWORD);
+
+			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),
+					contractGasProvider.getGasLimit());
+
+			String highestBidder = auctioncontract.highestBidder().send();
+			
+			log.debug("highestBidder : "+highestBidder);
+
+			return highestBidder;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 

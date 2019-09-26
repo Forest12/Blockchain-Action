@@ -3,8 +3,6 @@ package com.bcauction.domain.wrapper;
 
 // This file is an automatically generated Java binding. Do not modify as any
 // change will likely be lost upon the next re-generation!
-
-
 import io.reactivex.Flowable;
 import java.math.BigInteger;
 import java.util.ArrayList;

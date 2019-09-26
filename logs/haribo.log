@@ -1,38 +1,200 @@
-2019-09-23 14:01:42 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 14440 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
-2019-09-23 14:01:42 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
-2019-09-23 14:01:42 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
-2019-09-23 14:01:44 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-09-23 14:01:44 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2019-09-23 14:01:44 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
-2019-09-23 14:01:44 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-09-23 14:01:44 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
-2019-09-23 14:01:45 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-09-23 14:01:45 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-09-23 14:01:45 [main] INFO  com.bcauction.Application - Started Application in 2.797 seconds (JVM running for 3.057)
-2019-09-23 14:01:59 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-09-23 14:01:59 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-09-23 14:02:00 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-09-23 14:02:30 [http-nio-8080-exec-9] DEBUG com.bcauction.api.WalletController - 0x3112F6addf5B0e00603343beDAe5Bf0Df994ab84
-2019-09-23 14:02:30 [http-nio-8080-exec-9] DEBUG com.bcauction.api.WalletController - 12
-2019-09-23 14:02:33 [http-nio-8080-exec-2] INFO  c.b.application.impl.WalletService - Wallet [address=0x3112F6addf5B0e00603343beDAe5Bf0Df994ab84, balance=0, chargeNum=0, id=43, ownerId=12]
-2019-09-23 14:02:33 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 충전함수
-2019-09-23 14:02:34 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - ethGetTransactionCountorg.web3j.protocol.core.Request@4127b58a
-2019-09-23 14:02:34 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - ethGetTransactionCountorg.web3j.protocol.core.methods.response.EthGetTransactionCount@7103b7e0
-2019-09-23 14:02:34 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-23 14:02:36 [http-nio-8080-exec-2] INFO  c.b.application.impl.WalletService - received txhash: 0xe670f9b4ef3159d8a950d301eea9f7e248a15e72e4b7997bbfd6318366a31107
-2019-09-23 14:03:30 [http-nio-8080-exec-5] DEBUG c.b.application.impl.AuctionService - AuctionService 생성 8
-2019-09-23 14:03:30 [http-nio-8080-exec-5] DEBUG com.bcauction.api.AuctionController - 경매 생성 : Auction [auctionCreatorId=12, auctionId=131, createTime=2019-09-23T14:03:31, endTime=2019-09-24T03:00, id=8, isVaild=V, lowestPrice=1, startTime=2019-09-23T03:00, txsAddress=0xCf20bBc01eF73851f015E12c04A5C89e264460b4]
-2019-09-23 17:34:02 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h2m7s970ms12µs800ns).
-2019-09-23 17:47:06 [http-nio-8080-exec-8] INFO  o.a.coyote.http11.Http11Processor - Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:414)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:294)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:835)
+2019-09-25 13:42:58 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 11412 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-25 13:42:58 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-25 13:42:58 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-25 13:43:00 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-25 13:43:00 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-25 13:43:00 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-25 13:43:00 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-25 13:43:01 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-25 13:43:01 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-25 13:43:01 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-25 13:43:01 [main] INFO  com.bcauction.Application - Started Application in 3.146 seconds (JVM running for 3.758)
+2019-09-25 13:43:36 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-25 13:43:36 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-09-25 13:43:36 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-09-25 13:43:53 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - 경매정보조회0xd02d3879Cc3d8838A00B047eF55D37A819d08295
+2019-09-25 13:58:07 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - 경매정보조회0xd02d3879Cc3d8838A00B047eF55D37A819d08295
+2019-09-25 13:58:17 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-25 13:58:17 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-09-25 13:58:17 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-09-25 13:58:21 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 13888 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-25 13:58:21 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-25 13:58:21 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-25 13:58:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-25 13:58:22 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-25 13:58:22 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-25 13:58:22 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-25 13:58:23 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-25 13:58:23 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-25 13:58:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-25 13:58:23 [main] INFO  com.bcauction.Application - Started Application in 2.982 seconds (JVM running for 3.249)
+2019-09-25 13:58:31 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-25 13:58:32 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-09-25 13:58:32 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-09-25 14:07:01 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-25 14:07:01 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-09-25 14:07:01 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-09-25 14:07:04 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 12520 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-25 14:07:04 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-25 14:07:04 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-25 14:07:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-25 14:07:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-25 14:07:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-25 14:07:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-25 14:07:06 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-25 14:07:06 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-25 14:07:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-25 14:07:07 [main] INFO  com.bcauction.Application - Started Application in 3.131 seconds (JVM running for 3.399)
+2019-09-25 14:07:11 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-25 14:07:11 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-09-25 14:07:12 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-09-25 14:07:14 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-25 14:07:15 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - 경매정보조회 : com.bcauction.domain.wrapper.AuctionContract@5f76391b
+2019-09-25 14:12:35 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-25 14:12:36 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - 경매정보조회 : com.bcauction.domain.wrapper.AuctionContract@7ea1314d
+2019-09-25 14:12:48 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-25 14:12:48 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-09-25 14:12:48 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-09-25 14:12:50 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 15032 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-25 14:12:50 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-25 14:12:50 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-25 14:12:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-25 14:12:52 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-25 14:12:52 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-25 14:12:52 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-25 14:12:53 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-25 14:12:53 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-25 14:12:53 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-25 14:12:53 [main] INFO  com.bcauction.Application - Started Application in 3.014 seconds (JVM running for 3.289)
+2019-09-25 14:13:00 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-25 14:13:00 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-09-25 14:13:00 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-09-25 14:13:03 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-25 14:13:04 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - 경매정보조회 : com.bcauction.domain.wrapper.AuctionContract@620ebaa4
+2019-09-25 15:33:40 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:33:40 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-09-25 15:33:41 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-09-25 15:33:45 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 12556 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-25 15:33:45 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-25 15:33:45 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-25 15:33:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-25 15:33:46 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-25 15:33:46 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-25 15:33:46 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-25 15:33:46 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-25 15:33:47 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:33:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-25 15:33:47 [main] INFO  com.bcauction.Application - Started Application in 2.633 seconds (JVM running for 3.226)
+2019-09-25 15:33:58 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-25 15:33:58 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-09-25 15:33:58 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-09-25 15:34:01 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-25 15:34:03 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - 경매정보조회 : com.bcauction.domain.wrapper.AuctionContract@793977d2
+2019-09-25 15:34:31 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:34:31 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-09-25 15:34:31 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-09-25 15:34:40 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 18720 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-25 15:34:40 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-25 15:34:40 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-25 15:34:42 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-25 15:34:42 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-25 15:34:42 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-25 15:34:42 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-25 15:34:42 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-25 15:34:43 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:34:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-25 15:34:43 [main] INFO  com.bcauction.Application - Started Application in 2.966 seconds (JVM running for 3.237)
+2019-09-25 15:34:56 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-25 15:34:56 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-09-25 15:34:56 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-09-25 15:34:59 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-25 15:35:01 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - 0xd02d3879Cc3d8838A00B047eF55D37A819d08295
+2019-09-25 15:35:01 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - 22000000000
+2019-09-25 15:40:33 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:40:33 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-09-25 15:40:33 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-09-25 15:40:36 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 18924 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-25 15:40:36 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-25 15:40:36 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-25 15:40:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-25 15:40:38 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-25 15:40:38 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-25 15:40:38 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-25 15:40:38 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-25 15:40:39 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:40:39 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-25 15:40:39 [main] INFO  com.bcauction.Application - Started Application in 2.99 seconds (JVM running for 3.256)
+2019-09-25 15:40:51 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:40:55 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 15324 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-25 15:40:55 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-25 15:40:55 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-25 15:40:56 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-25 15:40:56 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-25 15:40:56 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-25 15:40:56 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-25 15:40:57 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-25 15:40:57 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:40:57 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-25 15:40:57 [main] INFO  com.bcauction.Application - Started Application in 2.975 seconds (JVM running for 3.249)
+2019-09-25 15:41:02 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-25 15:41:02 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-09-25 15:41:02 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-09-25 15:41:38 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:41:38 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-09-25 15:41:38 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-09-25 15:41:40 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 16828 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-25 15:41:40 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-25 15:41:40 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-25 15:41:42 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-25 15:41:42 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-25 15:41:42 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-25 15:41:42 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-25 15:41:43 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-25 15:41:43 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:41:43 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-25 15:41:43 [main] INFO  com.bcauction.Application - Started Application in 2.948 seconds (JVM running for 3.214)
+2019-09-25 15:41:48 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-25 15:41:48 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-09-25 15:41:48 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-09-25 15:41:50 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-25 15:41:52 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - 0xd02d3879Cc3d8838A00B047eF55D37A819d08295
+2019-09-25 15:42:16 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:42:16 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-09-25 15:42:16 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-09-25 15:42:18 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 15704 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-25 15:42:18 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-25 15:42:19 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-25 15:42:20 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-25 15:42:20 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-25 15:42:20 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-25 15:42:20 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-25 15:42:21 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-25 15:42:21 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:42:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-25 15:42:21 [main] INFO  com.bcauction.Application - Started Application in 3.198 seconds (JVM running for 3.467)
+2019-09-25 15:42:26 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-25 15:42:26 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-09-25 15:42:26 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-09-25 15:42:30 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-25 15:42:31 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - 0xd02d3879Cc3d8838A00B047eF55D37A819d08295
+2019-09-25 15:42:31 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - org.web3j.protocol.core.RemoteCall@2f3ac7a1
+2019-09-25 15:43:00 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:43:00 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-09-25 15:43:00 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-09-25 15:43:05 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 13076 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-25 15:43:05 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-25 15:43:05 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-25 15:43:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-25 15:43:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-25 15:43:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-25 15:43:07 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-25 15:43:07 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-25 15:43:07 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-25 15:43:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-25 15:43:07 [main] INFO  com.bcauction.Application - Started Application in 3.114 seconds (JVM running for 3.393)
+2019-09-25 15:43:13 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-25 15:43:13 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-09-25 15:43:13 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-09-25 15:43:16 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-25 15:43:17 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - 0xd02d3879Cc3d8838A00B047eF55D37A819d08295
+2019-09-25 15:43:17 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - io.reactivex.internal.operators.flowable.FlowableFromCallable@6d4085a8

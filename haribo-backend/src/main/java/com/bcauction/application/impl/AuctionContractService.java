@@ -68,8 +68,10 @@ public class AuctionContractService implements IAuctionContractService {
 	public AuctionInfo 경매정보조회(final String 컨트랙트주소)
 	{
 		// TODO
+		// log.debug("경매정보조회" + 컨트랙트주소);
+		credentials = CommonUtil.getCredential(WALLET_RESOURCE, PASSWORD);
+		AuctionContract auctionContract = AuctionContract.load(컨트랙트주소, web3j, credentials, contractGasProvider);
 		
-		// auctionFactoryContract = web3j.
 		return null;
 	}
 

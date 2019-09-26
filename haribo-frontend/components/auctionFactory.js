@@ -71,9 +71,8 @@ function createAuction(options, walletAddress, privateKey, onConfirm){
  * 해당 컨트랙트 주소의 bid함수를 호출하여 입찰합니다.
  * 경매 컨트랙트 주소: options.contractAddress
  *  */ 
-function auction_bid(options, onConfirm)
-{
-    
+function auction_bid(options, onConfirm) {
+  
 }
 
 /**
@@ -82,7 +81,39 @@ function auction_bid(options, onConfirm)
  * 경매 컨트랙트 주소: options.contractAddress
  *  */ 
 function auction_close(options, onConfirm){
-    
+  var web3 = createWeb3();
+  var contract = createAuctionContract(web3, options.contractAddress);
+  var createCloseCall = contract.methods.endAuction();
+  var encodedABI = createCloseCall.encodeABI();
+
+  console.log(encodedABI);
+
+  var tx={
+    from : options.walletAddress,
+    to : AUCTION_CONTRACT_ADDRESS,
+    gas : 3000001,
+    data : encodedABI
+  }
+
+  var signPromise = web3.eth.accounts.signTransaction(tx, privateKey);
+    signPromise.then((signedTx) => {
+        // raw transaction string may be available in .raw or 
+        // .rawTransaction depending on which signTransaction
+        // function was called
+        const sentTx = web3.eth.sendSignedTransaction(signedTx.raw || signedTx.rawTransaction);
+        sentTx.on("receipt", receipt => {
+          var newaddress = web3.eth.abi.decodeParameters(['address','uint256','uint256','uint256','uint256'], receipt.logs[0].data);
+          console.log(newaddress);
+           onConfirm(newaddress);
+        });
+        sentTx.on("error", err => {
+          console.log(err)
+        });
+      }).catch((err) => {
+        alert("최저가를 확인해주세요")
+      });
+
+  // onConfirm(encodedABI);
 }
 
 /**

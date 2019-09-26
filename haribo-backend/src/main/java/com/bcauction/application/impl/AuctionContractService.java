@@ -44,6 +44,7 @@ public class AuctionContractService implements IAuctionContractService {
 	private String PASSWORD;
 
 	private AuctionFactoryContract auctionFactoryContract;
+	private AuctionContract auctioncontract;
 	private ContractGasProvider contractGasProvider = new DefaultGasProvider();
 	private Credentials credentials;
 
@@ -71,18 +72,11 @@ public class AuctionContractService implements IAuctionContractService {
 	public AuctionInfo 경매정보조회(final String 컨트랙트주소) {
 
 		// TODO
-<<<<<<< HEAD
-		// log.debug("경매정보조회" + 컨트랙트주소);
-		credentials = CommonUtil.getCredential(WALLET_RESOURCE, PASSWORD);
-		AuctionContract auctionContract = AuctionContract.load(컨트랙트주소, web3j, credentials, contractGasProvider);
-		
-=======
 		try {
 			log.debug("AuctionContractService : " + 컨트랙트주소);
 			credentials = CommonUtil.getCredential(WALLET_RESOURCE, PASSWORD);
 
-			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),
-					contractGasProvider.getGasLimit());
+			auctioncontract = AuctionContract.load(컨트랙트주소, web3j, credentials, contractGasProvider);
 
 			Tuple7<BigInteger, BigInteger, BigInteger, BigInteger, String, BigInteger, Boolean> info;
 			BigInteger value1= auctioncontract.auctionStartTime().send();
@@ -102,13 +96,12 @@ public class AuctionContractService implements IAuctionContractService {
 			
 			log.debug("info"+info);
 
-			AuctionInfo ai = AuctionInfoFactory.생성(컨트랙트주소, 1,info);
+			AuctionInfo ai = AuctionInfoFactory.생성(컨트랙트주소, Long.parseLong(value5), info);
 			return ai;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
->>>>>>> 84c3daa6b34e6a6f8f1088fe90a78b1250751f8b
 		return null;
 	}
 

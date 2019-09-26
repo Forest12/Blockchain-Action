@@ -26,9 +26,6 @@ function createAuction(options, walletAddress, privateKey, onConfirm){
     var contract = createFactoryContract(web3);
     var createAuctionCall=contract.methods.createAuction(options.workId,options.minValue,options.startTime,options.endTime); // 함수 호출 Object 초기화
     var encodedABI = createAuctionCall.encodeABI();
-
-
-
     console.log(createAuctionCall)
 
     /**
@@ -76,27 +73,23 @@ function createAuction(options, walletAddress, privateKey, onConfirm){
  *  */ 
 function auction_bid(options, onConfirm)
 {
-    var web3 = createWeb3();
-    var contract = createAuctionContract(web3, options.contractAddress);
-    var createAuctionCall= contract.methods.bid();
-    var encodedABI = createAuctionCall.encodeABI();
+  var web3 = createWeb3();
+  var contract = createAuctionContract(web3, options.contractAddress);
+  var createBidCall = contract.methods.bid();
+  var encodedABI = createBidCall.encodeABI();
 
-    
-    var tx={
-        from:options.walletAddress,
-        to:options.contractAddress,
-        gas:3000001,
-        data:encodedABI
-    }
+  console.log(encodedABI);
 
-    /**
-      * 트랜잭션 전자 서명 후 트랜잭션 전송/처리
-    */
-    var signPromise = web3.eth.accounts.signTransaction(tx, options.privateKey);
+  var tx={
+    from : options.walletAddress,
+    to : AUCTION_CONTRACT_ADDRESS,
+    gas : 3000001,
+    data : encodedABI
+  }
+
+  var signPromise = web3.eth.accounts.signTransaction(tx, options.privateKey);
     signPromise.then((signedTx) => {
-        // raw transaction string may be available in .raw or 
-        // .rawTransaction depending on which signTransaction
-        // function was called
+        
         const sentTx = web3.eth.sendSignedTransaction(signedTx.raw || signedTx.rawTransaction);
         sentTx.on("receipt", receipt => {
           var newaddress = web3.eth.abi.decodeParameters(['address','uint256','uint256','uint256','uint256'], receipt.logs[0].data);
@@ -109,6 +102,8 @@ function auction_bid(options, onConfirm)
       }).catch((err) => {
         alert("최저가를 확인해주세요")
       });
+
+  
 }
 
 /**
@@ -131,16 +126,13 @@ function auction_close(options, onConfirm){
     data : encodedABI
   }
 
-  var signPromise = web3.eth.accounts.signTransaction(tx, privateKey);
+  var signPromise = web3.eth.accounts.signTransaction(tx, options.privateKey);
     signPromise.then((signedTx) => {
-        // raw transaction string may be available in .raw or 
-        // .rawTransaction depending on which signTransaction
-        // function was called
         const sentTx = web3.eth.sendSignedTransaction(signedTx.raw || signedTx.rawTransaction);
         sentTx.on("receipt", receipt => {
           var newaddress = web3.eth.abi.decodeParameters(['address','uint256','uint256','uint256','uint256'], receipt.logs[0].data);
           console.log(newaddress);
-           onConfirm(newaddress);
+          onConfirm(newaddress);
         });
         sentTx.on("error", err => {
           console.log(err)

@@ -13,13 +13,13 @@ var explorerAuctionDetailView = Vue.component('ExplorerDetailView', {
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th colspan="2"># {{ contractAddress }}</th>
+                                <th colspan="2"># {{ txsAddress }}</th>
                             </tr> 
                         </thead>
                         <tbody>
                             <tr>
                                 <th width="20%">Contract Address</th>
-                                <td>{{ contractAddress }}</td>
+                                <td>{{ txsAddress }}</td>
                             </tr>
                             <tr>
                                 <th width="20%">작품</th>
@@ -60,7 +60,7 @@ var explorerAuctionDetailView = Vue.component('ExplorerDetailView', {
     `,
     data(){
         return {
-            contractAddress: "",
+            txsAddress: "",
             contract: null,
             work: {
                 id: 0
@@ -68,8 +68,19 @@ var explorerAuctionDetailView = Vue.component('ExplorerDetailView', {
         }
     },
     mounted: async function(){
+        var scope = this;
         /**
          * TODO 경매 컨트랙트로부터 경매 정보를 가져옵니다. 
          */
+        scope.txsAddress = scope.$route.params.txsAddress;
+        console.log(scope.$route.params.auction);
+        scope.contract=scope.$route.params.auction;
+        
+        workService.findByTxs(scope.txsAddress, function(data){
+            workService.findById(data.작품id, function(work){
+                console.log(work);
+                scope.work={"id": work.id, "이름":work.workName};
+            })
+        })
     }
 })

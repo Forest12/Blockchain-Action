@@ -55,6 +55,8 @@ public class EthereumService implements IEthereumService {
 	private String PASSWORD;
 	@Value("${eth.admin.wallet.filename}")
 	private String ADMIN_WALLET_FILE;
+	@Value("${spring.web3j.client-address}")
+	private String Client_URL;
 
 	private ITransactionRepository transactionRepository;
 
@@ -158,30 +160,38 @@ public class EthereumService implements IEthereumService {
 		EthGetTransactionCount ethGetTransactionCount;
 		try {
 
-			Admin web3 = Admin.build(new HttpService("http://52.78.49.2:8545"));
-
+			Admin web3 = Admin.build(new HttpService(Client_URL));
+			
 			PersonalUnlockAccount personalUnlockAccount;
 			personalUnlockAccount = web3.personalUnlockAccount(ADMIN_ADDRESS, PASSWORD).send();
 
+			log.debug("unlockAccount after "+ personalUnlockAccount.accountUnlocked());
+			log.debug("unlockAccount after2 "+ personalUnlockAccount.getRawResponse() );
+
 			if (personalUnlockAccount.accountUnlocked()) {
 				System.out.println("계좌 unlock 해제");
+				log.debug("ethGetTransactionCount"+web3.ethGetTransactionCount(ADMIN_ADDRESS, DefaultBlockParameterName.LATEST));
+				ethGetTransactionCount = web3.ethGetTransactionCount(ADMIN_ADDRESS, DefaultBlockParameterName.LATEST).sendAsync().get();
+				log.debug("ethGetTransactionCount"+ethGetTransactionCount);
+	
+				BigInteger nonce = ethGetTransactionCount.getTransactionCount();
+				Credentials credentials = CommonUtil.getCredential(ADMIN_WALLET_FILE, PASSWORD);
+	
+				RawTransaction rawTransaction  = RawTransaction.createEtherTransaction(
+					 nonce, GAS_PRICE, GAS_LIMIT, 주소, Convert.toWei("5", Convert.Unit.ETHER).toBigInteger());
+				
+				byte[] signedMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
+				String hexValue = Numeric.toHexString(signedMessage);
+	
+				EthSendTransaction ethSendTransaction = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
+				String transactionHash = ethSendTransaction.getTransactionHash();
+	
+				return transactionHash;
+			}else{
+				log.debug("EtherService");
+				return null;
 			}
-
-			ethGetTransactionCount = web3.ethGetTransactionCount(ADMIN_ADDRESS, DefaultBlockParameterName.LATEST).sendAsync().get();
-			
-			BigInteger nonce = ethGetTransactionCount.getTransactionCount();
-			Credentials credentials = CommonUtil.getCredential(ADMIN_WALLET_FILE, PASSWORD);
-
-			RawTransaction rawTransaction  = RawTransaction.createEtherTransaction(
-				 nonce, GAS_PRICE, GAS_LIMIT, 주소, Convert.toWei("5", Convert.Unit.ETHER).toBigInteger());
-			
-			byte[] signedMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
-			String hexValue = Numeric.toHexString(signedMessage);
-
-			EthSendTransaction ethSendTransaction = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
-			String transactionHash = ethSendTransaction.getTransactionHash();
-
-			return transactionHash;
+		
 		} catch (InterruptedException | ExecutionException | IOException e) {
 			e.printStackTrace();
 		}
@@ -190,7 +200,7 @@ public class EthereumService implements IEthereumService {
 
 	@Override
 	public BigDecimal 잔액갱신(String 주소) {
-		Admin web3 = Admin.build(new HttpService("http://52.78.49.2:8545"));
+		Admin web3 = Admin.build(new HttpService(Client_URL));
 
 		try {
 			EthGetBalance ethGetBalance = web3.ethGetBalance(주소, DefaultBlockParameterName.PENDING).sendAsync().get();

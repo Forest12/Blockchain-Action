@@ -11,15 +11,15 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
                                 <table class="table table-bordered">
                                     <tr>
                                         <th width="20%">생성자</th>
-                                        <td><router-link :to="{ name: 'work.by_user', params: { id: creator['id'] } }">{{ creator['이름'] }}({{creator['이메일']}})</router-link></td>
+                                        <td><router-link :to="{ name: 'work.by_user', params: { id: creator['id'] } }">{{ creator['username'] }}({{creator['email']}})</router-link></td>
                                     </tr>
                                     <tr>
                                         <th>작품명</th>
-                                        <td>{{ work['이름'] }}</td>
+                                        <td>{{ work['workName'] }}</td>
                                     </tr>
                                     <tr>
                                         <th>작품 설명</th>
-                                        <td>{{ work['설명'] }}</td>
+                                        <td>{{ work['description'] }}</td>
                                     </tr>
                                     <tr>
                                         <th>경매 시작일</th>
@@ -65,11 +65,11 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
                                     <div class="col-md-6">
                                         <router-link :to="{ name: 'auction' }" class="btn btn-sm btn-outline-secondary">경매 리스트로 돌아가기</router-link>
                                     </div>
-                                    <div class="col-md-6 text-right" v-if="sharedStates.user.id == work['회원id'] && auction['종료'] != true">
+                                    <div class="col-md-6 text-right" v-if="sharedStates.user.id == work['memberId'] && auction['종료'] != true">
                                         <button type="button" class="btn btn-sm btn-primary" v-on:click="closeAuction" v-bind:disabled="isCanceling || isClosing">{{ isClosing ? "낙찰중" : "낙찰하기" }}</button>
                                         <button type="button" class="btn btn-sm btn-danger" v-on:click="cancelAuction" v-bind:disabled="isCanceling || isClosing">{{ isCanceling ? "취소하는 중" : "경매취소하기" }}</button>
                                     </div>
-                                    <div class="col-md-6 text-right" v-if="sharedStates.user.id != work['회원id'] && auction['종료'] != true">
+                                    <div class="col-md-6 text-right" v-if="sharedStates.user.id != work['memberId'] && auction['종료'] != true">
                                         <router-link :to="{ name: 'auction.bid', params: { id: this.$route.params.id } }" class="btn btn-sm btn-primary">입찰하기</router-link>
                                     </div>
                                 </div>
@@ -120,6 +120,7 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
 
         // 경매 정보 조회
         auctionService.findById(auctionId, function(auction){
+            console.log(auction)
             var amount = Number(auction['최소금액']).toLocaleString().split(",").join("")
             auction['최소금액'] = web3.utils.fromWei(amount, 'ether');
 
@@ -127,11 +128,13 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
 
             // 작품 정보 조회
             workService.findById(workId, function(work){
+                console.log(work);
                 scope.work = work;
-                var creatorId = work['회원id'];
+                var creatorId = work['memberId'];
 
                 // 생성자 정보 조회
                 userService.findById(creatorId, function(user){
+                    console.log(user);
                     scope.creator = user;
                 });
             });

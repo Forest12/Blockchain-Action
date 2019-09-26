@@ -73,21 +73,22 @@ public class AuctionContractService implements IAuctionContractService {
 
 			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),
 					contractGasProvider.getGasLimit());
-			
+
 			Tuple7<BigInteger, BigInteger, BigInteger, BigInteger, String, BigInteger, Boolean> info;
-			//BigInteger value1=0;
+			BigInteger value1= auctioncontract.auctionStartTime().send();
 			BigInteger value2 = auctioncontract.auctionEndTime().send();
 			BigInteger value3 = auctioncontract.minValue().send();
-			
+			BigInteger value4 = auctioncontract.digitalWorkId().send();
 			String value5="";
-			//BigInteger value6=0;
-			Boolean value7=false;
-			log.debug("value 2 : "+value2);
+			BigInteger value6 = auctioncontract.highestBid().send();
+			Boolean value7 = auctioncontract.isValid();
 
-			//info = new Tuple7<BigInteger,BigInteger,BigInteger,BigInteger,String,BigInteger,Boolean>(value1, value2, value3, value4, value5, value6, value7);
+			info = new Tuple7<BigInteger,BigInteger,BigInteger,BigInteger,String,BigInteger,Boolean>(value1, value2, value3, value4, value5, value6, value7);
 			
+			log.debug("info"+info);
 
-			//AuctionInfoFactory.생성(컨트랙트주소, 1,info);
+			AuctionInfo ai = AuctionInfoFactory.생성(컨트랙트주소, 1,info);
+			return ai;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

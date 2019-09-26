@@ -4,6 +4,7 @@ import com.bcauction.application.IAuctionContractService;
 import com.bcauction.domain.*;
 import com.bcauction.domain.exception.ApplicationException;
 import com.bcauction.domain.exception.DomainException;
+import com.bcauction.domain.repository.IDigitalWorkRepository;
 import com.bcauction.domain.repository.IWalletRepository;
 import com.bcauction.domain.wrapper.AuctionContract;
 import com.bcauction.domain.wrapper.AuctionFactoryContract;
@@ -50,10 +51,12 @@ public class AuctionContractService implements IAuctionContractService {
 	private Web3j web3j;
 
 	private IWalletRepository walletRepository;
+	private IDigitalWorkRepository digitalWorkRepository;
 
 	@Autowired
-	public AuctionContractService(IWalletRepository walletRepository) {
+	public AuctionContractService(IWalletRepository walletRepository, IDigitalWorkRepository digitalWorkRepository) {
 		this.walletRepository = walletRepository;
+		this.digitalWorkRepository = digitalWorkRepository;
 	}
 
 	/**
@@ -66,6 +69,7 @@ public class AuctionContractService implements IAuctionContractService {
 	 */
 	@Override
 	public AuctionInfo 경매정보조회(final String 컨트랙트주소) {
+
 		// TODO
 		try {
 			log.debug("AuctionContractService : " + 컨트랙트주소);
@@ -78,8 +82,13 @@ public class AuctionContractService implements IAuctionContractService {
 			BigInteger value1= auctioncontract.auctionStartTime().send();
 			BigInteger value2 = auctioncontract.auctionEndTime().send();
 			BigInteger value3 = auctioncontract.minValue().send();
-			BigInteger value4 = auctioncontract.digitalWorkId().send();
+			BigInteger value4 = auctioncontract.digitalWorkId().sendAsync().get();
 			String value5="";
+			if(value4 != null){
+				DigitalWork dw = digitalWorkRepository.조회(value4.longValue());
+				value5=dw.getMemberId()+"";
+			}
+
 			BigInteger value6 = auctioncontract.highestBid().send();
 			Boolean value7 = auctioncontract.isValid();
 

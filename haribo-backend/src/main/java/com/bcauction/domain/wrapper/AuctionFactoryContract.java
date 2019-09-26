@@ -1,11 +1,5 @@
 package com.bcauction.domain.wrapper;
 
-<<<<<<< HEAD
-
-// This file is an automatically generated Java binding. Do not modify as any
-// change will likely be lost upon the next re-generation!
-=======
->>>>>>> 84c3daa6b34e6a6f8f1088fe90a78b1250751f8b
 import io.reactivex.Flowable;
 import java.math.BigInteger;
 import java.util.ArrayList;

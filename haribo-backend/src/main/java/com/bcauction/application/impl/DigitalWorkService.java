@@ -74,13 +74,22 @@ public class DigitalWorkService implements IDigitalWorkService
 	 */
 	@Override
 	public DigitalWork 작품삭제(final long id)
-	{
-		// TODO
-		return null;
+	{	
+		digitalWorkRepository.삭제(id);
+		DigitalWork delwork = digitalWorkRepository.조회(id);
+		logger.debug("delwork : "+delwork.toString());
+		try {
+			Ownership delowner = fabricService.소유권소멸(delwork.getMemberId(), id);
+			logger.debug("del info : " + delowner.toString());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		return delwork;
 	}
 
 	@Override
 	public DigitalWork 작품정보수정(final DigitalWork 작품) {
+		logger.debug("작품정보수정 : "+작품.toString());
 		DigitalWork workStored = this.digitalWorkRepository.조회(작품.getId());
 		if (workStored == null)
 			throw new ApplicationException("해당 작품을 찾을 수 없습니다.");

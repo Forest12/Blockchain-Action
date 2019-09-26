@@ -65,7 +65,7 @@ public class AuctionService implements IAuctionService
 
 		경매.setCreateTime(LocalDateTime.now());
 		long id = this.auctionRepository.생성(경매);
-
+		logger.debug("AuctionService 생성 " + id);
 		return this.auctionRepository.조회(id);
 	}
 

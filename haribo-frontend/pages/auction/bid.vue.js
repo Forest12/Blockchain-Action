@@ -14,11 +14,11 @@ var auctionBidView = Vue.component('AuctionBidView', {
                         <div class="card-body">
                             <div class="form-group">
                                 <label id="privateKey"><b>입찰 대상 작품</b></label><br>
-                                {{ work['이름'] }}
+                                {{ work['workName'] }}
                             </div>
                             <div class="form-group">
                                 <label id="privateKey"><b>내 지갑 잔액</b></label><br>
-                                {{ wallet['잔액'] }} ETH
+                                {{ wallet['balance'] }} ETH
                             </div>
                             <div class="form-group">
                                 <label id="privateKey"><b>지갑 개인키</b></label>

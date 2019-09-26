@@ -55,8 +55,9 @@ public class AuctionContractService implements IAuctionContractService {
 	private IDigitalWorkRepository digitalWorkRepository;
 
 	@Autowired
-	public AuctionContractService(IWalletRepository walletRepository) {
+	public AuctionContractService(IWalletRepository walletRepository, IDigitalWorkRepository digitalWorkRepository) {
 		this.walletRepository = walletRepository;
+		this.digitalWorkRepository = digitalWorkRepository;
 	}
 
 	/**
@@ -69,6 +70,7 @@ public class AuctionContractService implements IAuctionContractService {
 	 */
 	@Override
 	public AuctionInfo 경매정보조회(final String 컨트랙트주소) {
+
 		// TODO
 		try {
 			log.debug("AuctionContractService : " + 컨트랙트주소);
@@ -80,8 +82,7 @@ public class AuctionContractService implements IAuctionContractService {
 			BigInteger value1= auctioncontract.auctionStartTime().send();
 			BigInteger value2 = auctioncontract.auctionEndTime().send();
 			BigInteger value3 = auctioncontract.minValue().send();
-			BigInteger value4 = auctioncontract.digitalWorkId().send();
-			// String value5=auctioncontract.highestBidder().send();
+			BigInteger value4 = auctioncontract.digitalWorkId().sendAsync().get();
 			String value5="";
 			if(value4 != null){
 				DigitalWork dw = digitalWorkRepository.조회(value4.longValue());
@@ -113,6 +114,22 @@ public class AuctionContractService implements IAuctionContractService {
 	public BigInteger 현재최고가(final String 컨트랙트주소)
 	{
 		// TODO
+		try {
+			log.debug("AuctionContractService - now highestBid : " + 컨트랙트주소);
+			credentials = CommonUtil.getCredential(WALLET_RESOURCE, PASSWORD);
+
+			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),
+					contractGasProvider.getGasLimit());
+
+			BigInteger highestBid = auctioncontract.highestBid().send();
+			
+			log.debug("highestBid : "+highestBid);
+
+			return highestBid;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return BigInteger.ZERO;
 	}
 
@@ -125,6 +142,22 @@ public class AuctionContractService implements IAuctionContractService {
 	public String 현재최고입찰자주소(final String 컨트랙트주소)
 	{
 		// TODO
+		try {
+			log.debug("AuctionContractService - now highestBidder : " + 컨트랙트주소);
+			credentials = CommonUtil.getCredential(WALLET_RESOURCE, PASSWORD);
+
+			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),
+					contractGasProvider.getGasLimit());
+
+			String highestBidder = auctioncontract.highestBidder().send();
+			
+			log.debug("highestBidder : "+highestBidder);
+
+			return highestBidder;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return null;
 	}
 

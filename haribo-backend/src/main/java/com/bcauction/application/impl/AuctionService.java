@@ -140,12 +140,14 @@ public class AuctionService implements IAuctionService
 	
 	    Auction auction = this.auctionRepository.조회(경매id);
 		auction.setIsValid("C");
-		LocalDateTime local=LocalDateTime.now();
-		auction.setEndTime(local);
+		auction.setEndTime(LocalDateTime.now());
 		this.auctionRepository.수정(auction);
 		 Bid bid=this.bidRepository.조회(경매id);
+		if(bid !=null){
 		 bid.setIsBid("Y");
 		this.bidRepository.수정(bid);
+		 }
+		 logger.debug("****취소2****");
 		// TODO
 		auction=this.auctionRepository.조회(경매id);
 		return auction;

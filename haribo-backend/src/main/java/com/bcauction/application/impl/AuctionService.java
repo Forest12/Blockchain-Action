@@ -109,17 +109,17 @@ public class AuctionService implements IAuctionService
 	{
 
 		// TODO
-		Auction auction = 조회(경매id);
+		Auction auction = this.auctionRepository.조회(경매id);
 		auction.setIsValid("E");
-		auctionRepository.수정(auction);
+		this.auctionRepository.수정(auction);
 
 		Bid bid = 낙찰(경매id, 회원id, auctionContractService.현재최고가(auction.getTxsAddress()));
 		AuctionInfo ai = auctionContractService.경매정보조회(auction.getTxsAddress());
 
-		Ownership os = ownerRepository.조회(auction.getAuctionCreatorId(), ai.get작품id());
+		Ownership os = this.ownerRepository.조회(auction.getAuctionCreatorId(), ai.get작품id());
 		os.setOwnerId(ai.get최고입찰자id());
 
-		fabricService.소유권이전(auction.getAuctionCreatorId(), ai.get최고입찰자id(), ai.get작품id());
+		this.fabricService.소유권이전(auction.getAuctionCreatorId(), ai.get최고입찰자id(), ai.get작품id());
 
 		return auction;
 	}
@@ -136,23 +136,18 @@ public class AuctionService implements IAuctionService
 	 * */
 	@Override
 	public Auction 경매취소(final long 경매id, final long 회원id)
-	{
+	{   logger.debug("****취소****");
 	
-		Auction auction=this.auctionRepository.조회(경매id);
-	
+	    Auction auction = this.auctionRepository.조회(경매id);
 		auction.setIsValid("C");
-		auction.setEndTime(LocalDateTime.now());
-		Bid bid=this.bidRepository.조회(경매id);
-		logger.debug("조회요"+" "+bid.getAuctionId());
-		logger.debug("잘됨요3"+auction.getIsValid()+" "+auction.getEndTime());
-		bid.setIsBid("Y");
+		LocalDateTime local=LocalDateTime.now();
+		auction.setEndTime(local);
 		this.auctionRepository.수정(auction);
-		logger.debug("잘됨요4"+auction.getIsValid());
+		 Bid bid=this.bidRepository.조회(경매id);
+		 bid.setIsBid("Y");
 		this.bidRepository.수정(bid);
-		
-		logger.debug("잘됨요"+this.auctionRepository.조회(경매id));
-		
 		// TODO
-		return this.auctionRepository.조회(경매id);
+		auction=this.auctionRepository.조회(경매id);
+		return auction;
 	}
 }

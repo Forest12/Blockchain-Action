@@ -107,9 +107,10 @@ public class AuctionService implements IAuctionService
 	@Override
 	public Auction 경매종료(final long 경매id, final long 회원id)
 	{
+
 		// TODO
 		Auction auction = 조회(경매id);
-		auction.setIsVaild("E");
+		auction.setIsValid("E");
 		auctionRepository.수정(auction);
 
 		logger.debug(auction.toString());
@@ -139,15 +140,22 @@ public class AuctionService implements IAuctionService
 	@Override
 	public Auction 경매취소(final long 경매id, final long 회원id)
 	{
-		// TODO
-		Auction auction = 조회(경매id);
-		auction.setIsVaild("C");
+	
+		Auction auction=this.auctionRepository.조회(경매id);
+	
+		auction.setIsValid("C");
 		auction.setEndTime(LocalDateTime.now());
-		auctionRepository.수정(auction);
-
-		Bid bid = 낙찰(경매id, 회원id, auctionContractService.현재최고가(auction.getTxsAddress()));
-		AuctionInfo ai = auctionContractService.경매정보조회(auction.getTxsAddress());
-
-		return auction;
+		Bid bid=this.bidRepository.조회(경매id);
+		logger.debug("조회요"+" "+bid.getAuctionId());
+		logger.debug("잘됨요3"+auction.getIsValid()+" "+auction.getEndTime());
+		bid.setIsBid("Y");
+		this.auctionRepository.수정(auction);
+		logger.debug("잘됨요4"+auction.getIsValid());
+		this.bidRepository.수정(bid);
+		
+		logger.debug("잘됨요"+this.auctionRepository.조회(경매id));
+		
+		// TODO
+		return this.auctionRepository.조회(경매id);
 	}
 }

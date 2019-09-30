@@ -14,11 +14,11 @@ var auctionBidView = Vue.component('AuctionBidView', {
                         <div class="card-body">
                             <div class="form-group">
                                 <label id="privateKey"><b>입찰 대상 작품</b></label><br>
-                                {{ work['이름'] }}
+                                {{ work['workName'] }}
                             </div>
                             <div class="form-group">
                                 <label id="privateKey"><b>내 지갑 잔액</b></label><br>
-                                {{ wallet['잔액'] }} ETH
+                                {{ wallet['balance'] }} ETH
                             </div>
                             <div class="form-group">
                                 <label id="privateKey"><b>지갑 개인키</b></label>
@@ -76,8 +76,8 @@ var auctionBidView = Vue.component('AuctionBidView', {
 
             var options = {
                 amount: this.input.price,
-                contractAddress: this.auction['경매컨트랙트주소'],
-                walletAddress: this.wallet['주소'],
+                contractAddress: this.auction['contractAddress'],
+                walletAddress: this.wallet['walletAddress'],
                 privateKey: this.input.privateKey
             };
             console.log(options);
@@ -104,9 +104,9 @@ var auctionBidView = Vue.component('AuctionBidView', {
         var auctionId = this.$route.params.id;
 
         auctionService.findById(auctionId, function(auction){
-            auction['최소금액'] = Number(auction['최소금액']) / (10**18);
+            auction['lowestPrice'] = Number(auction['lowestPrice']) / (10**18);
             scope.auction = auction;
-            var workId = auction['작품id'];
+            var workId = auction['workid'];
 
             workService.findById(workId, function(work){
                 scope.work = work;
@@ -115,7 +115,7 @@ var auctionBidView = Vue.component('AuctionBidView', {
 
         // 내 지갑 정보 조회
         walletService.findById(scope.sharedStates.user.id, function(wallet){
-            wallet['잔액'] = Number(wallet['잔액']) / (10 ** 18);
+            wallet['balance'] = Number(wallet['balance']) / (10 ** 18);
             scope.wallet = wallet;
         });
     }

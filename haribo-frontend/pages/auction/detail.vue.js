@@ -108,6 +108,30 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
 
 
             // register.vue.js, bid.vue.js를 참조하여 완성해 봅니다. 
+            var options = {
+                contractAddress: this.auction['contractAddress'],
+                walletAddress: this.wallet['walletAddress'],
+                privateKey: privateKey
+            };
+            console.log(options);
+            this.isClosing = false;
+
+            auction_close(options, function(receipt){
+                var auctionId = scope.$route.params.id;
+                var bidderId = scope.sharedStates.user.id;
+                
+                // 입찰 정보 등록 요청 API를 호출합니다.
+                // auctionId, bidderId, callback, whenError 
+                auctionService.close(auctionId, bidderId, 
+                function(result){
+                    alert("경매 종료 성공");
+                    scope.isClosing = true;
+                    scope.$router.go(-1);
+                }, 
+                function(error) {
+                    alert("경매 종료 실패");
+                });
+            });
         },
         cancelAuction: function() {
             /**

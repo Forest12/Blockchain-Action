@@ -43,7 +43,6 @@ function createAuction(options, walletAddress, privateKey, onConfirm){
         gas:3000001,
         data:encodedABI
     }
-
     /**
       * 트랜잭션 전자 서명 후 트랜잭션 전송/처리
     */
@@ -74,7 +73,37 @@ function createAuction(options, walletAddress, privateKey, onConfirm){
  *  */ 
 function auction_bid(options, onConfirm)
 {
-    
+  var web3 = createWeb3();
+  var contract = createAuctionContract(web3, options.contractAddress);
+  var createBidCall = contract.methods.bid();
+  var encodedABI = createBidCall.encodeABI();
+
+  console.log(encodedABI);
+
+  var tx={
+    from : options.walletAddress,
+    to : AUCTION_CONTRACT_ADDRESS,
+    gas : 3000001,
+    data : encodedABI
+  }
+
+  var signPromise = web3.eth.accounts.signTransaction(tx, options.privateKey);
+    signPromise.then((signedTx) => {
+        
+        const sentTx = web3.eth.sendSignedTransaction(signedTx.raw || signedTx.rawTransaction);
+        sentTx.on("receipt", receipt => {
+          var newaddress = web3.eth.abi.decodeParameters(['address','uint256','uint256','uint256','uint256'], receipt.logs[0].data);
+          console.log(newaddress);
+           onConfirm(newaddress);
+        });
+        sentTx.on("error", err => {
+          console.log(err)
+        });
+      }).catch((err) => {
+        alert("최저가를 확인해주세요")
+      });
+
+  
 }
 
 /**
@@ -83,7 +112,36 @@ function auction_bid(options, onConfirm)
  * 경매 컨트랙트 주소: options.contractAddress
  *  */ 
 function auction_close(options, onConfirm){
-    
+  var web3 = createWeb3();
+  var contract = createAuctionContract(web3, options.contractAddress);
+  var createCloseCall = contract.methods.endAuction();
+  var encodedABI = createCloseCall.encodeABI();
+
+  console.log(encodedABI);
+
+  var tx={
+    from : options.walletAddress,
+    to : AUCTION_CONTRACT_ADDRESS,
+    gas : 3000001,
+    data : encodedABI
+  }
+
+  var signPromise = web3.eth.accounts.signTransaction(tx, options.privateKey);
+    signPromise.then((signedTx) => {
+        const sentTx = web3.eth.sendSignedTransaction(signedTx.raw || signedTx.rawTransaction);
+        sentTx.on("receipt", receipt => {
+          var newaddress = web3.eth.abi.decodeParameters(['address','uint256','uint256','uint256','uint256'], receipt.logs[0].data);
+          console.log(newaddress);
+          onConfirm(newaddress);
+        });
+        sentTx.on("error", err => {
+          console.log(err)
+        });
+      }).catch((err) => {
+        alert("최저가를 확인해주세요")
+      });
+
+  // onConfirm(encodedABI);
 }
 
 /**

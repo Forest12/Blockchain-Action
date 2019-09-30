@@ -4,12 +4,16 @@ import com.bcauction.application.IAuctionContractService;
 import com.bcauction.application.IAuctionService;
 import com.bcauction.application.IFabricService;
 import com.bcauction.domain.Auction;
+import com.bcauction.domain.AuctionInfo;
 import com.bcauction.domain.Bid;
 import com.bcauction.domain.Ownership;
 import com.bcauction.domain.exception.ApplicationException;
 import com.bcauction.domain.exception.NotFoundException;
 import com.bcauction.domain.repository.IAuctionRepository;
 import com.bcauction.domain.repository.IBidRepository;
+import com.bcauction.domain.repository.IOwnershipRepository;
+import com.bcauction.infrastructure.repository.OwnershipRepository;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +32,7 @@ public class AuctionService implements IAuctionService
 	private IFabricService fabricService;
 	private IAuctionRepository auctionRepository;
 	private IBidRepository bidRepository;
+	private IOwnershipRepository ownerRepository;
 
 	@Autowired
 	public AuctionService(IAuctionContractService auctionContractService,
@@ -37,6 +42,8 @@ public class AuctionService implements IAuctionService
 		this.fabricService = fabricService;
 		this.auctionRepository = auctionRepository;
 		this.bidRepository = bidRepository;
+
+		ownerRepository = new OwnershipRepository();
 	}
 
 	@Override
@@ -102,7 +109,19 @@ public class AuctionService implements IAuctionService
 	{
 
 		// TODO
-		return null;
+		Auction auction = 조회(경매id);
+		auction.setIsVaild("E");
+		auctionRepository.수정(auction);
+
+		Bid bid = 낙찰(경매id, 회원id, auctionContractService.현재최고가(auction.getTxsAddress()));
+		AuctionInfo ai = auctionContractService.경매정보조회(auction.getTxsAddress());
+
+		Ownership os = ownerRepository.조회(auction.getAuctionCreatorId(), ai.get작품id());
+		os.setOwnerId(ai.get최고입찰자id());
+
+		fabricService.소유권이전(auction.getAuctionCreatorId(), ai.get최고입찰자id(), ai.get작품id());
+
+		return auction;
 	}
 
 	/**

@@ -100,7 +100,7 @@ function auction_bid(options, onConfirm)
           console.log(err)
         });
       }).catch((err) => {
-        alert("최저가를 확인해주세요")
+        alert("최저가를 확인해주세요") 
       });
 
   
@@ -149,6 +149,37 @@ function auction_close(options, onConfirm){
  * 해당 컨트랙트 주소의 cancelAuction함수를 호출하여 경매를 종료합니다.
  * 경매 컨트랙트 주소: options.contractAddress
  *  */ 
-function auction_cancel(options, onConfirm){
-    
+function auction_cancel(options, onConfirm) {
+
+  var web3 = createWeb3();
+  var contract = createAuctionContract(web3, options.contractAddress);
+
+  console.log(options)
+  var createCloseCall = contract.methods.cancelAuction();
+  console.log(createCloseCall)
+  var encodedABI = createCloseCall.encodeABI();
+  var tx = {
+      from: options.walletAddress,
+      to: options.contractAddress,
+      gas: 3000000,
+      data: encodedABI
+  }
+
+  var signPromise = web3.eth.accounts.signTransaction(tx, options.privateKey);
+  signPromise.then((signedTx) => {
+      // raw transaction string may be available in .raw or 
+      // .rawTransaction depending on which signTransaction
+      // function was called
+      const sentTx = web3.eth.sendSignedTransaction(signedTx.raw || signedTx.rawTransaction);
+      sentTx.on("receipt", receipt => {
+          console.log(receipt)
+          onConfirm(receipt);
+      });
+      sentTx.on("error", err => {
+          console.log(err)
+      });
+  }).catch((err) => {
+      alert("최저가를 확인해주세요")
+  });
+
 }

@@ -100,6 +100,7 @@ public class AuctionService implements IAuctionService
 	@Override
 	public Auction 경매종료(final long 경매id, final long 회원id)
 	{
+
 		// TODO
 		return null;
 	}
@@ -117,7 +118,22 @@ public class AuctionService implements IAuctionService
 	@Override
 	public Auction 경매취소(final long 경매id, final long 회원id)
 	{
+	
+		Auction auction=this.auctionRepository.조회(경매id);
+	
+		auction.setIsVaild("C");
+		auction.setEndTime(LocalDateTime.now());
+		Bid bid=this.bidRepository.조회(경매id);
+		logger.debug("조회요"+" "+bid.getAuctionId());
+		logger.debug("잘됨요3"+auction.getIsVaild()+" "+auction.getEndTime());
+		bid.setIsBid("Y");
+		this.auctionRepository.수정(auction);
+		logger.debug("잘됨요4"+auction.getIsVaild());
+		this.bidRepository.수정(bid);
+		
+		logger.debug("잘됨요"+this.auctionRepository.조회(경매id));
+		
 		// TODO
-		return null;
+		return this.auctionRepository.조회(경매id);
 	}
 }

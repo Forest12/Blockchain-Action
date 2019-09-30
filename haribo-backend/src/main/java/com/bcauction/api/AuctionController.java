@@ -53,6 +53,18 @@ public class AuctionController
 
 		return 목록;
 	}
+	
+	
+	@RequestMapping(value = "/work/{txsAddress}", method = RequestMethod.GET)
+	public AuctionInfo 조회(@PathVariable String txsAddress) {
+		AuctionInfo 작품 = this.auctionContractService.경매정보조회(txsAddress);
+		if (작품 == null) {
+			logger.error("NOT FOUND ID: ", txsAddress);
+			throw new NotFoundException(txsAddress + " 작품 정보를 찾을 수 없습니다.");
+		}
+
+		return 작품;
+	}
 
 	@RequestMapping(value = "/auctions/{id}", method = RequestMethod.GET)
 	public AuctionInfo 조회(@PathVariable long id) {

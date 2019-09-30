@@ -186,20 +186,20 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
         // 경매 정보 조회
         auctionService.findById(auctionId, function(auction) {
             console.log(auction)
-            var amount = Number(auction['최소금액']).toLocaleString().split(",").join("")
-            auction['최소금액'] = web3.utils.fromWei(amount, 'ether');
+            //var amount = Number(auction['최소금액']).toLocaleString().split(",").join("")
+            //console.log(amount);
+            //auction['최소금액'] = web3.utils.fromWei(amount, 'ether');
+            auction['최소금액']=auction.최소금액;
 
             var workId = auction['작품id'];
 
             // 작품 정보 조회
-            workService.findById(workId, function(work) {
-                console.log(work);
+            workService.findById(workId, function(work){
                 scope.work = work;
                 var creatorId = work['memberId'];
 
                 // 생성자 정보 조회
-                userService.findById(creatorId, function(user) {
-                    console.log(user);
+                userService.findById(creatorId, function(user){
                     scope.creator = user;
                 });
             });
@@ -215,7 +215,17 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
                 });
             }
 
+            var now = new Date();
+            var endDate = new Date(auction.경매종료시간);
+            var diff = endDate.getTime() - now.getTime();
+
+            //경매 상태
+            if(diff < 0) {
+                auction['종료']=true;
+            }
+
             scope.auction = auction;
+            console.log(scope.auction);
         });
     }
 });

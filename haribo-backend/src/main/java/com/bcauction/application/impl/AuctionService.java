@@ -110,7 +110,7 @@ public class AuctionService implements IAuctionService
 
 		// TODO
 		Auction auction = 조회(경매id);
-		auction.setIsVaild("E");
+		auction.setIsValid("E");
 		auctionRepository.수정(auction);
 
 		Bid bid = 낙찰(경매id, 회원id, auctionContractService.현재최고가(auction.getTxsAddress()));
@@ -140,14 +140,14 @@ public class AuctionService implements IAuctionService
 	
 		Auction auction=this.auctionRepository.조회(경매id);
 	
-		auction.setIsVaild("C");
+		auction.setIsValid("C");
 		auction.setEndTime(LocalDateTime.now());
 		Bid bid=this.bidRepository.조회(경매id);
 		logger.debug("조회요"+" "+bid.getAuctionId());
-		logger.debug("잘됨요3"+auction.getIsVaild()+" "+auction.getEndTime());
+		logger.debug("잘됨요3"+auction.getIsValid()+" "+auction.getEndTime());
 		bid.setIsBid("Y");
 		this.auctionRepository.수정(auction);
-		logger.debug("잘됨요4"+auction.getIsVaild());
+		logger.debug("잘됨요4"+auction.getIsValid());
 		this.bidRepository.수정(bid);
 		
 		logger.debug("잘됨요"+this.auctionRepository.조회(경매id));

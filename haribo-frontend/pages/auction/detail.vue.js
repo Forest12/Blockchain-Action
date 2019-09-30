@@ -154,13 +154,11 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
 
             // 작품 정보 조회
             workService.findById(workId, function(work){
-                console.log(work);
                 scope.work = work;
                 var creatorId = work['memberId'];
 
                 // 생성자 정보 조회
                 userService.findById(creatorId, function(user){
-                    console.log(user);
                     scope.creator = user;
                 });
             });
@@ -176,7 +174,17 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
                 });
             }
 
+            var now = new Date();
+            var endDate = new Date(auction.경매종료시간);
+            var diff = endDate.getTime() - now.getTime();
+
+            // 만약 종료일자가 지났다면 "경매 마감"을 표시한다.
+            if(diff < 0) {
+                auction['종료']=true;
+            }
+
             scope.auction = auction;
+            console.log(scope.auction);
         });
     }
 });

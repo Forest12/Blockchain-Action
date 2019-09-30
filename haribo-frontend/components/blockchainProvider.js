@@ -18,6 +18,13 @@ function getBlock(BlockNumber) {
   return web3.eth.getBlock(BlockNumber);
 }
 
+function getTransactionFromBlock(BlockHash, i) {
+  return web3.eth.getTransactionFromBlock(BlockHash, i);
+}
+
+function getTransaction(BlockHash) {
+  return web3.eth.getTransaction(BlockHash);
+}
 
 /*
     javascript 에서 URL 쿼리 스트링을 읽을 수 있게 해주는 함수

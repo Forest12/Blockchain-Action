@@ -14,6 +14,10 @@ const web3 = new Web3(BLOCKCHAIN_URL);
 function fetchLatestBlock() {
     return web3.eth.getBlockNumber();
 }
+function getBlock(BlockNumber) {
+  return web3.eth.getBlock(BlockNumber);
+}
+
 
 /*
     javascript 에서 URL 쿼리 스트링을 읽을 수 있게 해주는 함수

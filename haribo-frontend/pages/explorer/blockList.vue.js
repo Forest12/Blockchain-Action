@@ -32,14 +32,37 @@ var explorerBlockView = Vue.component('ExplorerBlockView', {
     data(){
         return {
             lastReadBlock: 0,
-            blocks: []
+            blocks: [],
+            blocktemp: []
         }
     },
     methods: {
         fetchBlocks: function(){
+
             /**
              * TODO 최근 10개의 블록 정보를 업데이트 합니다.
              */
+
+            var scope = this;
+
+            fetchLatestBlock().then(data =>{
+                
+                scope.lastReadBlock = data;
+                //store.state.lastReadBlock = data;
+                scope.blocktemp = [];
+
+                fetchBlocks(scope.lastReadBlock - 9, scope.lastReadBlock, data =>{
+                    //console.log(scope.blocktemp);
+                    data.timestamp = timeSince(data.timestamp);
+                    data.txCount = data.transactions.length;
+                    scope.blocktemp.unshift(data);
+                    if(scope.blocks.length!=10){
+                        scope.blocks = scope.blocktemp;
+                    }
+                })
+            })
+            //console.log(scope.blocks);
+            scope.blocks = scope.blocktemp;
         }
     },
     mounted: function(){

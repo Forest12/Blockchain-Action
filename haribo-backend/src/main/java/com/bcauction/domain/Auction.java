@@ -9,7 +9,7 @@ public class Auction
 	private long auctionCreatorId; //회원id
 	private long auctionId;
 	private LocalDateTime createTime;
-	private String isVaild = "V"; // V valid(유효함), C canceled, E ended
+	private String isValid = "V"; // V valid(유효함), C canceled, E ended
 	private LocalDateTime startTime;
 	private LocalDateTime endTime;
 	private BigInteger lowestPrice;
@@ -47,12 +47,12 @@ public class Auction
 		this.createTime = createTime;
 	}
 
-	public String getIsVaild() {
-		return isVaild;
+	public String getIsValid() {
+		return isValid;
 	}
 
-	public void setIsVaild(String isVaild) {
-		this.isVaild = isVaild;
+	public void setIsValid(String isValid) {
+		this.isValid = isValid;
 	}
 
 	public LocalDateTime getStartTime() {
@@ -90,7 +90,7 @@ public class Auction
 	@Override
 	public String toString() {
 		return "Auction [auctionCreatorId=" + auctionCreatorId + ", auctionId=" + auctionId + ", createTime="
-				+ createTime + ", endTime=" + endTime + ", id=" + id + ", isVaild=" + isVaild + ", lowestPrice="
+				+ createTime + ", endTime=" + endTime + ", id=" + id + ", isVaild=" + isValid + ", lowestPrice="
 				+ lowestPrice + ", startTime=" + startTime + ", txsAddress=" + txsAddress + "]";
 	}
 

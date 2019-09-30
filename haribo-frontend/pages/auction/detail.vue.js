@@ -99,11 +99,14 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
              */
             var scope = this;
             var privateKey = window.prompt("경매를 종료하시려면 지갑 비밀키를 입력해주세요.","");
-            
+            var walletAddr;
+            walletService.findAddressById(user.id, function(data) {
+                walletAddr = data;
+            });
             // register.vue.js, bid.vue.js를 참조하여 완성해 봅니다. 
             var options = {
-                contractAddress: this.auction['contractAddress'],
-                walletAddress: this.wallet['walletAddress'],
+                contractAddress: this.auction['경매컨트랙트주소'],
+                walletAddress: walletAddr,
                 privateKey: privateKey
             };
             console.log(options);

@@ -76,11 +76,11 @@ var auctionBidView = Vue.component('AuctionBidView', {
 
             var options = {
                 amount: this.input.price,
-                contractAddress: this.auction['contractAddress'],
-                walletAddress: this.wallet['walletAddress'],
+                contractAddress: this.auction['경매컨트랙트주소'],
+                walletAddress: scope.wallet['address'],
                 privateKey: this.input.privateKey
             };
-            console.log(options);
+            // console.log(options);
             this.bidding = true;
 
             // 컨트랙트 bid 함수를 호출합니다.

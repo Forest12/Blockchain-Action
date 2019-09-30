@@ -1,21 +1,176 @@
-2019-09-26 10:17:14 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 20092 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
-2019-09-26 10:17:14 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
-2019-09-26 10:17:14 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
-2019-09-26 10:17:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-09-26 10:17:16 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2019-09-26 10:17:16 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
-2019-09-26 10:17:16 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-09-26 10:17:16 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
-2019-09-26 10:17:17 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-09-26 10:17:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-09-26 10:17:17 [main] INFO  com.bcauction.Application - Started Application in 3.519 seconds (JVM running for 3.798)
-2019-09-26 10:17:35 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-09-26 10:17:35 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-09-26 10:17:35 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-09-26 10:17:37 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 10:17:37 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 10:17:39 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 10:44:18 [http-nio-8080-exec-10] INFO  o.a.coyote.http11.Http11Processor - Error parsing HTTP request header
+2019-09-30 10:29:21 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 12492 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-30 10:29:21 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-30 10:29:21 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-30 10:29:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-30 10:29:23 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-30 10:29:23 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-30 10:29:23 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-30 10:29:23 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-30 10:29:24 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-30 10:29:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-30 10:29:24 [main] INFO  com.bcauction.Application - Started Application in 3.459 seconds (JVM running for 3.746)
+2019-09-30 10:29:40 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-30 10:29:40 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-09-30 10:29:41 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-09-30 10:29:48 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
+2019-09-30 10:29:48 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:29:49 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=14, value6=0, value7=false}
+2019-09-30 10:29:49 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 10:29:49 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:29:50 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 10:29:50 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 10:29:50 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:29:51 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 10:29:52 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 10:29:52 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:29:53 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 10:31:04 [http-nio-8080-exec-2] DEBUG c.b.application.impl.AuctionService - AuctionService 생성 15
+2019-09-30 10:31:04 [http-nio-8080-exec-2] DEBUG com.bcauction.api.AuctionController - 경매 생성 : Auction [auctionCreatorId=12, auctionId=139, createTime=2019-09-30T10:31:04, endTime=2019-10-01T03:00, id=15, isVaild=V, lowestPrice=1, startTime=2019-09-30T01:00, txsAddress=0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662]
+2019-09-30 10:31:10 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 10:31:10 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:31:11 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 10:31:13 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 10:31:13 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:31:14 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 10:31:47 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 10:31:47 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:31:48 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 10:36:39 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 10:36:39 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:36:40 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 10:36:41 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 10:36:41 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:36:42 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 10:36:43 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 10:36:43 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:36:44 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 10:36:49 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 10:36:49 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:36:50 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 10:36:56 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 10:36:56 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:36:57 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 10:37:11 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 10:37:11 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:37:13 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 10:52:33 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 10:52:33 [http-nio-8080-exec-6] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:52:34 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 10:54:09 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 10:54:09 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:54:10 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 10:54:11 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 10:54:11 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:54:12 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 10:57:13 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 10:57:13 [http-nio-8080-exec-6] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:57:14 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 10:59:42 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 10:59:42 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 10:59:43 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:00:59 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 11:00:59 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:01:00 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:07:46 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 11:07:46 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:07:47 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:08:12 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:08:12 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:08:13 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:08:44 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 11:08:44 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:08:45 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:11:14 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
+2019-09-30 11:11:14 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:11:15 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=14, value6=0, value7=false}
+2019-09-30 11:11:15 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 11:11:15 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:11:16 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 11:11:16 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:11:16 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 11:11:17 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:11:17 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 11:11:17 [http-nio-8080-exec-6] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:11:18 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:11:18 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:11:18 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:11:19 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:11:29 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x514e7170f3FD01CACC5F8197Ab2f1e600FE82fDe
+2019-09-30 11:11:29 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:11:30 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569337200000, value2=1571929201000, value3=1, value4=140, value5=17, value6=0, value7=false}
+2019-09-30 11:11:30 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x75AE4E13Ab63E1d7BD72d0cE19Ef2B32AD3B5f6c
+2019-09-30 11:11:30 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:11:31 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569769200000, value2=1570201200000, value3=1, value4=141, value5=12, value6=0, value7=false}
+2019-09-30 11:11:31 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x6A221B81558C2E5eb1E67Fa8E7f794eabb5f5dc3
+2019-09-30 11:11:31 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:11:33 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569769200000, value2=1572404400000, value3=5, value4=142, value5=14, value6=0, value7=false}
+2019-09-30 11:11:33 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x85ADa218826C09E6552ff42e71308BDF0ee3B601
+2019-09-30 11:11:33 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:11:34 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=143, value5=16, value6=0, value7=false}
+2019-09-30 11:36:38 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 11:36:38 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:36:39 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:38:24 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:38:24 [http-nio-8080-exec-6] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:38:25 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:39:52 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:39:52 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:39:53 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:43:19 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:43:19 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:43:20 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:44:39 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:44:39 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:44:40 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:45:34 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:45:34 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:45:35 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:47:18 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:47:18 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:47:19 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:49:23 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:49:23 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:49:24 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:50:55 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:50:55 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:50:56 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:52:02 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:52:02 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:52:03 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:53:43 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:53:43 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:53:44 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:55:05 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
+2019-09-30 11:55:05 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:55:06 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=14, value6=0, value7=false}
+2019-09-30 11:55:06 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 11:55:06 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:55:07 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:55:07 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:55:08 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 11:55:08 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 11:55:08 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:55:08 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:55:09 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:55:09 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 11:55:09 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:55:10 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 11:55:13 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x514e7170f3FD01CACC5F8197Ab2f1e600FE82fDe
+2019-09-30 11:55:13 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:55:14 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569337200000, value2=1571929201000, value3=1, value4=140, value5=17, value6=0, value7=false}
+2019-09-30 11:55:14 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x75AE4E13Ab63E1d7BD72d0cE19Ef2B32AD3B5f6c
+2019-09-30 11:55:14 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:55:15 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569769200000, value2=1570201200000, value3=1, value4=141, value5=12, value6=0, value7=false}
+2019-09-30 11:55:18 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x6A221B81558C2E5eb1E67Fa8E7f794eabb5f5dc3
+2019-09-30 11:55:18 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:55:20 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569769200000, value2=1572404400000, value3=5, value4=142, value5=14, value6=0, value7=false}
+2019-09-30 11:55:20 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x85ADa218826C09E6552ff42e71308BDF0ee3B601
+2019-09-30 11:55:20 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:55:21 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=143, value5=16, value6=0, value7=false}
+2019-09-30 11:55:21 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x2154Ac9693c9A50f5be18AD692de9A03cBB36269
+2019-09-30 11:55:21 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 11:55:22 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 11:56:59 [http-nio-8080-exec-9] INFO  o.a.coyote.http11.Http11Processor - Error parsing HTTP request header
  Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
 java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
 	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:414)
@@ -28,138 +183,28 @@ java.lang.IllegalArgumentException: Invalid character found in method name. HTTP
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:835)
-2019-09-26 11:18:17 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-2019-09-26 11:18:17 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2019-09-26 11:18:17 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2019-09-26 11:18:20 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 18960 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
-2019-09-26 11:18:20 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
-2019-09-26 11:18:20 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
-2019-09-26 11:18:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-09-26 11:18:22 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2019-09-26 11:18:22 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
-2019-09-26 11:18:22 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-09-26 11:18:22 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
-2019-09-26 11:18:22 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-09-26 11:18:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-09-26 11:18:23 [main] INFO  com.bcauction.Application - Started Application in 3.148 seconds (JVM running for 3.425)
-2019-09-26 11:18:28 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-09-26 11:18:28 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-09-26 11:18:29 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-09-26 11:18:31 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:18:31 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:18:33 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:18:38 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:18:38 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:18:39 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:19:03 [http-nio-8080-exec-5] INFO  c.b.application.impl.WalletService - Wallet [address=0x3112F6addf5B0e00603343beDAe5Bf0Df994ab84, balance=0, chargeNum=1, id=43, ownerId=12]
-2019-09-26 11:19:03 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 충전함수
-2019-09-26 11:19:04 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - unlockAccount after true
-2019-09-26 11:19:04 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - unlockAccount after2 null
-2019-09-26 11:19:04 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - ethGetTransactionCountorg.web3j.protocol.core.Request@1b2ff987
-2019-09-26 11:19:04 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - ethGetTransactionCountorg.web3j.protocol.core.methods.response.EthGetTransactionCount@2bfd1581
-2019-09-26 11:19:04 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:19:05 [http-nio-8080-exec-5] INFO  c.b.application.impl.WalletService - received txhash: 0xacb757df0f5b80b16d3276112b8d10cc27e967363b50327de78439936e5f2935
-2019-09-26 11:19:16 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:19:16 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:19:17 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:19:18 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:19:18 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:19:19 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:26:06 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:26:06 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:26:07 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:26:17 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:26:17 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:26:18 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:08 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 11:28:08 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:09 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:12 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 11:28:12 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:13 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:17 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 11:28:17 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:18 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:18 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:28:18 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:20 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:20 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:28:20 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:21 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:50 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 11:28:50 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:51 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:51 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 11:28:51 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:52 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:57 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:28:57 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:58 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:59 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:28:59 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:29:00 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:31:34 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:31:34 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:31:35 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:31:35 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:31:35 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:31:36 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:32:19 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:32:19 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:32:20 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:32:20 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:32:20 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:32:21 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 12:07:47 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 12:07:47 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 12:07:48 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 12:07:50 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 12:07:50 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 12:07:51 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 12:08:01 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 12:08:01 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 12:08:02 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 12:08:03 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 12:08:03 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 12:08:04 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 13:54:10 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 13:54:10 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 13:54:11 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 13:54:32 [http-nio-8080-exec-10] DEBUG c.b.api.DigitalWorkController - 0, 12
-2019-09-26 13:54:32 [http-nio-8080-exec-10] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
-	workName: 정준희
-	description: wwg
-	isDisclosure: Y
-	isVaild: Y
-	memberId: 12 }
-2019-09-26 13:54:32 [http-nio-8080-exec-10] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 139 { id: 139
-	workName: 정준희
-	description: wwg
-	isDisclosure: Y
-	isVaild: Y
-	memberId: 12 }
-2019-09-26 13:54:32 [http-nio-8080-exec-10] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
-2019-09-26 13:54:32 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/fabric-ca.pem
-2019-09-26 13:54:32 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes\fabric-ca.pem
-2019-09-26 13:54:32 [http-nio-8080-exec-10] WARN  o.h.fabric_ca.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
-2019-09-26 13:54:32 [http-nio-8080-exec-10] WARN  o.h.fabric.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
-2019-09-26 13:54:33 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/fabric-peer.pem
-2019-09-26 13:54:33 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes\fabric-peer.pem
-2019-09-26 13:54:33 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/fabric-orderer.pem
-2019-09-26 13:54:33 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes\fabric-orderer.pem
-2019-09-26 13:54:34 [http-nio-8080-exec-10] INFO  org.hyperledger.fabric.sdk.Channel - Channel Channel{id: 3, name: auctionchannel001} eventThread started shutdown: false  thread: null 
-2019-09-26 13:54:36 [http-nio-8080-exec-10] DEBUG c.b.application.impl.FabricCCService - fee290c76afd4eafb4adecc2db9fded14c10ee8457f81218131b76d1c40847d1
-2019-09-26 13:54:37 [http-nio-8080-exec-10] DEBUG c.b.application.impl.FabricCCService - 5b4fe5d25c69743e0c3c201dd5f6ccd25e044fc1c13814e8a7aa8020cb2f0fe4
-2019-09-26 13:54:37 [http-nio-8080-exec-10] INFO  c.b.application.impl.FabricCCService - Work 139 by Owner 12: 2019-09-26 04:54:36 ~ FALSE
-2019-09-26 13:54:37 [http-nio-8080-exec-10] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-09-26T04:54:36, ownerId=12, workId=139]
-2019-09-26 13:54:37 [http-nio-8080-exec-10] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (12, 139)
-2019-09-26 13:54:37 [http-nio-8080-exec-10] INFO  c.b.i.repository.OwnershipRepository - true
-2019-09-26 13:55:07 [http-nio-8080-exec-8] DEBUG c.b.application.impl.AuctionService - AuctionService 생성 14
-2019-09-26 13:55:07 [http-nio-8080-exec-8] DEBUG com.bcauction.api.AuctionController - 경매 생성 : Auction [auctionCreatorId=12, auctionId=139, createTime=2019-09-26T13:55:07, endTime=2019-09-27T03:00, id=14, isVaild=V, lowestPrice=1, startTime=2019-09-26T03:00, txsAddress=0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572]
-2019-09-26 13:55:15 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 13:55:15 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 13:55:16 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:01:00 [http-nio-8080-exec-8] INFO  o.a.coyote.http11.Http11Processor - Error parsing HTTP request header
+2019-09-30 12:00:10 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 12:00:10 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 12:00:11 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 12:01:47 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 12:01:47 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 12:01:48 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 12:02:42 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 12:02:42 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 12:02:43 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 12:04:13 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 12:04:13 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 12:04:14 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 12:10:23 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 12:10:23 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 12:10:24 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 12:11:57 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 12:11:57 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 12:11:58 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 12:12:44 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 12:12:44 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 12:12:45 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569805200000, value2=1569898800000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 12:29:40 [http-nio-8080-exec-9] INFO  o.a.coyote.http11.Http11Processor - Error parsing HTTP request header
  Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
 java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
 	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:414)
@@ -172,388 +217,109 @@ java.lang.IllegalArgumentException: Invalid character found in method name. HTTP
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 	at java.base/java.lang.Thread.run(Thread.java:835)
-2019-09-26 14:32:51 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:32:51 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:32:52 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:32:55 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:32:55 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:32:56 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:33:41 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:33:41 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:33:42 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:33:43 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:33:43 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:33:44 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:34:42 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:34:42 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:34:43 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:34:43 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:34:43 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:34:44 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:34:48 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:34:48 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:34:49 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:40:01 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:40:01 [http-nio-8080-exec-6] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:40:02 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:40:44 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:40:44 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:40:46 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:45:56 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 14:45:56 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:45:57 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:49:02 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 14:49:02 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:49:03 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:49:06 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:49:06 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:49:07 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:49:07 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:49:07 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:49:08 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:50:04 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 14:50:04 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:50:05 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:50:06 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:50:06 [http-nio-8080-exec-6] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:50:07 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:50:07 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:50:07 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:50:08 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 15:35:34 [http-nio-8080-exec-10] ERROR c.b.application.impl.EthereumService - 잔액갱신
-java.util.concurrent.ExecutionException: java.net.ConnectException: Failed to connect to /52.78.49.2:8547
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:395)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2070)
-	at com.bcauction.application.impl.EthereumService.잔액갱신(EthereumService.java:206)
-	at com.bcauction.application.impl.WalletService.조회_ETH잔액동기화(WalletService.java:58)
-	at com.bcauction.application.impl.WalletService.조회(WalletService.java:72)
-	at jdk.internal.reflect.GeneratedMethodAccessor130.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:206)
-	at com.sun.proxy.$Proxy68.조회(Unknown Source)
-	at com.bcauction.api.WalletController.조회By소유자(WalletController.java:61)
-	at jdk.internal.reflect.GeneratedMethodAccessor129.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:835)
-Caused by: java.net.ConnectException: Failed to connect to /52.78.49.2:8547
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:225)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:149)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:195)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:121)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:100)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:120)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:185)
-	at okhttp3.RealCall.execute(RealCall.java:69)
-	at org.web3j.protocol.http.HttpService.performIO(HttpService.java:151)
-	at org.web3j.protocol.Service.send(Service.java:34)
-	at org.web3j.protocol.Service.lambda$sendAsync$0(Service.java:46)
-	at org.web3j.utils.Async.lambda$run$1(Async.java:27)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1807)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	... 1 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method)
-	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107)
-	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
-	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
-	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
-	at java.base/java.net.Socket.connect(Socket.java:591)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:124)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:223)
-	... 25 common frames omitted
-2019-09-26 15:35:35 [http-nio-8080-exec-10] ERROR c.b.application.impl.EthereumService - 잔액갱신
-java.util.concurrent.ExecutionException: java.net.ConnectException: Failed to connect to /52.78.49.2:8547
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:395)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2070)
-	at com.bcauction.application.impl.EthereumService.잔액갱신(EthereumService.java:206)
-	at com.bcauction.application.impl.WalletService.조회_ETH잔액동기화(WalletService.java:58)
-	at jdk.internal.reflect.GeneratedMethodAccessor131.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:206)
-	at com.sun.proxy.$Proxy68.조회_ETH잔액동기화(Unknown Source)
-	at com.bcauction.api.WalletController.조회By소유자(WalletController.java:65)
-	at jdk.internal.reflect.GeneratedMethodAccessor129.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:835)
-Caused by: java.net.ConnectException: Failed to connect to /52.78.49.2:8547
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:225)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:149)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:195)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:121)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:100)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:120)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:185)
-	at okhttp3.RealCall.execute(RealCall.java:69)
-	at org.web3j.protocol.http.HttpService.performIO(HttpService.java:151)
-	at org.web3j.protocol.Service.send(Service.java:34)
-	at org.web3j.protocol.Service.lambda$sendAsync$0(Service.java:46)
-	at org.web3j.utils.Async.lambda$run$1(Async.java:27)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1807)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	... 1 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method)
-	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107)
-	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
-	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
-	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
-	at java.base/java.net.Socket.connect(Socket.java:591)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:124)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:223)
-	... 25 common frames omitted
-2019-09-26 15:35:36 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 15:35:36 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 15:43:24 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 15:43:24 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 15:43:29 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 15:43:29 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 15:46:52 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 15:46:52 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:01:32 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 16:01:32 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:01:33 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:02:19 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 16:02:19 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:02:20 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:13:15 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 16:13:15 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:13:16 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:13:16 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:13:16 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:13:17 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 16:13:17 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:13:17 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:13:18 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:13:18 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 16:13:18 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:13:18 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 16:13:18 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:13:19 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:13:19 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:13:19 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:13:19 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:13:20 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:13:20 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 16:13:20 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:13:22 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:13:28 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 16:13:28 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:13:29 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:21:57 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 16:21:57 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:21:58 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:22:00 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 16:22:00 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:22:01 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:27:27 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 16:27:27 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:27:28 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:27:50 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:27:50 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:27:51 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:27:53 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:27:53 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:27:54 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:28:09 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:28:09 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:28:10 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:28:10 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:28:10 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:28:11 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:30:47 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:30:47 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:30:48 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:30:48 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:30:48 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:30:49 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:33:35 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 16:33:35 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:33:36 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:33:44 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 16:33:44 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:33:45 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:33:45 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:33:45 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:33:46 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:33:46 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:33:46 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:33:46 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 16:33:46 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:33:47 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:33:47 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:34:11 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:34:11 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:34:12 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:34:12 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:34:12 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:34:13 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:43:32 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:43:32 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:43:33 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:43:33 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:43:33 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:43:34 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:45:17 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:45:17 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:45:18 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:45:19 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:45:19 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:45:20 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:48:28 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:48:28 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:48:29 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:48:32 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:48:32 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:48:33 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:55:30 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:55:30 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:55:31 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:55:32 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:55:32 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:55:33 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:56:43 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:56:43 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:56:44 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:56:46 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 16:56:46 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:56:47 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:57:00 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 16:57:00 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:57:01 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:57:02 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 16:57:02 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:57:03 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 17:13:29 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 17:13:29 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 17:13:30 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 17:13:32 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 17:13:32 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 17:13:33 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
+2019-09-30 13:33:57 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:33:57 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:34:12 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:34:12 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:34:45 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
+2019-09-30 13:34:45 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:34:46 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=14, value6=0, value7=false}
+2019-09-30 13:34:46 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 13:34:46 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:34:47 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 13:34:47 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 13:34:47 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:34:48 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 13:34:48 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:34:48 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:34:49 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:34:49 [http-nio-8080-exec-6] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:35:32 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
+2019-09-30 13:35:32 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:35:33 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=14, value6=0, value7=false}
+2019-09-30 13:35:33 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 13:35:33 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:35:34 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 13:35:34 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 13:35:34 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:35:35 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 13:35:35 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:35:35 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:35:37 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
+2019-09-30 13:35:37 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:35:38 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=14, value6=0, value7=false}
+2019-09-30 13:35:38 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 13:35:38 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:35:39 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 13:35:39 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 13:35:39 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:35:40 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 13:35:40 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:35:40 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:35:51 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:35:51 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:36:11 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:36:11 [http-nio-8080-exec-6] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:36:34 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:36:34 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:36:48 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-30 13:36:48 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-09-30 13:36:48 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-09-30 13:36:52 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 5664 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-30 13:36:52 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-30 13:36:52 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-30 13:36:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-30 13:36:54 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-30 13:36:54 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-30 13:36:54 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-30 13:36:54 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-30 13:36:55 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-30 13:36:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-30 13:36:55 [main] INFO  com.bcauction.Application - Started Application in 3.287 seconds (JVM running for 3.88)
+2019-09-30 13:37:08 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-30 13:37:08 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-09-30 13:37:08 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-09-30 13:37:11 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:37:11 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:37:53 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
+2019-09-30 13:37:53 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:37:54 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=14, value6=0, value7=false}
+2019-09-30 13:37:54 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
+2019-09-30 13:37:54 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:37:55 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:37:55 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:37:55 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=16, value6=0, value7=false}
+2019-09-30 13:37:55 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 13:37:55 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:37:56 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 13:37:56 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:37:56 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:38:02 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:38:02 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:38:06 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 13:38:06 [http-nio-8080-exec-6] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:38:07 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 13:38:10 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x7D88ccbb87cDad8c9dC1d618beb2eE119e7b6662
+2019-09-30 13:38:10 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:38:16 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
+2019-09-30 13:38:16 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 13:38:17 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=12, value6=0, value7=false}
+2019-09-30 13:59:09 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
+2019-09-30 13:59:09 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
+2019-09-30 14:01:42 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-09-30 14:01:42 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-09-30 14:01:42 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-09-30 14:01:46 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 19324 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-09-30 14:01:46 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-09-30 14:01:46 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-09-30 14:01:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-09-30 14:01:48 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-09-30 14:01:48 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-09-30 14:01:48 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-09-30 14:01:49 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-09-30 14:01:49 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-30 14:01:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-30 14:01:49 [main] INFO  com.bcauction.Application - Started Application in 3.106 seconds (JVM running for 3.391)
+2019-09-30 14:02:16 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-09-30 14:02:16 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-09-30 14:02:16 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.

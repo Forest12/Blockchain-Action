@@ -30,6 +30,7 @@ var auctionService = {
             "bidAmount": bidPrice,
             "bidDate": new Date()
         }
+        console.log(data);
         $.ajax({
             type: "PUT",
             url: API_BASE_URL + "/api/auctions/bid",

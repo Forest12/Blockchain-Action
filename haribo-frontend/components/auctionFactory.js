@@ -75,7 +75,7 @@ function auction_bid(options, onConfirm)
 {
   var web3 = createWeb3();
   var contract = createAuctionContract(web3, options.contractAddress);
-  var createBidCall = contract.methods.bid().;
+  var createBidCall = contract.methods.bid();
   var encodedABI = createBidCall.encodeABI();
 
   
@@ -83,7 +83,7 @@ function auction_bid(options, onConfirm)
 
   var tx={
     from : options.walletAddress,
-    to : AUCTION_CONTRACT_ADDRESS,
+    to : options.contractAddress,
     gas : 3000001,
     data : encodedABI
   }
@@ -123,7 +123,7 @@ function auction_close(options, onConfirm){
 
   var tx={
     from : options.walletAddress,
-    to : AUCTION_CONTRACT_ADDRESS,
+    to : options.contractAddress,
     gas : 3000001,
     data : encodedABI
   }
@@ -135,6 +135,8 @@ function auction_close(options, onConfirm){
           var newaddress = web3.eth.abi.decodeParameters(['address','uint256','uint256','uint256','uint256'], receipt.logs[0].data);
           console.log(newaddress);
           onConfirm(newaddress);
+          // console.log(receipt);
+          // onConfirm(receipt);
         });
         sentTx.on("error", err => {
           console.log(err)
@@ -152,5 +154,28 @@ function auction_close(options, onConfirm){
  * 경매 컨트랙트 주소: options.contractAddress
  *  */ 
 function auction_cancel(options, onConfirm){
-    
+  var web3 = createWeb3();
+  var contract = createAuctionContract(web3, options.contractAddress);
+  var createCloseCall = contract.methods.cancelAuction();
+  var encodedABI = createCloseCall.encodeABI();
+
+  var tx = {
+      from: options.walletAddress,
+      to: options.contractAddress,
+      gas: 3000001,
+      data: encodedABI
+  }
+  console.log(options);
+  var signPromise = web3.eth.accounts.signTransaction(tx, options.privateKey);
+  signPromise.then((signedTx) => {
+      const sentTx = web3.eth.sendSignedTransaction(signedTx.raw || signedTx.rawTransaction);
+      sentTx.on("receipt", receipt => {
+          onConfirm(receipt);
+      });
+      sentTx.on("error", err => {
+          console.log(err)
+      });
+  }).catch((err) => {
+      alert("최저가를 확인해주세요")
+  });
 }

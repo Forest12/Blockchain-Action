@@ -88,7 +88,8 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
             sharedStates: store.state,
             bidder: {},
             isCanceling: false,
-            isClosing: false
+            isClosing: false,
+            address: null
         }
     },
     methods: {
@@ -100,13 +101,13 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
             var scope = this;
             var privateKey = window.prompt("경매를 종료하시려면 지갑 비밀키를 입력해주세요.","");
             var walletAddr;
-            walletService.findAddressById(user.id, function(data) {
-                walletAddr = data;
-            });
+            var creator_id = scope.work['memberId'];
+            // console.log(creator_id)
+           
             // register.vue.js, bid.vue.js를 참조하여 완성해 봅니다. 
             var options = {
                 contractAddress: this.auction['경매컨트랙트주소'],
-                walletAddress: walletAddr,
+                walletAddress: scope.address,
                 privateKey: privateKey
             };
             console.log(options);
@@ -115,9 +116,7 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
             auction_close(options, function(receipt){
                 var auctionId = scope.$route.params.id;
                 var bidderId = scope.sharedStates.user.id;
-                
-                // 입찰 정보 등록 요청 API를 호출합니다.
-                // auctionId, bidderId, callback, whenError 
+            
                 auctionService.close(auctionId, bidderId, 
                 function(result){
                     alert("경매 종료 성공");
@@ -126,6 +125,7 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
                 }, 
                 function(error) {
                     alert("경매 종료 실패");
+                    console.log(error);
                 });
             });
         },
@@ -135,10 +135,52 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
              * 경매 상태 업데이트를 위해 API를 호출합니다. 
              */
             var scope = this;
-            var privateKey = window.prompt("경매를 취소하시려면 지갑 비밀키를 입력해주세요.","");
-            
-            // register.vue.js, bid.vue.js를 참조하여 완성해 봅니다.
-            
+            // var auctionId = this.$route.params.id;
+            var creator_id = scope.work['memberId'];
+            console.log(creator_id)
+
+            userService.findById(creator_id, function(user) {
+                console.log("생성자정보")
+                console.log(user);
+                scope.creator = user;
+                walletService.findAddressById(user.id, function(data) {
+                    scope.address = data;
+                });
+            });
+            console.log(scope.creator.id)
+
+
+            var privateKey = window.prompt("경매를 취소하시려면 지갑 비밀키를 입력해주세요.", "");
+            var publicKey = web3.eth.accounts.privateKeyToAccount(privateKey);
+            var options = {
+                contractAddress: this.auction['경매컨트랙트주소'],
+                walletAddress: scope.address,
+                privateKey: privateKey
+            };
+            console.log(scope.address)
+            console.log(publicKey.address)
+            // if (publicKey.address == scope.address) {
+                auction_cancel(options, function(cancel) {
+                    console.log(cancel);
+                    var auctionId = scope.$route.params.id;
+                var bidderId = scope.sharedStates.user.id;
+                
+                // 입찰 정보 등록 요청 API를 호출합니다.
+                // auctionId, bidderId, callback, whenError 
+                auctionService.cancel(auctionId, bidderId, 
+                function(result){
+                    alert("경매 취소 성공");
+                    scope.isClosing = true;
+                    scope.$router.go(-1);
+                }, 
+                function(error) {
+                    alert("경매 취소 실패");
+                });
+                });
+            // } 
+            // else {
+            //     alert("경매 본인이 아닙니다.")
+            // }
 
         }
     },
@@ -165,6 +207,11 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
                 userService.findById(creatorId, function(user){
                     console.log(user);
                     scope.creator = user;
+                });
+
+                walletService.findAddressById(creatorId, function(data) {
+                    scope.address = data;
+                    console.log("aaaaaaa" + scope.address);
                 });
             });
 

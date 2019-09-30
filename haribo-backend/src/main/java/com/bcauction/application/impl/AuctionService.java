@@ -112,11 +112,14 @@ public class AuctionService implements IAuctionService
 		auction.setIsVaild("E");
 		auctionRepository.수정(auction);
 
+		logger.debug(auction.toString());
+
 		Bid bid = 낙찰(경매id, 회원id, auctionContractService.현재최고가(auction.getTxsAddress()));
 		AuctionInfo ai = auctionContractService.경매정보조회(auction.getTxsAddress());
 
 		Ownership os = ownerRepository.조회(auction.getAuctionCreatorId(), ai.get작품id());
 		os.setOwnerId(ai.get최고입찰자id());
+		ownerRepository.수정(os);
 
 		fabricService.소유권이전(auction.getAuctionCreatorId(), ai.get최고입찰자id(), ai.get작품id());
 
@@ -137,6 +140,14 @@ public class AuctionService implements IAuctionService
 	public Auction 경매취소(final long 경매id, final long 회원id)
 	{
 		// TODO
-		return null;
+		Auction auction = 조회(경매id);
+		auction.setIsVaild("C");
+		auction.setEndTime(LocalDateTime.now());
+		auctionRepository.수정(auction);
+
+		Bid bid = 낙찰(경매id, 회원id, auctionContractService.현재최고가(auction.getTxsAddress()));
+		AuctionInfo ai = auctionContractService.경매정보조회(auction.getTxsAddress());
+
+		return auction;
 	}
 }

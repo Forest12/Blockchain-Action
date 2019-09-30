@@ -94,7 +94,7 @@ public class AuctionContractService implements IAuctionContractService {
 
 			info = new Tuple7<BigInteger,BigInteger,BigInteger,BigInteger,String,BigInteger,Boolean>(value1, value2, value3, value4, value5, value6, value7);
 			
-			log.debug("info"+info);
+			// log.debug("info"+info);
 
 			AuctionInfo ai = AuctionInfoFactory.생성(컨트랙트주소, Long.parseLong(value5), info);
 			return ai;
@@ -118,8 +118,7 @@ public class AuctionContractService implements IAuctionContractService {
 			log.debug("AuctionContractService - now highestBid : " + 컨트랙트주소);
 			credentials = CommonUtil.getCredential(WALLET_RESOURCE, PASSWORD);
 
-			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),
-					contractGasProvider.getGasLimit());
+			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),contractGasProvider.getGasLimit());
 
 			BigInteger highestBid = auctioncontract.highestBid().send();
 			
@@ -146,8 +145,7 @@ public class AuctionContractService implements IAuctionContractService {
 			log.debug("AuctionContractService - now highestBidder : " + 컨트랙트주소);
 			credentials = CommonUtil.getCredential(WALLET_RESOURCE, PASSWORD);
 
-			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),
-					contractGasProvider.getGasLimit());
+			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),contractGasProvider.getGasLimit());
 
 			String highestBidder = auctioncontract.highestBidder().send();
 			

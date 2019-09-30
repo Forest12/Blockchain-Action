@@ -150,8 +150,9 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
                     scope.address = data;
                     var privateKey = window.prompt("경매를 취소하시려면 지갑 비밀키를 입력해주세요.", "");
                     var publicKey = web3.eth.accounts.privateKeyToAccount(privateKey);
+                    console.log(publicKey);
                     var options = {
-                        contractAddress: this.auction['경매컨트랙트주소'],
+                        contractAddress: scope.auction['경매컨트랙트주소'],
                         walletAddress: scope.address,
                         privateKey: privateKey
                     };

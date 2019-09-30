@@ -85,16 +85,15 @@ var explorerBlockDetailView = Vue.component('ExplorerBlockDetailView', {
              */  
             getBlock(blockNumber).then(data=>{
                 console.log(data);
-                this.block.number = data.number;
-                this.block.hash =data.hash;
-                this.block.timestamp =timeSince(data.timestamp);
-                this.block.miner =data.miner;
-                this.block.nonce =data.nonce;
-                this.block.difficulty =data.difficulty;
-                this.block.size =data.size;
-                this.block.gasLimit =data.gasLimit;
-                this.block.gasUsed =data.gasUsed;
-
+                scope.block.number = data.number;
+                scope.block.hash =data.hash;
+                scope.block.timestamp =timeSince(data.timestamp);
+                scope.block.miner =data.miner;
+                scope.block.nonce =data.nonce;
+                scope.block.difficulty =data.difficulty;
+                scope.block.size =data.size;
+                scope.block.gasLimit =data.gasLimit;
+                scope.block.gasUsed =data.gasUsed;
             })
 
 

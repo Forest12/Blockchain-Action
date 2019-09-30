@@ -62,7 +62,14 @@ var explorerTxDetailView = Vue.component('ExplorerTxDetailView', {
             isValid: true, 
             tx: {
                 hash: "-",
-                timestamp: "-"
+                timestamp: "-",
+                block : 0,
+                from : 0,
+                to : 0,
+                value : 0,
+                gas : 0,
+                gasPrice : 0,
+                input : 0
             }
         }
     },
@@ -70,12 +77,28 @@ var explorerTxDetailView = Vue.component('ExplorerTxDetailView', {
         /**
          *  TODO 트랜잭션 해시로 트랜잭션 상세 정보를 조회합니다.
          */
-        var hash; // 조회할 트랜잭션 해시를 초기화합니다. 
+        var scope = this;
+        var hash = scope.$route.params.hash;  // 조회할 트랜잭션 해시를 초기화합니다. 
 
         if(hash) {
             /**
              * 트랜잭션 해시값으로 트랜잭션 정보를 가져옵니다. 
              */
+            getTransaction(hash).then(data=>{
+                scope.tx.hash = data.hash;
+                scope.tx.block = data.blockNumber;
+                scope.tx.from = data.from;
+                scope.tx.to = data.to;
+                scope.tx.value = data.value;
+                scope.tx.gas = data.gas;
+                scope.tx.gasPrice = data.gasPrice;
+                scope.tx.input = data.input;
+                getBlock(data.blockHash).then(data=>{
+                    scope.tx.timestamp = timeSince(data.timestamp);
+                })
+                console.log(timeSince(data.timestamp));
+
+            })
         } else {
             this.isValid = false;
         }

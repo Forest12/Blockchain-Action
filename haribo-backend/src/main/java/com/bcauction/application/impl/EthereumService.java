@@ -165,9 +165,6 @@ public class EthereumService implements IEthereumService {
 			PersonalUnlockAccount personalUnlockAccount;
 			personalUnlockAccount = web3.personalUnlockAccount(ADMIN_ADDRESS, PASSWORD).send();
 
-			log.debug("unlockAccount after "+ personalUnlockAccount.accountUnlocked());
-			log.debug("unlockAccount after2 "+ personalUnlockAccount.getRawResponse() );
-
 			if (personalUnlockAccount.accountUnlocked()) {
 				System.out.println("계좌 unlock 해제");
 				log.debug("ethGetTransactionCount"+web3.ethGetTransactionCount(ADMIN_ADDRESS, DefaultBlockParameterName.LATEST));
@@ -185,7 +182,7 @@ public class EthereumService implements IEthereumService {
 	
 				EthSendTransaction ethSendTransaction = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
 				String transactionHash = ethSendTransaction.getTransactionHash();
-	
+
 				return transactionHash;
 			}else{
 				log.debug("EtherService");
@@ -205,6 +202,7 @@ public class EthereumService implements IEthereumService {
 		try {
 			EthGetBalance ethGetBalance = web3.ethGetBalance(주소, DefaultBlockParameterName.PENDING).sendAsync().get();
 			String charge = ethGetBalance.getBalance()+"";
+			log.debug("잔액갱신"+charge);
 
 			return Convert.fromWei(charge, Convert.Unit.ETHER);
 		} catch (InterruptedException | ExecutionException e) {

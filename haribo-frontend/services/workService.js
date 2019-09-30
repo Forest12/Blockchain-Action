@@ -14,6 +14,11 @@ var workService = {
             callback(data);
         });
     },
+    findByTxs: function(txsAddress, callback){
+        $.get(API_BASE_URL + "/api/work/" + txsAddress, function(data){
+            callback(data);
+        });
+    },
     findHistoryById: function(workId, callback){
         $.get(API_BASE_URL + "/api/works/history/" + workId, function(data){
             var result = [];

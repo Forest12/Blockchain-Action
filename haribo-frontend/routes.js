@@ -84,7 +84,7 @@ const routes = [{
     component: explorerAuctionView
 },{
     name: "explorer.auction.detail",
-    path: '/explorer/auction/detail/:contractAddress',
+    path: '/explorer/auction/detail/:txsAddress',
     component: explorerAuctionDetailView
 },{
     name: "explorer.block",

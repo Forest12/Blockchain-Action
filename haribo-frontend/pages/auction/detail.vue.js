@@ -147,8 +147,10 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
         // 경매 정보 조회
         auctionService.findById(auctionId, function(auction){
             console.log(auction)
-            var amount = Number(auction['최소금액']).toLocaleString().split(",").join("")
-            auction['최소금액'] = web3.utils.fromWei(amount, 'ether');
+            //var amount = Number(auction['최소금액']).toLocaleString().split(",").join("")
+            //console.log(amount);
+            //auction['최소금액'] = web3.utils.fromWei(amount, 'ether');
+            auction['최소금액']=auction.최소금액;
 
             var workId = auction['작품id'];
 
@@ -178,7 +180,7 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
             var endDate = new Date(auction.경매종료시간);
             var diff = endDate.getTime() - now.getTime();
 
-            // 만약 종료일자가 지났다면 "경매 마감"을 표시한다.
+            //경매 상태
             if(diff < 0) {
                 auction['종료']=true;
             }

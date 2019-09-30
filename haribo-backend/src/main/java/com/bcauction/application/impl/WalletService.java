@@ -54,11 +54,15 @@ public class WalletService implements IWalletService
 		 * 	잔액정보가 다를 경우 정보를 갱신하여 반환한다.
 		 * 	ethereumService.java에 추가 메소드를 구현하는 것을 권장한다.
 		 */
-
-		BigDecimal charge = this.ethereumService.잔액갱신(지갑주소);
-
-		wallet.setBalance(charge);
 		
+		while(true){
+			BigDecimal charge = this.ethereumService.잔액갱신(지갑주소);
+			if(wallet.getBalance()!=charge){
+				wallet.setBalance(charge);
+				break;
+			}
+		}	
+		this.잔액갱신(지갑주소, wallet.getBalance());
 		return wallet;
 	}
 
@@ -108,10 +112,10 @@ public class WalletService implements IWalletService
 	@Override
 	public Wallet 충전(String 지갑주소) {
 		Wallet wallet = this.조회_ETH잔액동기화(지갑주소);
+		log.debug("충전전"+wallet.getBalance());
 		if (wallet == null || !wallet.isRechargeable()) {
 			throw new ApplicationException("[1] 충전할 수 없습니다!");
 		}
-		log.info(wallet.toString());
 
 		try {
 			String txHash = this.ethereumService.충전(지갑주소);

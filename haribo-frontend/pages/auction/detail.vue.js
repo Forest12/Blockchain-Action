@@ -138,8 +138,8 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
              * 컨트랙트를 호출하여 경매를 취소하고
              * 경매 상태 업데이트를 위해 API를 호출합니다. 
              */
-            scope.isCanceling = true;
             var scope = this;
+            scope.isCanceling = true;
             var auctionId = this.$route.params.id;
             var creator_id = scope.work['memberId'];
             userService.findById(creator_id, function(user) {

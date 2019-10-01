@@ -85,7 +85,8 @@ function auction_bid(options, onConfirm)
     from : options.walletAddress,
     to : options.contractAddress,
     gas : 3000001,
-    data : encodedABI
+    data : encodedABI,
+    value: options.amount,
   }
 
   var signPromise = web3.eth.accounts.signTransaction(tx, options.privateKey);
@@ -93,10 +94,10 @@ function auction_bid(options, onConfirm)
         
         const sentTx = web3.eth.sendSignedTransaction(signedTx.raw || signedTx.rawTransaction);
         sentTx.on("receipt", receipt => {
-          // console.log(receipt)
-          var newaddress = web3.eth.abi.decodeParameters(['uint256','uint256'], receipt.logs[0].data);
+          console.log(receipt)
+          var newaddress = web3.eth.abi.decodeParameters(['address','uint256','uint256','uint256','uint256'], receipt.logs[0].data);
           console.log(newaddress);
-           onConfirm(newaddress);
+          onConfirm(newaddress);
         });
         sentTx.on("error", err => {
           console.log(err)
@@ -125,7 +126,7 @@ function auction_close(options, onConfirm){
     from : options.walletAddress,
     to : options.contractAddress,
     gas : 3000001,
-    data : encodedABI
+    data : encodedABI,
   }
 
   var signPromise = web3.eth.accounts.signTransaction(tx, options.privateKey);

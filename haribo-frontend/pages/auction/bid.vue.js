@@ -75,7 +75,7 @@ var auctionBidView = Vue.component('AuctionBidView', {
             var scope = this;
 
             var options = {
-                amount: this.input.price,
+                amount: this.input.price * (10**18),
                 contractAddress: this.auction['경매컨트랙트주소'],
                 walletAddress: scope.wallet['address'],
                 privateKey: this.input.privateKey
@@ -86,7 +86,7 @@ var auctionBidView = Vue.component('AuctionBidView', {
             // 컨트랙트 bid 함수를 호출합니다.
             // components/auctionFactory.js의 auction_bid 함수를 호출합니다.
             // TODO auction_bid 함수의 내용을 완성합니다.             
-            auction_bid(options, function(receipt){
+            auction_bid(options,function(receipt){
                 var bidder = scope.sharedStates.user.id;
                 var auctionId = scope.$route.params.id;
                 
@@ -104,9 +104,9 @@ var auctionBidView = Vue.component('AuctionBidView', {
         var auctionId = this.$route.params.id;
 
         auctionService.findById(auctionId, function(auction){
-            auction['lowestPrice'] = Number(auction['lowestPrice']) / (10**18);
+            auction['최소금액'] = Number(auction['최소금액']) / (10**18);
             scope.auction = auction;
-            var workId = auction['workid'];
+            var workId = auction['작품id'];
 
             workService.findById(workId, function(work){
                 scope.work = work;

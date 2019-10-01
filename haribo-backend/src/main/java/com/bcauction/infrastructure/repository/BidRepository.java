@@ -16,9 +16,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Repository
 public class BidRepository implements IBidRepository
 {
+
+	public static final Logger logger = LoggerFactory.getLogger(BidRepository.class);
+
 	private JdbcTemplate jdbcTemplate;
 	private SimpleJdbcInsert simpleJdbcInsert;
 
@@ -93,6 +99,8 @@ public class BidRepository implements IBidRepository
 			paramMap.put("bid_amount", 입찰.getBidAmount());
 			paramMap.put("is_bid", 입찰.getIsBid());
 
+			logger.debug(paramMap.get("auction_part_id") + ", " + paramMap.get("auction_id") + ", " + paramMap.get("bid_amount"));
+
 			this.simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate)
 					.withTableName("Bid")
 					.usingGeneratedKeyColumns("id");
@@ -107,6 +115,7 @@ public class BidRepository implements IBidRepository
 
 	@Override
 	public int 수정(final Bid 입찰){
+		
 		StringBuilder sbSql =  new StringBuilder("UPDATE Bid ");
 		sbSql.append("SET is_bid=? ");
 		sbSql.append("WHERE auction_part_id=? AND auction_id=? AND bid_amount=?");

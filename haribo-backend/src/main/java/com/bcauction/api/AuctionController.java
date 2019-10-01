@@ -96,6 +96,7 @@ public class AuctionController
 
 	@RequestMapping(value = "/auctions/bid", method = RequestMethod.PUT)
 	public Bid 입찰(@RequestBody Bid bid) {
+		logger.debug("입찰" + bid.getBidAmount());
 		return auctionService.입찰(bid);
 	}
 

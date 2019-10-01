@@ -78,7 +78,9 @@ public class AuctionService implements IAuctionService
 
 	@Override
 	public Bid 입찰(Bid 입찰) {
+		logger.debug("입찰" + 입찰.getBidAmount());
 		long id = this.bidRepository.생성(입찰);
+		logger.debug("입찰 생성 후" + id);
 		return this.bidRepository.조회(id);
 	}
 

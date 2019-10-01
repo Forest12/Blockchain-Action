@@ -216,7 +216,7 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
         auctionService.findById(auctionId, function(auction) {
             console.log(auction)
             //var amount = Number(auction['최소금액']).toLocaleString().split(",").join("")
-            //console.log(amount);
+            // console.log(amount);
             //auction['최소금액'] = web3.utils.fromWei(amount, 'ether');
             auction['최소금액']=auction.최소금액;
 
@@ -245,6 +245,7 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
                 var bidderId = auction['최고입찰자id'];
 
                 userService.findById(bidderId, function(user) {
+                    console.log(user);
                     scope.bidder = user;
                 });
             }

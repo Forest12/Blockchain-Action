@@ -8,6 +8,7 @@ import com.bcauction.domain.repository.IDigitalWorkRepository;
 import com.bcauction.domain.repository.IWalletRepository;
 import com.bcauction.domain.wrapper.AuctionContract;
 import com.bcauction.domain.wrapper.AuctionFactoryContract;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,8 +84,9 @@ public class AuctionContractService implements IAuctionContractService {
 			BigInteger value2 = auctioncontract.auctionEndTime().send();
 			BigInteger value3 = auctioncontract.minValue().send();
 			BigInteger value4 = auctioncontract.digitalWorkId().sendAsync().get();
-			String value5="";
-			if(value4 != null){
+			String value5=auctioncontract.highestBidder().send();
+			log.debug("value5" + value5);
+			if(value5.equals("")){
 				DigitalWork dw = digitalWorkRepository.조회(value4.longValue());
 				value5=dw.getMemberId()+"";
 			}

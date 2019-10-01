@@ -94,7 +94,7 @@ public class AuctionRepository implements IAuctionRepository
 	public int 수정(final Auction 경매)
 	{
 		StringBuilder sbSql =  new StringBuilder("UPDATE Auction ");
-		sbSql.append("SET is_valid=? AND end_time=? ");
+		sbSql.append("SET is_valid=? , end_time=? ");
 		sbSql.append("where id=? AND auction_creator_id=? AND auction_id=?");
 		try {
 			return this.jdbcTemplate.update(sbSql.toString(),

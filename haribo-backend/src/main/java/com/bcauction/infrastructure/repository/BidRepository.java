@@ -11,6 +11,8 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
+
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
@@ -80,8 +82,10 @@ public class BidRepository implements IBidRepository
 	public Bid 조회(final long 경매id, final long 낙찰자id, final BigInteger 최고가) {
 		StringBuilder sbSql =  new StringBuilder("SELECT * FROM Bid WHERE auction_part_id=? AND auction_id=? AND bid_amount=?");
 		try {
+			BigDecimal bdm = new BigDecimal(최고가);
+			bdm.divide(bdm, 2, BigDecimal.ROUND_UP); 
 			return this.jdbcTemplate.queryForObject(sbSql.toString(),
-								new Object[] {낙찰자id, 경매id, 최고가 }, (rs, rowNum) -> BidFactory.생성(rs) );
+								new Object[] {낙찰자id, 경매id, bdm }, (rs, rowNum) -> BidFactory.생성(rs) );
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		} catch (Exception e) {

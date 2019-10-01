@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.Console;
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -91,6 +92,7 @@ public class AuctionController
 
 	@RequestMapping(value = "/auctions/{aid}/by/{mid}", method = RequestMethod.PUT)
 	public Auction 경매종료(@PathVariable long aid, @PathVariable long mid) { //mid = 최고가 입찰자 id
+		logger.debug(aid + ", " + mid);
 		return this.auctionService.경매종료(aid, mid);
 	}
 

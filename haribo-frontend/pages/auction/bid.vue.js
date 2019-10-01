@@ -80,7 +80,7 @@ var auctionBidView = Vue.component('AuctionBidView', {
                 walletAddress: scope.wallet['address'],
                 privateKey: this.input.privateKey
             };
-            // console.log(options);
+            console.log(options);
             this.bidding = true;
 
             // 컨트랙트 bid 함수를 호출합니다.

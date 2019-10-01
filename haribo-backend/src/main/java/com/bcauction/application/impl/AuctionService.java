@@ -43,7 +43,7 @@ public class AuctionService implements IAuctionService
 		this.auctionRepository = auctionRepository;
 		this.bidRepository = bidRepository;
 
-		ownerRepository = new OwnershipRepository();
+		// ownerRepository = new OwnershipRepository();
 	}
 
 	@Override
@@ -87,6 +87,7 @@ public class AuctionService implements IAuctionService
 	@Override
 	public Bid 낙찰(final long 경매id, final long 낙찰자id, final BigInteger 입찰최고가)
 	{
+		logger.debug(경매id + ", " + 낙찰자id + ", " + 입찰최고가);
 		int affected = this.bidRepository.수정(경매id, 낙찰자id, 입찰최고가);
 		if(affected == 0)
 			return null;
@@ -112,17 +113,18 @@ public class AuctionService implements IAuctionService
 
 		// TODO
 		Auction auction = 조회(경매id);
+		logger.debug(auction.getIsValid() + ", " + auction.getAuctionId());
 		auction.setIsValid("E");
 		auctionRepository.수정(auction);
-
-		logger.debug(auction.toString());
+		logger.debug(auction.getIsValid() + ", " + auction.getAuctionId());
+		// logger.debug(auction.toString());
 
 		Bid bid = 낙찰(경매id, 회원id, auctionContractService.현재최고가(auction.getTxsAddress()));
 		AuctionInfo ai = auctionContractService.경매정보조회(auction.getTxsAddress());
 
-		Ownership os = ownerRepository.조회(auction.getAuctionCreatorId(), ai.get작품id());
-		os.setOwnerId(ai.get최고입찰자id());
-		ownerRepository.수정(os);
+		// Ownership os = ownerRepository.조회(auction.getAuctionCreatorId(), ai.get작품id());
+		// os.setOwnerId(ai.get최고입찰자id());
+		// ownerRepository.수정(os);
 
 		fabricService.소유권이전(auction.getAuctionCreatorId(), ai.get최고입찰자id(), ai.get작품id());
 

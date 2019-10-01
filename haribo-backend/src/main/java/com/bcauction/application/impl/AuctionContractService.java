@@ -86,9 +86,11 @@ public class AuctionContractService implements IAuctionContractService {
 			BigInteger value4 = auctioncontract.digitalWorkId().sendAsync().get();
 			String value5=auctioncontract.highestBidder().send();
 			log.debug("value5" + value5);
-			if(value5.equals("")){
+			if(value5.equals("0x0000000000000000000000000000000000000000")){
 				DigitalWork dw = digitalWorkRepository.조회(value4.longValue());
 				value5=dw.getMemberId()+"";
+			}else {
+				value5 = walletRepository.조회(value5).getOwnerId() + "";
 			}
 
 			BigInteger value6 = auctioncontract.highestBid().send();

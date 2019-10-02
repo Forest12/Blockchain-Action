@@ -63,33 +63,50 @@ public class EthereumService implements IEthereumService {
 	@Autowired
 	private Web3j web3j;
 
-
 	@Autowired
 	public EthereumService(ITransactionRepository transactionRepository) {
 		this.transactionRepository = transactionRepository;
 	}
 
-	private EthBlock.Block 최근블록(final boolean fullFetched)
-	{
+	private EthBlock.Block 최근블록(final boolean fullFetched) {
 		try {
 			EthBlock latestBlockResponse;
-			latestBlockResponse
-					= web3j.ethGetBlockByNumber(DefaultBlockParameterName.LATEST, fullFetched).sendAsync().get();
+			latestBlockResponse = web3j.ethGetBlockByNumber(DefaultBlockParameterName.LATEST, fullFetched).sendAsync()
+					.get();
 
 			return latestBlockResponse.getBlock();
-		}catch (ExecutionException | InterruptedException e){
+		} catch (ExecutionException | InterruptedException e) {
 			throw new ApplicationException(e.getMessage());
 		}
 	}
 
 	/**
-	 * 최근 블록 조회
-	 * 예) 최근 20개의 블록 조회
+	 * 최근 블록 조회 예) 최근 20개의 블록 조회
+	 * 
 	 * @return List<Block>
 	 */
 	@Override
-	public List<Block> 최근블록조회()
-	{
+	public List<Block> 최근블록조회() {
+	
+		try {
+			EthBlock latestBlockResponse = web3j.ethGetBlockByNumber(DefaultBlockParameterName.LATEST, true).sendAsync()
+					.get();
+			Block blo=null;
+			Block realblock=blo.fromOriginalBlock(latestBlockResponse.getBlock());
+
+			List<Block> block = new ArrayList<>();
+			BigInteger big = realblock.getBlockNo();
+			int number=big.intValue();
+			for(int number)
+
+		} catch (InterruptedException | ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	
+		
+		
 		// TODO
 		return null;
 	}
@@ -176,13 +193,13 @@ public class EthereumService implements IEthereumService {
 	
 				RawTransaction rawTransaction  = RawTransaction.createEtherTransaction(
 					 nonce, GAS_PRICE, GAS_LIMIT, 주소, Convert.toWei("5", Convert.Unit.ETHER).toBigInteger());
-				
+				log.debug("왔나?");
 				byte[] signedMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
 				String hexValue = Numeric.toHexString(signedMessage);
-	
+	            log.debug("왔나?2");
 				EthSendTransaction ethSendTransaction = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
 				String transactionHash = ethSendTransaction.getTransactionHash();
-
+                log.debug("왔나?3");
 				return transactionHash;
 			}else{
 				log.debug("EtherService");

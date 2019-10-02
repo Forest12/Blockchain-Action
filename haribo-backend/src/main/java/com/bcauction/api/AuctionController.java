@@ -92,11 +92,13 @@ public class AuctionController
 
 	@RequestMapping(value = "/auctions/{aid}/by/{mid}", method = RequestMethod.PUT)
 	public Auction 경매종료(@PathVariable long aid, @PathVariable long mid) { //mid = 최고가 입찰자 id
+		logger.debug(aid + ", " + mid);
 		return this.auctionService.경매종료(aid, mid);
 	}
 
 	@RequestMapping(value = "/auctions/bid", method = RequestMethod.PUT)
 	public Bid 입찰(@RequestBody Bid bid) {
+		logger.debug("입찰" + bid.getBidAmount());
 		return auctionService.입찰(bid);
 	}
 

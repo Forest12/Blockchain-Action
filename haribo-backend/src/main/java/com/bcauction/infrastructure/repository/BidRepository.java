@@ -11,14 +11,22 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
+
+import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Repository
 public class BidRepository implements IBidRepository
 {
+
+	public static final Logger logger = LoggerFactory.getLogger(BidRepository.class);
+
 	private JdbcTemplate jdbcTemplate;
 	private SimpleJdbcInsert simpleJdbcInsert;
 
@@ -93,6 +101,8 @@ public class BidRepository implements IBidRepository
 			paramMap.put("bid_amount", 입찰.getBidAmount());
 			paramMap.put("is_bid", 입찰.getIsBid());
 
+			logger.debug(paramMap.get("auction_part_id") + ", " + paramMap.get("auction_id") + ", " + paramMap.get("bid_amount"));
+
 			this.simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate)
 					.withTableName("Bid")
 					.usingGeneratedKeyColumns("id");
@@ -125,12 +135,17 @@ public class BidRepository implements IBidRepository
 
 	@Override
 	public int 수정(final long 경매id, final long 낙찰자id, final BigInteger 입찰최고가) {
+
+		BigDecimal bd = new BigDecimal(입찰최고가);
+		BigDecimal divbd = new BigDecimal(Math.pow(10, 18) + "");
+		logger.debug("bidrepository 139" + bd.divide(divbd, 2, BigDecimal.ROUND_DOWN));
+
 		StringBuilder sbSql =  new StringBuilder("UPDATE Bid ");
 		sbSql.append("SET is_bid=? ");
 		sbSql.append("WHERE auction_id=? AND auction_part_id=? AND bid_amount=?");
 		try {
 			return this.jdbcTemplate.update(sbSql.toString(),
-								new Object[] { "Y", 경매id, 낙찰자id, 입찰최고가 });
+								new Object[] { "Y", 경매id, 낙찰자id, bd.divide(divbd, 2, BigDecimal.ROUND_DOWN) });
 		} catch (Exception e) {
 			throw new RepositoryException(e, e.getMessage());
 		}

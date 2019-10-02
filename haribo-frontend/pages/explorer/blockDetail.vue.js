@@ -59,18 +59,44 @@ var explorerBlockDetailView = Vue.component('ExplorerBlockDetailView', {
         return {
             isValid: true,
             block: {
-                number: 0
+                number: 0,
+                hash : 0,
+                timestamp : 0,
+                miner : 0,
+                nonce : 0,
+                difficulty : 0,
+                size : 0,
+                gasLimit : 0,
+                gasUsed : 0
+
             }
         }
     },
     mounted: function(){
         // TODO 
+        var scope = this;
         var blockNumber; // 조회할 블록 번호를 초기화 합니다. 
+        blockNumber = scope.$route.params.blockNumber;
+        console.log(blockNumber);
 
         if(blockNumber) {
             /**
              * 블록 번호로 블록 정보를 가져옵니다. 
              */  
+            getBlock(blockNumber).then(data=>{
+                console.log(data);
+                scope.block.number = data.number;
+                scope.block.hash =data.hash;
+                scope.block.timestamp =timeSince(data.timestamp);
+                scope.block.miner =data.miner;
+                scope.block.nonce =data.nonce;
+                scope.block.difficulty =data.difficulty;
+                scope.block.size =data.size;
+                scope.block.gasLimit =data.gasLimit;
+                scope.block.gasUsed =data.gasUsed;
+            })
+
+
         } else {
             this.isValid = false;
         }

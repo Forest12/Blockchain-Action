@@ -126,7 +126,7 @@ public class AuctionService implements IAuctionService
 		// os.setOwnerId(ai.get최고입찰자id());
 		// ownerRepository.수정(os);
 
-		fabricService.소유권이전(auction.getAuctionCreatorId(), ai.get최고입찰자id(), ai.get작품id());
+		this.fabricService.소유권이전(auction.getAuctionCreatorId(), ai.get최고입찰자id(), ai.get작품id());
 
 		return auction;
 	}
@@ -143,23 +143,20 @@ public class AuctionService implements IAuctionService
 	 * */
 	@Override
 	public Auction 경매취소(final long 경매id, final long 회원id)
-	{
+	{   logger.debug("****취소****");
 	
-		Auction auction=this.auctionRepository.조회(경매id);
-	
+	    Auction auction = this.auctionRepository.조회(경매id);
 		auction.setIsValid("C");
 		auction.setEndTime(LocalDateTime.now());
-		Bid bid=this.bidRepository.조회(경매id);
-		logger.debug("조회요"+" "+bid.getAuctionId());
-		logger.debug("잘됨요3"+auction.getIsValid()+" "+auction.getEndTime());
-		bid.setIsBid("Y");
 		this.auctionRepository.수정(auction);
-		logger.debug("잘됨요4"+auction.getIsValid());
+		 Bid bid=this.bidRepository.조회(경매id);
+		if(bid !=null){
+		 bid.setIsBid("Y");
 		this.bidRepository.수정(bid);
-		
-		logger.debug("잘됨요"+this.auctionRepository.조회(경매id));
-		
+		 }
+		 logger.debug("****취소2****");
 		// TODO
-		return this.auctionRepository.조회(경매id);
+		auction=this.auctionRepository.조회(경매id);
+		return auction;
 	}
 }

@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.Console;
+import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -111,8 +111,25 @@ public class AuctionController
 	 */
 	@RequestMapping(value = "/auctions/owner/{id}", method = RequestMethod.GET)
 	public List<Auction> 사용자경매목록조회(@PathVariable int id){
-		// TODO
-		return null;
+		List<Auction> auctions = auctionService.경매목록조회();
+		List<Auction> ownerAuctions = new ArrayList<Auction>();
+		for(int i=0; i<auctions.size(); i++){
+			if(auctions.get(i).getAuctionCreatorId()==id){
+				Auction tmp = new Auction();
+				tmp.setAuctionCreatorId(auctions.get(i).getAuctionCreatorId());
+				tmp.setAuctionId(auctions.get(i).getAuctionId());
+				tmp.setCreateTime(auctions.get(i).getCreateTime());
+				tmp.setEndTime(auctions.get(i).getEndTime());
+				tmp.setId(auctions.get(i).getId());
+				tmp.setIsValid(auctions.get(i).getIsValid());
+				tmp.setLowestPrice(auctions.get(i).getLowestPrice());
+				tmp.setStartTime(auctions.get(i).getStartTime());
+				tmp.setTxsAddress(auctions.get(i).getTxsAddress());
+				ownerAuctions.add(tmp);
+			}
+		}
+		logger.debug("필터후 : "+ownerAuctions);
+		return ownerAuctions;
 	}
 
 }

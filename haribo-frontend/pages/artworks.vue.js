@@ -67,6 +67,7 @@ var artworksView = Vue.component('artworksView', {
     data() {
         return {
             artworks: [{
+                "id":"",
                 "workName": "",
                 "description": ""
             }]
@@ -92,6 +93,7 @@ var artworksView = Vue.component('artworksView', {
         var scope = this;
 
         workService.findAll(function(data){
+            console.log(data);
             scope.artworks = data;
         });
     }

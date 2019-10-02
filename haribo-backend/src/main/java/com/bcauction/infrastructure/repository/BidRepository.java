@@ -82,10 +82,8 @@ public class BidRepository implements IBidRepository
 	public Bid 조회(final long 경매id, final long 낙찰자id, final BigInteger 최고가) {
 		StringBuilder sbSql =  new StringBuilder("SELECT * FROM Bid WHERE auction_part_id=? AND auction_id=? AND bid_amount=?");
 		try {
-			BigDecimal bdm = new BigDecimal(최고가);
-			bdm.divide(bdm, 2, BigDecimal.ROUND_UP); 
 			return this.jdbcTemplate.queryForObject(sbSql.toString(),
-								new Object[] {낙찰자id, 경매id, bdm }, (rs, rowNum) -> BidFactory.생성(rs) );
+								new Object[] {낙찰자id, 경매id, 최고가 }, (rs, rowNum) -> BidFactory.생성(rs) );
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		} catch (Exception e) {
@@ -119,7 +117,6 @@ public class BidRepository implements IBidRepository
 
 	@Override
 	public int 수정(final Bid 입찰){
-		
 		StringBuilder sbSql =  new StringBuilder("UPDATE Bid ");
 		sbSql.append("SET is_bid=? ");
 		sbSql.append("WHERE auction_part_id=? AND auction_id=? AND bid_amount=?");
@@ -138,12 +135,17 @@ public class BidRepository implements IBidRepository
 
 	@Override
 	public int 수정(final long 경매id, final long 낙찰자id, final BigInteger 입찰최고가) {
+
+		BigDecimal bd = new BigDecimal(입찰최고가);
+		BigDecimal divbd = new BigDecimal(Math.pow(10, 18) + "");
+		logger.debug("bidrepository 139" + bd.divide(divbd, 2, BigDecimal.ROUND_DOWN));
+
 		StringBuilder sbSql =  new StringBuilder("UPDATE Bid ");
 		sbSql.append("SET is_bid=? ");
 		sbSql.append("WHERE auction_id=? AND auction_part_id=? AND bid_amount=?");
 		try {
 			return this.jdbcTemplate.update(sbSql.toString(),
-								new Object[] { "Y", 경매id, 낙찰자id, 입찰최고가 });
+								new Object[] { "Y", 경매id, 낙찰자id, bd.divide(divbd, 2, BigDecimal.ROUND_DOWN) });
 		} catch (Exception e) {
 			throw new RepositoryException(e, e.getMessage());
 		}

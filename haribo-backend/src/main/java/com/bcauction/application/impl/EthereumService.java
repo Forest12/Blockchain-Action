@@ -23,6 +23,7 @@ import org.web3j.protocol.admin.methods.response.PersonalUnlockAccount;
 import org.web3j.protocol.core.DefaultBlockParameter;
 import org.web3j.protocol.core.DefaultBlockParameterName;
 import org.web3j.protocol.core.DefaultBlockParameterNumber;
+import org.web3j.protocol.core.Request;
 import org.web3j.protocol.core.methods.response.*;
 import org.web3j.protocol.exceptions.TransactionException;
 import org.web3j.protocol.http.HttpService;
@@ -105,14 +106,38 @@ public class EthereumService implements IEthereumService {
     }
 
 	/**
-	 * 최근 생성된 블록에 포함된 트랜잭션 조회
-	 * 이더리움 트랜잭션을 EthereumTransaction으로 변환해야 한다.
+	 * 최근 생성된 블록에 포함된 트랜잭션 조회 이더리움 트랜잭션을 EthereumTransaction으로 변환해야 한다.
+	 * 
 	 * @return List<EthereumTransaction>
 	 */
 	@Override
-	public List<EthereumTransaction> 최근트랜잭션조회()
-	{
+	public List<EthereumTransaction> 최근트랜잭션조회() {
 		// TODO
+		List<EthereumTransaction> list;
+		int transactioncount;
+		try {
+			transactioncount = web3j.ethGetBlockTransactionCountByNumber(DefaultBlockParameterName.LATEST).sendAsync()
+					.get().getTransactionCount().intValue();
+					
+		for (int i = 0; i < transactioncount; i++) {
+			Request<?, EthTransaction> TransactionTemp = web3j
+					.ethGetTransactionByBlockNumberAndIndex(
+				DefaultBlockParameterName.LATEST, BigInteger.valueOf(i));
+				EthereumTransaction transaction = TransactionTemp.send().getResult().
+				list.add(transaction);
+		}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
 		return null;
 	}
 

@@ -48,7 +48,7 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
                                 <table class="table table-bordered mt-3" v-if="bidder.id">
                                     <tr>
                                         <th width="20%">현재 최고 입찰자</th>
-                                        <td>{{ bidder['이름'] }}({{ bidder['이메일'] }})</td>
+                                        <td>{{ bidder['username'] }}({{ bidder['email'] }})</td>
                                     </tr>
                                     <tr>
                                         <th>현재 최고 입찰액</th>
@@ -83,38 +83,43 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
     data() {
         return {
             work: {},
-            creator: {id:0},
+            creator: { id: 0 },
             auction: {},
             sharedStates: store.state,
             bidder: {},
             isCanceling: false,
-            isClosing: false
+            isClosing: false,
+            address: null
         }
     },
     methods: {
-        closeAuction: function(){
+        closeAuction: function() {
             /**
              * 컨트랙트를 호출하여 경매를 종료하고
              * 경매 상태 업데이트를 위해 API를 호출합니다. 
              */
+
             var scope = this;
             var privateKey = window.prompt("경매를 종료하시려면 지갑 비밀키를 입력해주세요.","");
             
+            // console.log(creator_id)
+           
             // register.vue.js, bid.vue.js를 참조하여 완성해 봅니다. 
             var options = {
-                contractAddress: this.auction['contractAddress'],
-                walletAddress: this.wallet['walletAddress'],
-                privateKey: privateKey
+                contractAddress: this.auction['경매컨트랙트주소'],
+                walletAddress: scope.address,
+                privateKey: privateKey,
+                // amount: scope.auction['최고입찰액'] * (10**18)
+                // highestBidder : scope.bidder.id, 
+                // highestBid : scope.auction['최고입찰액']
             };
             console.log(options);
             this.isClosing = false;
 
-            auction_close(options, function(receipt){
+            auction_close(options, function(receipt) {
                 var auctionId = scope.$route.params.id;
-                var bidderId = scope.sharedStates.user.id;
-                
-                // 입찰 정보 등록 요청 API를 호출합니다.
-                // auctionId, bidderId, callback, whenError 
+                var bidderId = scope.bidder.id;
+            
                 auctionService.close(auctionId, bidderId, 
                 function(result){
                     alert("경매 종료 성공");
@@ -123,60 +128,101 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
                 }, 
                 function(error) {
                     alert("경매 종료 실패");
+                    console.log(error);
                 });
             });
         },
-        cancelAuction: function(){
+        cancelAuction: function() {
             /**
              * 컨트랙트를 호출하여 경매를 취소하고
              * 경매 상태 업데이트를 위해 API를 호출합니다. 
              */
             var scope = this;
-            var privateKey = window.prompt("경매를 취소하시려면 지갑 비밀키를 입력해주세요.","");
-            
-            // register.vue.js, bid.vue.js를 참조하여 완성해 봅니다.
-            
-
+            scope.isCanceling = true;
+            var auctionId = this.$route.params.id;
+            var creator_id = scope.work['memberId'];
+            userService.findById(creator_id, function(user) {
+                console.log("생성자정보")
+                console.log(user);
+                scope.creator = user;
+                walletService.findAddressById(user.id, function(data) {
+                    scope.address = data;
+                    var privateKey = window.prompt("경매를 취소하시려면 지갑 비밀키를 입력해주세요.", "");
+                    var publicKey = web3.eth.accounts.privateKeyToAccount(privateKey);
+                    console.log(publicKey);
+                    var options = {
+                        contractAddress: scope.auction['경매컨트랙트주소'],
+                        walletAddress: scope.address,
+                        privateKey: privateKey
+                    };
+                    if (publicKey.address == scope.address) {
+                        auction_cancel(options, function(cancel) {
+                            auctionService.cancel(auctionId, scope.sharedStates.user.id);
+                            alert("경매가 취소되었습니다.");
+                            scope.$router.go(-1);
+                        });
+                    } else {
+                        alert("경매 본인이 아닙니다.")
+                    }
+                });
+            });
+            // register.vue.js, bid.vue.js를 참조하여 완성해 봅니다. 
         }
     },
-    mounted: async function(){
+    mounted: async function() {
         var auctionId = this.$route.params.id;
         var scope = this;
         var web3 = createWeb3();
 
         // 경매 정보 조회
-        auctionService.findById(auctionId, function(auction){
-            console.log(auction)
-            var amount = Number(auction['최소금액']).toLocaleString().split(",").join("")
-            auction['최소금액'] = web3.utils.fromWei(amount, 'ether');
+        auctionService.findById(auctionId, function(auction) {
+            console.log(auction);
+            //var amount = Number(auction['최소금액']).toLocaleString().split(",").join("")
+            // console.log(amount);
+            //auction['최소금액'] = web3.utils.fromWei(amount, 'ether');
+            auction['최소금액']=auction.최소금액;
 
             var workId = auction['작품id'];
 
             // 작품 정보 조회
-            workService.findById(workId, function(work){
-                console.log(work);
+            workService.findById(workId, function(work) {
                 scope.work = work;
                 var creatorId = work['memberId'];
 
                 // 생성자 정보 조회
-                userService.findById(creatorId, function(user){
-                    console.log(user);
+                userService.findById(creatorId, function(user) {
                     scope.creator = user;
+                });
+
+                walletService.findAddressById(creatorId, function(data) {
+                    scope.address = data;
+                    // console.log("aaaaaaa" + scope.address);
                 });
             });
 
             // 입찰자 조회
-            if(auction['최고입찰액'] > 0) {
+            if (auction['최고입찰액'] > 0) {
                 var amount = Number(auction['최고입찰액']).toLocaleString().split(",").join("")
                 auction['최고입찰액'] = web3.utils.fromWei(amount, 'ether');
                 var bidderId = auction['최고입찰자id'];
 
-                userService.findById(bidderId, function(user){
+                userService.findById(bidderId, function(user) {
+                    console.log(user);
                     scope.bidder = user;
                 });
             }
 
+            var now = new Date();
+            var endDate = new Date(auction.경매종료시간);
+            var diff = endDate.getTime() - now.getTime();
+
+            //경매 상태
+            if (diff < 0) {
+                auction['종료'] = true;
+            }
+
             scope.auction = auction;
+            console.log(scope.auction);
         });
     }
 });

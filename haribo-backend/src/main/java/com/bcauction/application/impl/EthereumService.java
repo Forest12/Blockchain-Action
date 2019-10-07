@@ -6,6 +6,7 @@ import com.bcauction.domain.exception.ApplicationException;
 import com.bcauction.domain.repository.ITransactionRepository;
 import com.bcauction.domain.wrapper.Block;
 import com.bcauction.domain.wrapper.EthereumTransaction;
+import com.bcauction.domain.Transaction;
 
 import org.hibernate.validator.internal.util.logging.Log;
 import org.slf4j.Logger;
@@ -23,7 +24,9 @@ import org.web3j.protocol.admin.methods.response.PersonalUnlockAccount;
 import org.web3j.protocol.core.DefaultBlockParameter;
 import org.web3j.protocol.core.DefaultBlockParameterName;
 import org.web3j.protocol.core.DefaultBlockParameterNumber;
+import org.web3j.protocol.core.Request;
 import org.web3j.protocol.core.methods.response.*;
+import org.web3j.protocol.core.methods.response.EthBlock.TransactionResult;
 import org.web3j.protocol.exceptions.TransactionException;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.tx.Transfer;
@@ -63,61 +66,83 @@ public class EthereumService implements IEthereumService {
 	@Autowired
 	private Web3j web3j;
 
-
 	@Autowired
 	public EthereumService(ITransactionRepository transactionRepository) {
 		this.transactionRepository = transactionRepository;
 	}
 
-	private EthBlock.Block 최근블록(final boolean fullFetched)
-	{
+	private EthBlock.Block 최근블록(final boolean fullFetched) {
 		try {
 			EthBlock latestBlockResponse;
-			latestBlockResponse
-					= web3j.ethGetBlockByNumber(DefaultBlockParameterName.LATEST, fullFetched).sendAsync().get();
+			latestBlockResponse = web3j.ethGetBlockByNumber(DefaultBlockParameterName.LATEST, fullFetched).sendAsync()
+					.get();
 
 			return latestBlockResponse.getBlock();
-		}catch (ExecutionException | InterruptedException e){
+		} catch (ExecutionException | InterruptedException e) {
 			throw new ApplicationException(e.getMessage());
 		}
 	}
 
 	/**
-	 * 최근 블록 조회
-	 * 예) 최근 20개의 블록 조회
+	 * 최근 블록 조회 예) 최근 20개의 블록 조회
+	 * 
 	 * @return List<Block>
 	 */
 	@Override
 	public List<Block> 최근블록조회()
-	{
-		// TODO
-		return null;
-	}
+    {
+        // TODO
+        
+        List<Block> list = new ArrayList<>();
+        Block block=null;
+        Block block2=block.fromOriginalBlock(this.최근블록(true));
+        BigInteger big=block2.getBlockNo();
+        int Number=big.intValue();
+        for(int i=Number-20;i<=Number;i++){
+            if(i>0){
+                Block blocktemp=this.블록검색(i+"");
+                list.add(blocktemp);
+           }    
+        }
+        return list;
+    }
 
 	/**
-	 * 최근 생성된 블록에 포함된 트랜잭션 조회
-	 * 이더리움 트랜잭션을 EthereumTransaction으로 변환해야 한다.
+	 * 최근 생성된 블록에 포함된 트랜잭션 조회 이더리움 트랜잭션을 EthereumTransaction으로 변환해야 한다.
+	 * 
 	 * @return List<EthereumTransaction>
 	 */
 	@Override
-	public List<EthereumTransaction> 최근트랜잭션조회()
-	{
+	public List<EthereumTransaction> 최근트랜잭션조회() {
 		// TODO
-		return null;
+        Block block=null;
+		Block lastBlock=block.fromOriginalBlock(this.최근블록(true));
+		List<EthereumTransaction> list = lastBlock.getTrans();
+
+		return list;
 	}
 
 	/**
-	 * 특정 블록 검색
-	 * 조회한 블록을 Block으로 변환해야 한다.
+	 * 특정 블록 검색 조회한 블록을 Block으로 변환해야 한다.
+	 * 
 	 * @param 블록No
 	 * @return Block
 	 */
 	@Override
-	public Block 블록검색(String 블록No)
-	{
-		// TODO
-		return null;
-	}
+	public Block 블록검색(String 블록No) {
+        // TODO
+       Block block=null;
+        EthBlock latestBlockResponse;
+        try {
+            latestBlockResponse = web3j.ethGetBlockByNumber(DefaultBlockParameterName.valueOf(블록No), true).sendAsync()
+                    .get();
+                    return block.fromOriginalBlock(latestBlockResponse.getBlock());
+        } catch (InterruptedException | ExecutionException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 	/**
 	 * 특정 hash 값을 갖는 트랜잭션 검색
@@ -129,7 +154,16 @@ public class EthereumService implements IEthereumService {
 	public EthereumTransaction 트랜잭션검색(String 트랜잭션Hash)
 	{
 		// TODO
-		return null;
+        org.web3j.protocol.core.methods.response.Transaction transaction;
+		try {
+			transaction = web3j.ethGetTransactionByHash(트랜잭션Hash).send().getResult();
+			EthereumTransaction temp = null;
+				return temp.convertTransaction(transaction);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        		return null;
 	}
 
 	/**
@@ -143,6 +177,35 @@ public class EthereumService implements IEthereumService {
 	public Address 주소검색(String 주소)
 	{
 		// TODO
+
+		Address address= null;
+    	address.setId(주소);
+		List<Transaction> list = this.transactionRepository.조회By주소(주소);
+		List<EthereumTransaction> addlist = null;
+		for(int i=0;i<list.size();i++){			
+			EthereumTransaction eth = this.트랜잭션검색(list.get(i).getHash());
+			addlist.add(eth);
+		}
+		address.setTrans(addlist);
+		address.setTxCount(BigInteger.valueOf(list.size()));
+
+		EthGetBalance ethGetBalance = null;
+		try {
+
+			//이더리움 노드에게 지정한 Address 의 잔액을 조회한다.
+			ethGetBalance = web3j.ethGetBalance(주소, DefaultBlockParameterName.PENDING).sendAsync().get();
+			
+			//wei 단위를 ETH 단위로 변환 한다.
+			BigInteger balance = Convert.fromWei(ethGetBalance.getBalance()+"", Convert.Unit.ETHER).toBigInteger();
+
+			address.setBalance(balance);
+			
+			return address;
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 
@@ -165,9 +228,6 @@ public class EthereumService implements IEthereumService {
 			PersonalUnlockAccount personalUnlockAccount;
 			personalUnlockAccount = web3.personalUnlockAccount(ADMIN_ADDRESS, PASSWORD).send();
 
-			log.debug("unlockAccount after "+ personalUnlockAccount.accountUnlocked());
-			log.debug("unlockAccount after2 "+ personalUnlockAccount.getRawResponse() );
-
 			if (personalUnlockAccount.accountUnlocked()) {
 				System.out.println("계좌 unlock 해제");
 				log.debug("ethGetTransactionCount"+web3.ethGetTransactionCount(ADMIN_ADDRESS, DefaultBlockParameterName.LATEST));
@@ -179,13 +239,13 @@ public class EthereumService implements IEthereumService {
 	
 				RawTransaction rawTransaction  = RawTransaction.createEtherTransaction(
 					 nonce, GAS_PRICE, GAS_LIMIT, 주소, Convert.toWei("5", Convert.Unit.ETHER).toBigInteger());
-				
+				log.debug("왔나?");
 				byte[] signedMessage = TransactionEncoder.signMessage(rawTransaction, credentials);
 				String hexValue = Numeric.toHexString(signedMessage);
-	
+	            log.debug("왔나?2");
 				EthSendTransaction ethSendTransaction = web3j.ethSendRawTransaction(hexValue).sendAsync().get();
 				String transactionHash = ethSendTransaction.getTransactionHash();
-	
+                log.debug("왔나?3");
 				return transactionHash;
 			}else{
 				log.debug("EtherService");
@@ -205,6 +265,7 @@ public class EthereumService implements IEthereumService {
 		try {
 			EthGetBalance ethGetBalance = web3.ethGetBalance(주소, DefaultBlockParameterName.PENDING).sendAsync().get();
 			String charge = ethGetBalance.getBalance()+"";
+			log.debug("잔액갱신"+charge);
 
 			return Convert.fromWei(charge, Convert.Unit.ETHER);
 		} catch (InterruptedException | ExecutionException e) {

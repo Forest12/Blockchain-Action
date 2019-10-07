@@ -17,7 +17,7 @@ var artworksView = Vue.component('artworksView', {
                         <div class="col-md-3 artwork" v-for="item in artworks">
                             <div class="card">
                                 <div class="card-body">
-                                    <img src="./assets/images/artworks/artwork1.jpg">
+                                    <img :src="item['work_url']"/>
                                     <h4>{{ item["workName"] }}</h4>
                                     <p v-if="item['description'] != null">{{ item["description"] }}</p>
                                     <p v-if="item['description'] == null">-</p>
@@ -29,7 +29,7 @@ var artworksView = Vue.component('artworksView', {
                 </div>
                 <div id="list">
                     <div class="row" v-for="item in artworks">
-                            <div class="col-md-3"><img width="50px" src="./assets/images/artworks/artwork1.jpg"></div>
+                            <div class="col-md-3"><img width="50px" :src="item['work_url']"/></div>
                             <div class="col-md-3"><h4>{{ item["workName"] }}</h4></div>
                             <div class="col-md-3"> 
                                 <p v-if="item['description'] != null">{{ item["description"] }}</p>
@@ -67,6 +67,7 @@ var artworksView = Vue.component('artworksView', {
     data() {
         return {
             artworks: [{
+                "id": "",
                 "workName": "",
                 "description": ""
             }]
@@ -77,21 +78,22 @@ var artworksView = Vue.component('artworksView', {
             var x = document.getElementById("list")
             var y = document.getElementById("album")
             console.log(x);
-            x.style.display="block";
-            y.style.display="none";
+            x.style.display = "block";
+            y.style.display = "none";
         },
         changeAlbum: function() {
             var x = document.getElementById("list")
             var y = document.getElementById("album")
             console.log(x);
-            x.style.display="none";
-            y.style.display="block";
+            x.style.display = "none";
+            y.style.display = "block";
         }
     },
-    mounted: function(){
+    mounted: function() {
         var scope = this;
 
-        workService.findAll(function(data){
+        workService.findAll(function(data) {
+            console.log(data);
             scope.artworks = data;
         });
     }

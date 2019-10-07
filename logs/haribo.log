@@ -1,445 +1,1489 @@
-2019-09-26 10:17:14 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 20092 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
-2019-09-26 10:17:14 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
-2019-09-26 10:17:14 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
-2019-09-26 10:17:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-09-26 10:17:16 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2019-09-26 10:17:16 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
-2019-09-26 10:17:16 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-09-26 10:17:16 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
-2019-09-26 10:17:17 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-09-26 10:17:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-09-26 10:17:17 [main] INFO  com.bcauction.Application - Started Application in 3.519 seconds (JVM running for 3.798)
-2019-09-26 10:17:35 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-09-26 10:17:35 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-09-26 10:17:35 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-09-26 10:17:37 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 10:17:37 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 10:17:39 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 10:44:18 [http-nio-8080-exec-10] INFO  o.a.coyote.http11.Http11Processor - Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:414)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:294)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:835)
-2019-09-26 11:18:17 [Thread-5] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-2019-09-26 11:18:17 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
-2019-09-26 11:18:17 [Thread-5] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
-2019-09-26 11:18:20 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 18960 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
-2019-09-26 11:18:20 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
-2019-09-26 11:18:20 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
-2019-09-26 11:18:22 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
-2019-09-26 11:18:22 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2019-09-26 11:18:22 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
-2019-09-26 11:18:22 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2019-09-26 11:18:22 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
-2019-09-26 11:18:22 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2019-09-26 11:18:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-09-26 11:18:23 [main] INFO  com.bcauction.Application - Started Application in 3.148 seconds (JVM running for 3.425)
-2019-09-26 11:18:28 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-09-26 11:18:28 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-2019-09-26 11:18:29 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-2019-09-26 11:18:31 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:18:31 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:18:33 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:18:38 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:18:38 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:18:39 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:19:03 [http-nio-8080-exec-5] INFO  c.b.application.impl.WalletService - Wallet [address=0x3112F6addf5B0e00603343beDAe5Bf0Df994ab84, balance=0, chargeNum=1, id=43, ownerId=12]
-2019-09-26 11:19:03 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 충전함수
-2019-09-26 11:19:04 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - unlockAccount after true
-2019-09-26 11:19:04 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - unlockAccount after2 null
-2019-09-26 11:19:04 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - ethGetTransactionCountorg.web3j.protocol.core.Request@1b2ff987
-2019-09-26 11:19:04 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - ethGetTransactionCountorg.web3j.protocol.core.methods.response.EthGetTransactionCount@2bfd1581
-2019-09-26 11:19:04 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:19:05 [http-nio-8080-exec-5] INFO  c.b.application.impl.WalletService - received txhash: 0xacb757df0f5b80b16d3276112b8d10cc27e967363b50327de78439936e5f2935
-2019-09-26 11:19:16 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:19:16 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:19:17 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:19:18 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:19:18 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:19:19 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:26:06 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:26:06 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:26:07 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:26:17 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:26:17 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:26:18 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:08 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 11:28:08 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:09 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:12 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 11:28:12 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:13 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:17 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 11:28:17 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:18 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:18 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:28:18 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:20 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:20 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:28:20 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:21 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:50 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 11:28:50 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:51 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:51 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 11:28:51 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:52 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:57 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:28:57 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:28:58 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:28:59 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:28:59 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:29:00 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:31:34 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:31:34 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:31:35 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:31:35 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:31:35 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:31:36 [http-nio-8080-exec-2] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:32:19 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:32:19 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:32:20 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 11:32:20 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 11:32:20 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 11:32:21 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 12:07:47 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 12:07:47 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 12:07:48 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 12:07:50 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x8c60102C11CdBb764B9e1120E187FEA9B8A7b3e4
-2019-09-26 12:07:50 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 12:07:51 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569380400000, value2=1569639600000, value3=1, value4=137, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 12:08:01 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 12:08:01 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 12:08:02 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 12:08:03 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 12:08:03 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 12:08:04 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 13:54:10 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 13:54:10 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 13:54:11 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 13:54:32 [http-nio-8080-exec-10] DEBUG c.b.api.DigitalWorkController - 0, 12
-2019-09-26 13:54:32 [http-nio-8080-exec-10] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
-	workName: 정준희
-	description: wwg
+2019-10-07 08:58:18 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=2d14h57m45s81ms429µs).
+2019-10-07 10:27:15 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 18108 (started by multicampus in c:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3)
+2019-10-07 10:27:15 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-10-07 10:27:15 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-10-07 10:27:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-10-07 10:27:16 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-10-07 10:27:16 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-10-07 10:27:17 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-10-07 10:27:17 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-10-07 10:27:18 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-07 10:27:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-07 10:27:18 [main] INFO  com.bcauction.Application - Started Application in 3.561 seconds (JVM running for 4.237)
+2019-10-07 10:27:27 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-07 10:27:27 [http-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-10-07 10:27:27 [http-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-10-07 10:27:28 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 10:27:28 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 10:28:21 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 10:28:21 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 11:00:50 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 11:00:50 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 12:04:05 [Thread-6] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-07 12:04:05 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-10-07 12:04:05 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-10-07 12:04:11 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 14320 (started by multicampus in c:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3)
+2019-10-07 12:04:11 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-10-07 12:04:11 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-10-07 12:04:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-10-07 12:04:13 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-10-07 12:04:13 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-10-07 12:04:13 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-10-07 12:04:14 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-10-07 12:04:14 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-07 12:04:14 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-07 12:04:14 [main] INFO  com.bcauction.Application - Started Application in 3.752 seconds (JVM running for 4.406)
+2019-10-07 12:05:32 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-07 12:05:32 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-10-07 12:05:32 [http-nio-8080-exec-3] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-10-07 12:05:32 [http-nio-8080-exec-4] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 12:05:32 [http-nio-8080-exec-4] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 12:05:50 [http-nio-8080-exec-3] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 12:05:50 [http-nio-8080-exec-3] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: 박종찬
+	description: asd
 	isDisclosure: Y
 	isVaild: Y
-	memberId: 12 }
-2019-09-26 13:54:32 [http-nio-8080-exec-10] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 139 { id: 139
-	workName: 정준희
-	description: wwg
+	memberId: 22
+	work_url:  }
+2019-10-07 12:05:50 [http-nio-8080-exec-3] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 167 { id: 167
+	workName: 박종찬
+	description: asd
 	isDisclosure: Y
 	isVaild: Y
-	memberId: 12 }
-2019-09-26 13:54:32 [http-nio-8080-exec-10] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
-2019-09-26 13:54:32 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/fabric-ca.pem
-2019-09-26 13:54:32 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes\fabric-ca.pem
-2019-09-26 13:54:32 [http-nio-8080-exec-10] WARN  o.h.fabric_ca.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
-2019-09-26 13:54:32 [http-nio-8080-exec-10] WARN  o.h.fabric.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
-2019-09-26 13:54:33 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/fabric-peer.pem
-2019-09-26 13:54:33 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes\fabric-peer.pem
-2019-09-26 13:54:33 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/fabric-orderer.pem
-2019-09-26 13:54:33 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes\fabric-orderer.pem
-2019-09-26 13:54:34 [http-nio-8080-exec-10] INFO  org.hyperledger.fabric.sdk.Channel - Channel Channel{id: 3, name: auctionchannel001} eventThread started shutdown: false  thread: null 
-2019-09-26 13:54:36 [http-nio-8080-exec-10] DEBUG c.b.application.impl.FabricCCService - fee290c76afd4eafb4adecc2db9fded14c10ee8457f81218131b76d1c40847d1
-2019-09-26 13:54:37 [http-nio-8080-exec-10] DEBUG c.b.application.impl.FabricCCService - 5b4fe5d25c69743e0c3c201dd5f6ccd25e044fc1c13814e8a7aa8020cb2f0fe4
-2019-09-26 13:54:37 [http-nio-8080-exec-10] INFO  c.b.application.impl.FabricCCService - Work 139 by Owner 12: 2019-09-26 04:54:36 ~ FALSE
-2019-09-26 13:54:37 [http-nio-8080-exec-10] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-09-26T04:54:36, ownerId=12, workId=139]
-2019-09-26 13:54:37 [http-nio-8080-exec-10] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (12, 139)
-2019-09-26 13:54:37 [http-nio-8080-exec-10] INFO  c.b.i.repository.OwnershipRepository - true
-2019-09-26 13:55:07 [http-nio-8080-exec-8] DEBUG c.b.application.impl.AuctionService - AuctionService 생성 14
-2019-09-26 13:55:07 [http-nio-8080-exec-8] DEBUG com.bcauction.api.AuctionController - 경매 생성 : Auction [auctionCreatorId=12, auctionId=139, createTime=2019-09-26T13:55:07, endTime=2019-09-27T03:00, id=14, isVaild=V, lowestPrice=1, startTime=2019-09-26T03:00, txsAddress=0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572]
-2019-09-26 13:55:15 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 13:55:15 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 13:55:16 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:01:00 [http-nio-8080-exec-8] INFO  o.a.coyote.http11.Http11Processor - Error parsing HTTP request header
- Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
-java.lang.IllegalArgumentException: Invalid character found in method name. HTTP method names must be tokens
-	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:414)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:294)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:835)
-2019-09-26 14:32:51 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:32:51 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:32:52 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:32:55 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:32:55 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:32:56 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:33:41 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:33:41 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:33:42 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:33:43 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:33:43 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:33:44 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:34:42 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:34:42 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:34:43 [http-nio-8080-exec-4] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:34:43 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:34:43 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:34:44 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:34:48 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:34:48 [http-nio-8080-exec-9] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:34:49 [http-nio-8080-exec-9] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:40:01 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:40:01 [http-nio-8080-exec-6] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:40:02 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:40:44 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:40:44 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:40:46 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:45:56 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 14:45:56 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:45:57 [http-nio-8080-exec-5] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:49:02 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 14:49:02 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:49:03 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:49:06 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:49:06 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:49:07 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:49:07 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:49:07 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:49:08 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:50:04 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 14:50:04 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:50:05 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:50:06 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:50:06 [http-nio-8080-exec-6] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:50:07 [http-nio-8080-exec-6] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 14:50:07 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 14:50:07 [http-nio-8080-exec-1] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 14:50:08 [http-nio-8080-exec-1] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1568084400000, value2=1572404400000, value3=1, value4=138, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 15:35:34 [http-nio-8080-exec-10] ERROR c.b.application.impl.EthereumService - 잔액갱신
-java.util.concurrent.ExecutionException: java.net.ConnectException: Failed to connect to /52.78.49.2:8547
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:395)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2070)
-	at com.bcauction.application.impl.EthereumService.잔액갱신(EthereumService.java:206)
-	at com.bcauction.application.impl.WalletService.조회_ETH잔액동기화(WalletService.java:58)
-	at com.bcauction.application.impl.WalletService.조회(WalletService.java:72)
-	at jdk.internal.reflect.GeneratedMethodAccessor130.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:206)
-	at com.sun.proxy.$Proxy68.조회(Unknown Source)
-	at com.bcauction.api.WalletController.조회By소유자(WalletController.java:61)
-	at jdk.internal.reflect.GeneratedMethodAccessor129.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:835)
-Caused by: java.net.ConnectException: Failed to connect to /52.78.49.2:8547
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:225)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:149)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:195)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:121)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:100)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:120)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:185)
-	at okhttp3.RealCall.execute(RealCall.java:69)
-	at org.web3j.protocol.http.HttpService.performIO(HttpService.java:151)
-	at org.web3j.protocol.Service.send(Service.java:34)
-	at org.web3j.protocol.Service.lambda$sendAsync$0(Service.java:46)
-	at org.web3j.utils.Async.lambda$run$1(Async.java:27)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1807)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	... 1 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method)
-	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107)
-	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
-	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
-	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
-	at java.base/java.net.Socket.connect(Socket.java:591)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:124)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:223)
-	... 25 common frames omitted
-2019-09-26 15:35:35 [http-nio-8080-exec-10] ERROR c.b.application.impl.EthereumService - 잔액갱신
-java.util.concurrent.ExecutionException: java.net.ConnectException: Failed to connect to /52.78.49.2:8547
-	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:395)
-	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2070)
-	at com.bcauction.application.impl.EthereumService.잔액갱신(EthereumService.java:206)
-	at com.bcauction.application.impl.WalletService.조회_ETH잔액동기화(WalletService.java:58)
-	at jdk.internal.reflect.GeneratedMethodAccessor131.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:206)
-	at com.sun.proxy.$Proxy68.조회_ETH잔액동기화(Unknown Source)
-	at com.bcauction.api.WalletController.조회By소유자(WalletController.java:65)
-	at jdk.internal.reflect.GeneratedMethodAccessor129.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:189)
-	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
-	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:102)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
-	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
-	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1038)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:835)
-Caused by: java.net.ConnectException: Failed to connect to /52.78.49.2:8547
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:225)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:149)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:195)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:121)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:100)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:120)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:92)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:67)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:185)
-	at okhttp3.RealCall.execute(RealCall.java:69)
-	at org.web3j.protocol.http.HttpService.performIO(HttpService.java:151)
-	at org.web3j.protocol.Service.send(Service.java:34)
-	at org.web3j.protocol.Service.lambda$sendAsync$0(Service.java:46)
-	at org.web3j.utils.Async.lambda$run$1(Async.java:27)
-	at java.base/java.util.concurrent.CompletableFuture$AsyncRun.run(CompletableFuture.java:1807)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	... 1 common frames omitted
-Caused by: java.net.ConnectException: Connection refused: connect
-	at java.base/java.net.PlainSocketImpl.waitForConnect(Native Method)
-	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:107)
-	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
-	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
-	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
-	at java.base/java.net.Socket.connect(Socket.java:591)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:124)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:223)
-	... 25 common frames omitted
-2019-09-26 15:35:36 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 15:35:36 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 15:43:24 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 15:43:24 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 15:43:29 [http-nio-8080-exec-7] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0x9E3ca615d5f214281BFaBdc0b4dF1DEAa9eF49e4
-2019-09-26 15:43:29 [http-nio-8080-exec-7] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 15:46:52 [http-nio-8080-exec-10] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 15:46:52 [http-nio-8080-exec-10] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:01:32 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 16:01:32 [http-nio-8080-exec-8] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:01:33 [http-nio-8080-exec-8] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
-2019-09-26 16:02:19 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - AuctionContractService : 0xD0a73E57c3b15f3aBD5570DE5F6f5aA716730572
-2019-09-26 16:02:19 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/block1week/blockchain-sub3/haribo-backend/target/classes/admin.wallet
-2019-09-26 16:02:20 [http-nio-8080-exec-3] DEBUG c.b.a.impl.AuctionContractService - infoTuple7{value1=1569466800000, value2=1569553200000, value3=1, value4=139, value5=0x0000000000000000000000000000000000000000, value6=0, value7=false}
+	memberId: 22
+	work_url: null }
+2019-10-07 12:05:50 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 12:05:50 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-ca.pem
+2019-10-07 12:05:50 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-ca.pem
+2019-10-07 12:05:50 [http-nio-8080-exec-3] WARN  o.h.fabric_ca.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
+2019-10-07 12:05:50 [http-nio-8080-exec-3] WARN  o.h.fabric.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
+2019-10-07 12:05:51 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-peer.pem
+2019-10-07 12:05:51 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-peer.pem
+2019-10-07 12:05:51 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-orderer.pem
+2019-10-07 12:05:51 [http-nio-8080-exec-3] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-orderer.pem
+2019-10-07 12:05:53 [http-nio-8080-exec-3] INFO  org.hyperledger.fabric.sdk.Channel - Channel Channel{id: 3, name: auctionchannel001} eventThread started shutdown: false  thread: null 
+2019-10-07 12:05:55 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - 2d996ea78788b14cf5a5fb02e6be45f94f5f87d907f5b668898f42e843fcc28d
+2019-10-07 12:05:56 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - a8ac181cf61b422005af3d8e44117a6c3a40afe18c5bf1efd94d0fe0c5c5cb8d
+2019-10-07 12:05:56 [http-nio-8080-exec-3] INFO  c.b.application.impl.FabricCCService - Work 167 by Owner 22: 2019-10-07 03:05:55 ~ FALSE
+2019-10-07 12:05:56 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T03:05:55, ownerId=22, workId=167]
+2019-10-07 12:05:56 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 167)
+2019-10-07 12:05:56 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 12:07:28 [http-nio-8080-exec-9] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 12:07:28 [http-nio-8080-exec-9] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: aaaa
+	description: dasdasda
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 12:07:28 [http-nio-8080-exec-9] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 168 { id: 168
+	workName: aaaa
+	description: dasdasda
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 12:07:28 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 12:07:29 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricCCService - eca798d5c25732e2d279e9ee9207f5bd2069a44dd8b1370107358e77a51c8ce7
+2019-10-07 12:07:30 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricCCService - bbcb921d599f4845a89803cd6ab5c4ce8c2f124e3dc4f24896fa59372722e1f7
+2019-10-07 12:07:30 [http-nio-8080-exec-9] INFO  c.b.application.impl.FabricCCService - Work 168 by Owner 22: 2019-10-07 03:07:29 ~ FALSE
+2019-10-07 12:07:30 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T03:07:29, ownerId=22, workId=168]
+2019-10-07 12:07:31 [http-nio-8080-exec-9] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 168)
+2019-10-07 12:07:31 [http-nio-8080-exec-9] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 12:15:09 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 12:15:09 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 12:15:17 [http-nio-8080-exec-4] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 12:15:17 [http-nio-8080-exec-4] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: 등록등록
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 12:15:17 [http-nio-8080-exec-4] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 169 { id: 169
+	workName: 등록등록
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 12:15:17 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 12:15:18 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - a9d8e66d09c0b04cc66ba4074fb859340152380015a9a2f698e817f925b1003e
+2019-10-07 12:15:19 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - 43cb156774346a7f97cedf969f25f0938bd9d43fe895d5a21d0204e55ac1712f
+2019-10-07 12:15:19 [http-nio-8080-exec-4] INFO  c.b.application.impl.FabricCCService - Work 169 by Owner 22: 2019-10-07 03:15:18 ~ FALSE
+2019-10-07 12:15:19 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T03:15:18, ownerId=22, workId=169]
+2019-10-07 12:15:19 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 169)
+2019-10-07 12:15:19 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 12:18:04 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 12:18:04 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 12:18:13 [http-nio-8080-exec-3] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 12:18:13 [http-nio-8080-exec-3] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: zxcccc
+	description: asdas
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 12:18:13 [http-nio-8080-exec-3] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 170 { id: 170
+	workName: zxcccc
+	description: asdas
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 12:18:13 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 12:18:14 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - 80e79103e2c20977db13bf81da72ffd5926393685dc69ca2966c967ff0cc4ded
+2019-10-07 12:18:15 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - 3e8f5dfe5211edcd6a8814ba70f981e23c0675ba6d80914d160a7d20ecadfcfd
+2019-10-07 12:18:15 [http-nio-8080-exec-3] INFO  c.b.application.impl.FabricCCService - Work 170 by Owner 22: 2019-10-07 03:18:14 ~ FALSE
+2019-10-07 12:18:15 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T03:18:14, ownerId=22, workId=170]
+2019-10-07 12:18:16 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 170)
+2019-10-07 12:18:16 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 12:20:03 [Thread-6] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-07 12:20:03 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2019-10-07 12:20:03 [Thread-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2019-10-07 13:27:23 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 11220 (started by multicampus in c:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3)
+2019-10-07 13:27:23 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-10-07 13:27:23 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-10-07 13:27:25 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-10-07 13:27:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-10-07 13:27:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-10-07 13:27:26 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-10-07 13:27:27 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-10-07 13:27:27 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-07 13:27:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-07 13:27:27 [main] INFO  com.bcauction.Application - Started Application in 5.137 seconds (JVM running for 5.486)
+2019-10-07 13:27:53 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-07 13:27:53 [http-nio-8080-exec-2] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 13:27:53 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-10-07 13:27:53 [http-nio-8080-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-10-07 13:27:53 [http-nio-8080-exec-2] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: 박종찬ㅇㅁㄴㅇㅁㄴ
+	description: ㅁㄴㅇ
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 13:27:53 [http-nio-8080-exec-2] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 171 { id: 171
+	workName: 박종찬ㅇㅁㄴㅇㅁㄴ
+	description: ㅁㄴㅇ
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 13:27:53 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 13:27:53 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-ca.pem
+2019-10-07 13:27:53 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-ca.pem
+2019-10-07 13:27:53 [http-nio-8080-exec-2] WARN  o.h.fabric_ca.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
+2019-10-07 13:27:53 [http-nio-8080-exec-2] WARN  o.h.fabric.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
+2019-10-07 13:27:54 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-peer.pem
+2019-10-07 13:27:54 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-peer.pem
+2019-10-07 13:27:54 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-orderer.pem
+2019-10-07 13:27:54 [http-nio-8080-exec-2] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-orderer.pem
+2019-10-07 13:27:56 [http-nio-8080-exec-2] INFO  org.hyperledger.fabric.sdk.Channel - Channel Channel{id: 3, name: auctionchannel001} eventThread started shutdown: false  thread: null 
+2019-10-07 13:27:58 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - 010cb1d4f458c6203fcac3efd6a32bf479ac755c96f4aea634c5a5a24dbb3e54
+2019-10-07 13:27:59 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - 5771b19245d84c42a6fddcb5ef4a7279d842a05d2dca5d64be8453470c61a968
+2019-10-07 13:27:59 [http-nio-8080-exec-2] INFO  c.b.application.impl.FabricCCService - Work 171 by Owner 22: 2019-10-07 04:27:58 ~ FALSE
+2019-10-07 13:27:59 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T04:27:58, ownerId=22, workId=171]
+2019-10-07 13:27:59 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 171)
+2019-10-07 13:27:59 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 13:30:52 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:30:52 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:32:39 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:32:39 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:41:25 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:41:25 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:51:09 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:51:10 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:51:20 [http-nio-8080-exec-9] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 13:51:20 [http-nio-8080-exec-9] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: aaaazxczxc
+	description: zxczxczx
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 13:51:20 [http-nio-8080-exec-9] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 172 { id: 172
+	workName: aaaazxczxc
+	description: zxczxczx
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 13:51:20 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 13:51:21 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricCCService - 35c76837feec7068419979f04a914c58348c7e016913b634dffe1803cdc12847
+2019-10-07 13:51:22 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricCCService - 5e01acbbe19eedc01591116b6d1f20af9036c153ffab698fa24b297e7798043f
+2019-10-07 13:51:22 [http-nio-8080-exec-9] INFO  c.b.application.impl.FabricCCService - Work 172 by Owner 22: 2019-10-07 04:51:21 ~ FALSE
+2019-10-07 13:51:22 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T04:51:21, ownerId=22, workId=172]
+2019-10-07 13:51:22 [http-nio-8080-exec-9] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 172)
+2019-10-07 13:51:22 [http-nio-8080-exec-9] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 13:53:10 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:53:11 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:53:19 [http-nio-8080-exec-5] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 13:53:19 [http-nio-8080-exec-5] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: zxczxc
+	description: zxczxczxc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 13:53:19 [http-nio-8080-exec-5] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 173 { id: 173
+	workName: zxczxc
+	description: zxczxczxc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 13:53:19 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 13:53:20 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricCCService - 27dcfaa2e028850fe4a84dbb0f44703dfa4f185d46d0183d5a6273af2ceb7a2b
+2019-10-07 13:53:21 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricCCService - ade6cac5e477fd17c765225f37b92a51178f5273789b946ee8ab403a1df3f0bf
+2019-10-07 13:53:21 [http-nio-8080-exec-5] INFO  c.b.application.impl.FabricCCService - Work 173 by Owner 22: 2019-10-07 04:53:20 ~ FALSE
+2019-10-07 13:53:21 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T04:53:20, ownerId=22, workId=173]
+2019-10-07 13:53:21 [http-nio-8080-exec-5] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 173)
+2019-10-07 13:53:21 [http-nio-8080-exec-5] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 13:54:42 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:54:42 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:54:48 [http-nio-8080-exec-1] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 13:54:48 [http-nio-8080-exec-1] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: adsdasdzxczxc
+	description: xzczx
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 13:54:49 [http-nio-8080-exec-1] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 174 { id: 174
+	workName: adsdasdzxczxc
+	description: xzczx
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 13:54:49 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 13:54:50 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - 48145c0bba9da3b689bc9789bc19f91de9a181db974f1a12709271074ce22711
+2019-10-07 13:54:51 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - 8c2d0b0a5ca671bdf93f96bb091eb5fbe4bdb34ac350472aa3938982a27bbe03
+2019-10-07 13:54:51 [http-nio-8080-exec-1] INFO  c.b.application.impl.FabricCCService - Work 174 by Owner 22: 2019-10-07 04:54:50 ~ FALSE
+2019-10-07 13:54:51 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T04:54:50, ownerId=22, workId=174]
+2019-10-07 13:54:51 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 174)
+2019-10-07 13:54:51 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 13:55:43 [http-nio-8080-exec-4] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:55:43 [http-nio-8080-exec-4] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:55:51 [http-nio-8080-exec-6] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 13:55:51 [http-nio-8080-exec-6] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: zxczxczxczxczx
+	description: zxczxc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 13:55:52 [http-nio-8080-exec-6] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 175 { id: 175
+	workName: zxczxczxczxczx
+	description: zxczxc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 13:55:52 [http-nio-8080-exec-6] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 13:55:53 [http-nio-8080-exec-6] DEBUG c.b.application.impl.FabricCCService - a15506be058a2ea79443e993a6fffd1a4914add9b7218326e89079cb7e9b188d
+2019-10-07 13:55:54 [http-nio-8080-exec-6] DEBUG c.b.application.impl.FabricCCService - e5a1f304e35dc043e23cac41714cd95754ac081ee6405592cb278a2a8363fd58
+2019-10-07 13:55:54 [http-nio-8080-exec-6] INFO  c.b.application.impl.FabricCCService - Work 175 by Owner 22: 2019-10-07 04:55:53 ~ FALSE
+2019-10-07 13:55:54 [http-nio-8080-exec-6] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T04:55:53, ownerId=22, workId=175]
+2019-10-07 13:55:54 [http-nio-8080-exec-6] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 175)
+2019-10-07 13:55:54 [http-nio-8080-exec-6] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 13:56:14 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:56:14 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:56:21 [http-nio-8080-exec-1] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 13:56:21 [http-nio-8080-exec-1] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: zxczxczxczxczxczxczxc
+	description: c
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 13:56:21 [http-nio-8080-exec-1] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 176 { id: 176
+	workName: zxczxczxczxczxczxczxc
+	description: c
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 13:56:21 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 13:56:22 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - 355543f20adf70670ae1eeb06fb74a6fba0bd9fb026fa3e8f140fc5e3a23bbd1
+2019-10-07 13:56:23 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - f422b78950143e7c71813043dfdc0d5c128d87eeb413b65b976dc61a54f30968
+2019-10-07 13:56:23 [http-nio-8080-exec-1] INFO  c.b.application.impl.FabricCCService - Work 176 by Owner 22: 2019-10-07 04:56:22 ~ FALSE
+2019-10-07 13:56:23 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T04:56:22, ownerId=22, workId=176]
+2019-10-07 13:56:23 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 176)
+2019-10-07 13:56:23 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 13:59:21 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:59:21 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:59:31 [http-nio-8080-exec-8] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 13:59:31 [http-nio-8080-exec-8] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: xczxaweqwe
+	description: sda
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 13:59:31 [http-nio-8080-exec-8] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 177 { id: 177
+	workName: xczxaweqwe
+	description: sda
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 13:59:31 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 13:59:32 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricCCService - 4bae2e14b6e5265691e55187e37dd737f31d6b0d1270f0a408d5d33c14354b89
+2019-10-07 13:59:33 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricCCService - bd4278f03cd7a7dd1137f9b46471db86978917968cbdaa7da17a3e5ffd30dcf6
+2019-10-07 13:59:33 [http-nio-8080-exec-8] INFO  c.b.application.impl.FabricCCService - Work 177 by Owner 22: 2019-10-07 04:59:32 ~ FALSE
+2019-10-07 13:59:33 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T04:59:32, ownerId=22, workId=177]
+2019-10-07 13:59:33 [http-nio-8080-exec-8] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 177)
+2019-10-07 13:59:33 [http-nio-8080-exec-8] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 13:59:47 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:59:47 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 13:59:54 [http-nio-8080-exec-3] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 13:59:54 [http-nio-8080-exec-3] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: cxvzxcvsdafwe
+	description: sdc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 13:59:54 [http-nio-8080-exec-3] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 178 { id: 178
+	workName: cxvzxcvsdafwe
+	description: sdc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 13:59:54 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 13:59:55 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - 46a38cdc53e517aecb1c9a90608b98d0965831c82405f86647ebc701b9148981
+2019-10-07 13:59:56 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - 28de17244298dcef70faf3b504fdebd8e29d1cf669863a1b3946e0bfb69f7821
+2019-10-07 13:59:56 [http-nio-8080-exec-3] INFO  c.b.application.impl.FabricCCService - Work 178 by Owner 22: 2019-10-07 04:59:55 ~ FALSE
+2019-10-07 13:59:56 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T04:59:55, ownerId=22, workId=178]
+2019-10-07 13:59:56 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 178)
+2019-10-07 13:59:56 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:00:28 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 564 (started by multicampus in c:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3)
+2019-10-07 14:00:28 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-10-07 14:00:28 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-10-07 14:00:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-10-07 14:00:30 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-10-07 14:00:30 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-10-07 14:00:30 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-10-07 14:00:31 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-10-07 14:00:31 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-07 14:00:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-07 14:00:32 [main] INFO  com.bcauction.Application - Started Application in 4.29 seconds (JVM running for 4.741)
+2019-10-07 14:00:35 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-07 14:00:36 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-10-07 14:00:36 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-10-07 14:00:36 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:00:36 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:00:43 [http-nio-8080-exec-5] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:00:43 [http-nio-8080-exec-5] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: zxczxcasweqw
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:00:43 [http-nio-8080-exec-5] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 179 { id: 179
+	workName: zxczxcasweqw
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:00:43 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:00:43 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-ca.pem
+2019-10-07 14:00:43 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-ca.pem
+2019-10-07 14:00:43 [http-nio-8080-exec-5] WARN  o.h.fabric_ca.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
+2019-10-07 14:00:43 [http-nio-8080-exec-5] WARN  o.h.fabric.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
+2019-10-07 14:00:43 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-peer.pem
+2019-10-07 14:00:43 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-peer.pem
+2019-10-07 14:00:43 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-orderer.pem
+2019-10-07 14:00:43 [http-nio-8080-exec-5] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-orderer.pem
+2019-10-07 14:00:45 [http-nio-8080-exec-5] INFO  org.hyperledger.fabric.sdk.Channel - Channel Channel{id: 3, name: auctionchannel001} eventThread started shutdown: false  thread: null 
+2019-10-07 14:00:46 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricCCService - fcb84a32b609547b17ce9016c2737a78fe401a694c3d5ff3cbe4786fd11e0ccf
+2019-10-07 14:00:47 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricCCService - 28e903531a3b97bb25f5765b8fa0f3ee894dab1ff3843f76f52c092bc538a9bd
+2019-10-07 14:00:47 [http-nio-8080-exec-5] INFO  c.b.application.impl.FabricCCService - Work 179 by Owner 22: 2019-10-07 05:00:46 ~ FALSE
+2019-10-07 14:00:47 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:00:46, ownerId=22, workId=179]
+2019-10-07 14:00:47 [http-nio-8080-exec-5] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 179)
+2019-10-07 14:00:47 [http-nio-8080-exec-5] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:02:22 [http-nio-8080-exec-9] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:02:22 [http-nio-8080-exec-9] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: zxcaweqwe
+	description: qs
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:02:22 [http-nio-8080-exec-9] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 180 { id: 180
+	workName: zxcaweqwe
+	description: qs
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:02:22 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:02:24 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricCCService - fd131f6fdd80c350b33ac5b90ae620b6d46b0289d9386c91433d3e4e16aec382
+2019-10-07 14:02:25 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricCCService - 2b04d77ab868a5587a69eb7add3ea705055f69dfbaa1715086bfcbecea746ba9
+2019-10-07 14:02:25 [http-nio-8080-exec-9] INFO  c.b.application.impl.FabricCCService - Work 180 by Owner 22: 2019-10-07 05:02:24 ~ FALSE
+2019-10-07 14:02:25 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:02:24, ownerId=22, workId=180]
+2019-10-07 14:02:25 [http-nio-8080-exec-9] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 180)
+2019-10-07 14:02:25 [http-nio-8080-exec-9] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:02:46 [http-nio-8080-exec-1] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:02:46 [http-nio-8080-exec-1] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: zzxc
+	description: zxczxc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:02:46 [http-nio-8080-exec-1] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 181 { id: 181
+	workName: zzxc
+	description: zxczxc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:02:46 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:02:46 [http-nio-8080-exec-2] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:02:46 [http-nio-8080-exec-2] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: zzxc
+	description: zxczxc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:02:46 [http-nio-8080-exec-2] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 182 { id: 182
+	workName: zzxc
+	description: zxczxc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:02:46 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:02:47 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - 4031f30d1d7a2c1782a4354e88eb01eaf3641828c76b7bd3bdac99f88773829e
+2019-10-07 14:02:47 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - 9a09c7f8a03a8b3929c6b0435756857ae147bf951a400c7b6bcdc1e9ee1d1178
+2019-10-07 14:02:48 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - c414923e3f859fbd6b67c3067af6054985ced3279731562e20c44849eb6a65f5
+2019-10-07 14:02:48 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - d29f691d4b239f2b7e17b23515b6196a87c56e19ef340eee9eb7c00b2ee17561
+2019-10-07 14:02:48 [http-nio-8080-exec-2] INFO  c.b.application.impl.FabricCCService - Work 182 by Owner 22: 2019-10-07 05:02:47 ~ FALSE
+2019-10-07 14:02:48 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:02:47, ownerId=22, workId=182]
+2019-10-07 14:02:48 [http-nio-8080-exec-1] INFO  c.b.application.impl.FabricCCService - Work 181 by Owner 22: 2019-10-07 05:02:47 ~ FALSE
+2019-10-07 14:02:48 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:02:47, ownerId=22, workId=181]
+2019-10-07 14:02:48 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 182)
+2019-10-07 14:02:48 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 181)
+2019-10-07 14:02:48 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:02:48 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:03:33 [http-nio-8080-exec-4] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:03:33 [http-nio-8080-exec-4] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: xx
+	description: ccc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:03:33 [http-nio-8080-exec-4] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 183 { id: 183
+	workName: xx
+	description: ccc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:03:33 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:03:34 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - 17142057def8dcec88c711f2cc49710573fff535e61be0cff115d0d8b4c8160a
+2019-10-07 14:03:35 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - 6576ea5cced95f975ea62a189285e5ea1843322cca77b6208ca9ab1e72d66844
+2019-10-07 14:03:35 [http-nio-8080-exec-4] INFO  c.b.application.impl.FabricCCService - Work 183 by Owner 22: 2019-10-07 05:03:34 ~ FALSE
+2019-10-07 14:03:35 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:03:34, ownerId=22, workId=183]
+2019-10-07 14:03:35 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 183)
+2019-10-07 14:03:35 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:04:31 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:04:31 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:04:48 [http-nio-8080-exec-1] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:04:48 [http-nio-8080-exec-1] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: zxcnytf
+	description: qwd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:04:48 [http-nio-8080-exec-1] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 184 { id: 184
+	workName: zxcnytf
+	description: qwd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:04:48 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:04:49 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - 33e1648bb58495b504d1de1798ee19954447a3ab4471f6d15ed8103a70889693
+2019-10-07 14:04:51 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - 2d521131cb17d21851e4e635525039f2adc29db809eb53acc50cc47d5a7fdf32
+2019-10-07 14:04:51 [http-nio-8080-exec-1] INFO  c.b.application.impl.FabricCCService - Work 184 by Owner 22: 2019-10-07 05:04:49 ~ FALSE
+2019-10-07 14:04:51 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:04:49, ownerId=22, workId=184]
+2019-10-07 14:04:51 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 184)
+2019-10-07 14:04:51 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:07:48 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:07:48 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:08:05 [http-nio-8080-exec-7] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:08:05 [http-nio-8080-exec-7] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: ad
+	description: asdasad
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:08:05 [http-nio-8080-exec-7] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 185 { id: 185
+	workName: ad
+	description: asdasad
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:08:05 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:08:06 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricCCService - 1f55fb1efccadff4f437bacd00443b7e905c76fc0b13dfeebdda125211627bfe
+2019-10-07 14:08:07 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricCCService - feeb67a2bc1969b0e59305001747853a246fb8ea6d7e1b8228cb537054d801b2
+2019-10-07 14:08:07 [http-nio-8080-exec-7] INFO  c.b.application.impl.FabricCCService - Work 185 by Owner 22: 2019-10-07 05:08:06 ~ FALSE
+2019-10-07 14:08:07 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:08:06, ownerId=22, workId=185]
+2019-10-07 14:08:07 [http-nio-8080-exec-7] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 185)
+2019-10-07 14:08:07 [http-nio-8080-exec-7] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:08:51 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:08:51 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:09:00 [http-nio-8080-exec-2] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:09:00 [http-nio-8080-exec-2] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: dcfnty
+	description: jtysew
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:09:00 [http-nio-8080-exec-2] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 186 { id: 186
+	workName: dcfnty
+	description: jtysew
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:09:00 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:09:01 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - 031fcbd48015918ba549d50cda713cae5deac993f74e18b02f4fe07fba98df2e
+2019-10-07 14:09:02 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - f29938392ec7d41ea4b39db1ee512d39a10c76bb7f89e5a8e2150da99fb46459
+2019-10-07 14:09:02 [http-nio-8080-exec-2] INFO  c.b.application.impl.FabricCCService - Work 186 by Owner 22: 2019-10-07 05:09:01 ~ FALSE
+2019-10-07 14:09:02 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:09:01, ownerId=22, workId=186]
+2019-10-07 14:09:02 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 186)
+2019-10-07 14:09:02 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:09:29 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:09:29 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:09:42 [http-nio-8080-exec-7] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:09:42 [http-nio-8080-exec-7] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: fghff
+	description: hfghfghgfh
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:09:42 [http-nio-8080-exec-7] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 187 { id: 187
+	workName: fghff
+	description: hfghfghgfh
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:09:42 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:09:43 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricCCService - d553f6076bc32a91f1682855e92052d73676854dbd47b8808c6e996ef41e42c0
+2019-10-07 14:09:44 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricCCService - 530dfe07f9ccbb9b78d408a4da7efeef80291947c0bb87b2b9ba2a0e5151073d
+2019-10-07 14:09:44 [http-nio-8080-exec-7] INFO  c.b.application.impl.FabricCCService - Work 187 by Owner 22: 2019-10-07 05:09:43 ~ FALSE
+2019-10-07 14:09:44 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:09:43, ownerId=22, workId=187]
+2019-10-07 14:09:44 [http-nio-8080-exec-7] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 187)
+2019-10-07 14:09:44 [http-nio-8080-exec-7] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:10:11 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:10:11 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:10:21 [http-nio-8080-exec-2] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:10:21 [http-nio-8080-exec-2] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: dasda
+	description: asdas
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:10:21 [http-nio-8080-exec-2] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 188 { id: 188
+	workName: dasda
+	description: asdas
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:10:21 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:10:22 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - 528ba15cf2327c9aed8efed6dc966da0266c0910b79e03a4dc63134fa8919a06
+2019-10-07 14:10:23 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - ce442d9d010b0b0adfe0f6d29fd43e89825669dc85260267d3505e68a1b91318
+2019-10-07 14:10:23 [http-nio-8080-exec-2] INFO  c.b.application.impl.FabricCCService - Work 188 by Owner 22: 2019-10-07 05:10:22 ~ FALSE
+2019-10-07 14:10:23 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:10:22, ownerId=22, workId=188]
+2019-10-07 14:10:23 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 188)
+2019-10-07 14:10:23 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:11:25 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:11:25 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:11:34 [http-nio-8080-exec-7] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:11:34 [http-nio-8080-exec-7] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: ghg
+	description: fghf
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:11:34 [http-nio-8080-exec-7] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 189 { id: 189
+	workName: ghg
+	description: fghf
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:11:34 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:11:35 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricCCService - 0565fc9721176d7746a56dd8910f5ecd32562b1366f57e5346eaee0caa15b2db
+2019-10-07 14:11:36 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricCCService - a07af2c494469d260c93b46a0d7353b960f0f091d45d3c19195a5d6faa623bb9
+2019-10-07 14:11:36 [http-nio-8080-exec-7] INFO  c.b.application.impl.FabricCCService - Work 189 by Owner 22: 2019-10-07 05:11:35 ~ FALSE
+2019-10-07 14:11:36 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:11:35, ownerId=22, workId=189]
+2019-10-07 14:11:37 [http-nio-8080-exec-7] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 189)
+2019-10-07 14:11:37 [http-nio-8080-exec-7] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:12:18 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:12:18 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:12:27 [http-nio-8080-exec-2] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:12:27 [http-nio-8080-exec-2] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: dfs
+	description: sdfs
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:12:27 [http-nio-8080-exec-2] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 190 { id: 190
+	workName: dfs
+	description: sdfs
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:12:27 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:12:28 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - 03254ba0960677bfa50aa8f3212888c83e0f33ba7e0a906865318005663830c0
+2019-10-07 14:12:29 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - 0dd8fe011820bce31e18c07c7346d0ab4855c48e886229233555be7db9d96adb
+2019-10-07 14:12:29 [http-nio-8080-exec-2] INFO  c.b.application.impl.FabricCCService - Work 190 by Owner 22: 2019-10-07 05:12:28 ~ FALSE
+2019-10-07 14:12:29 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:12:28, ownerId=22, workId=190]
+2019-10-07 14:12:29 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 190)
+2019-10-07 14:12:29 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:14:01 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:14:01 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:14:10 [http-nio-8080-exec-8] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:14:10 [http-nio-8080-exec-8] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: sdfs
+	description: dsfsd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:14:10 [http-nio-8080-exec-8] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 191 { id: 191
+	workName: sdfs
+	description: dsfsd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:14:10 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:14:11 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricCCService - 6cc1a08ccc3e78ed6c6982b96b860001f5b43ac2da7d5ce1bc48a4d0535cec9b
+2019-10-07 14:14:12 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricCCService - 262f426acdf6a7081d0ecc25c9dbbff8333f7bae7d602985e83ad8575906ec85
+2019-10-07 14:14:12 [http-nio-8080-exec-8] INFO  c.b.application.impl.FabricCCService - Work 191 by Owner 22: 2019-10-07 05:14:11 ~ FALSE
+2019-10-07 14:14:12 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:14:11, ownerId=22, workId=191]
+2019-10-07 14:14:12 [http-nio-8080-exec-8] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 191)
+2019-10-07 14:14:13 [http-nio-8080-exec-8] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:15:28 [http-nio-8080-exec-1] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:15:28 [http-nio-8080-exec-1] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: fsdf
+	description: sfsdf
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:15:28 [http-nio-8080-exec-1] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 192 { id: 192
+	workName: fsdf
+	description: sfsdf
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:15:28 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:15:29 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - bfad132ca4f7dc9c76e485c17e194f91a8c8f4333eff111435580bf1e04e05f1
+2019-10-07 14:15:30 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - 2f2f6ca27a9968bfcf241aaee00c405d9b1d9efc7d92e9cd4592470b72c79662
+2019-10-07 14:15:30 [http-nio-8080-exec-1] INFO  c.b.application.impl.FabricCCService - Work 192 by Owner 22: 2019-10-07 05:15:29 ~ FALSE
+2019-10-07 14:15:30 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:15:29, ownerId=22, workId=192]
+2019-10-07 14:15:30 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 192)
+2019-10-07 14:15:30 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:16:07 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:16:07 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:16:23 [http-nio-8080-exec-1] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:16:23 [http-nio-8080-exec-1] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: dsfsdfs
+	description: fsdfsdf
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:16:23 [http-nio-8080-exec-1] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 193 { id: 193
+	workName: dsfsdfs
+	description: fsdfsdf
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:16:23 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:16:24 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - 55b4269dc0ce67294b432d47204b6884f1a743cdc8cde905325710d80255aac9
+2019-10-07 14:16:25 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - b2e7c2b95087d824c619c2ba6665b85d843f305f065cb9d9cdb3dcd4d9abede0
+2019-10-07 14:16:25 [http-nio-8080-exec-1] INFO  c.b.application.impl.FabricCCService - Work 193 by Owner 22: 2019-10-07 05:16:24 ~ FALSE
+2019-10-07 14:16:25 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:16:24, ownerId=22, workId=193]
+2019-10-07 14:16:25 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 193)
+2019-10-07 14:16:25 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:17:13 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:17:13 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 14:17:24 [http-nio-8080-exec-8] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 14:17:24 [http-nio-8080-exec-8] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: dfsdfsd
+	description: sdfsdfsdf
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 14:17:24 [http-nio-8080-exec-8] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 194 { id: 194
+	workName: dfsdfsd
+	description: sdfsdfsdf
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 14:17:24 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 14:17:25 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricCCService - 29d1b492501e04be3254aeca58bab5a7a4f25ca6a3a212b987660673ea9731df
+2019-10-07 14:17:26 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricCCService - 8ed4e91c79afabd5abb2f2fa29154c51fa30b4b444794e1da5595a9e989c699d
+2019-10-07 14:17:26 [http-nio-8080-exec-8] INFO  c.b.application.impl.FabricCCService - Work 194 by Owner 22: 2019-10-07 05:17:25 ~ FALSE
+2019-10-07 14:17:26 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T05:17:25, ownerId=22, workId=194]
+2019-10-07 14:17:26 [http-nio-8080-exec-8] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 194)
+2019-10-07 14:17:26 [http-nio-8080-exec-8] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 14:18:43 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m6s872ms551µs800ns).
+2019-10-07 15:03:13 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=44m30s87ms753µs300ns).
+2019-10-07 15:04:32 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:04:32 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:04:41 [http-nio-8080-exec-5] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:04:41 [http-nio-8080-exec-5] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: 
+	description: 
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:04:41 [http-nio-8080-exec-5] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 195 { id: 195
+	workName: 
+	description: 
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:04:41 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:04:43 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricCCService - afad1765958928f28b06b5846831f3626c4e018d33f1e8002d88c506441890f3
+2019-10-07 15:04:44 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricCCService - 2b4338d7ba65e111af58c6f25d64b2da87c3d7cddda60f51d8ec7f99bf78b08d
+2019-10-07 15:04:44 [http-nio-8080-exec-5] INFO  c.b.application.impl.FabricCCService - Work 195 by Owner 22: 2019-10-07 06:04:43 ~ FALSE
+2019-10-07 15:04:44 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:04:43, ownerId=22, workId=195]
+2019-10-07 15:04:44 [http-nio-8080-exec-5] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 195)
+2019-10-07 15:04:44 [http-nio-8080-exec-5] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:04:56 [http-nio-8080-exec-8] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:04:56 [http-nio-8080-exec-8] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: 박종찬vc
+	description: 21
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:04:56 [http-nio-8080-exec-8] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 196 { id: 196
+	workName: 박종찬vc
+	description: 21
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:04:56 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:04:58 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricCCService - 5965195559e0fa9c347a3741325d0a6ff1ef9fd652eef8ac8ba0d329d2a02b46
+2019-10-07 15:04:59 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricCCService - 46bb41fa17e876faf6f67434bfe3c32ad7909de3b757dca2b55c8289d489fac0
+2019-10-07 15:04:59 [http-nio-8080-exec-8] INFO  c.b.application.impl.FabricCCService - Work 196 by Owner 22: 2019-10-07 06:04:58 ~ FALSE
+2019-10-07 15:04:59 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:04:58, ownerId=22, workId=196]
+2019-10-07 15:04:59 [http-nio-8080-exec-8] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 196)
+2019-10-07 15:04:59 [http-nio-8080-exec-8] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:10:42 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:10:42 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:10:50 [http-nio-8080-exec-5] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:10:50 [http-nio-8080-exec-5] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: zxczxcawq
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:10:50 [http-nio-8080-exec-5] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 197 { id: 197
+	workName: zxczxcawq
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:10:50 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:10:51 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricCCService - 0a93c924121a2641fd34c174c2a3caf625d054998daf5ccd5e90d54c52ff2f19
+2019-10-07 15:10:52 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricCCService - 76227169c1ad33a2d86e4e6fba68b9ed9868efb2c7db5894334a938d79ba5d26
+2019-10-07 15:10:52 [http-nio-8080-exec-5] INFO  c.b.application.impl.FabricCCService - Work 197 by Owner 22: 2019-10-07 06:10:51 ~ FALSE
+2019-10-07 15:10:52 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:10:51, ownerId=22, workId=197]
+2019-10-07 15:10:52 [http-nio-8080-exec-5] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 197)
+2019-10-07 15:10:52 [http-nio-8080-exec-5] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:12:49 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:12:49 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:12:56 [http-nio-8080-exec-3] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:12:56 [http-nio-8080-exec-3] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: asdas
+	description: dasdas
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:12:56 [http-nio-8080-exec-3] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 198 { id: 198
+	workName: asdas
+	description: dasdas
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:12:56 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:12:57 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - 29363dff51084c431e33c713d72fba173d4fe30e50b1d663bd154fd47f4bef6e
+2019-10-07 15:12:58 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - 5c1bdefdf98b6e38633ec98f5bd9a98a413df963eab95751260d12343275db91
+2019-10-07 15:12:58 [http-nio-8080-exec-3] INFO  c.b.application.impl.FabricCCService - Work 198 by Owner 22: 2019-10-07 06:12:57 ~ FALSE
+2019-10-07 15:12:58 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:12:57, ownerId=22, workId=198]
+2019-10-07 15:12:59 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 198)
+2019-10-07 15:12:59 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:13:27 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:13:27 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:14:13 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:14:13 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:18:24 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:18:24 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:30:45 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:30:45 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:30:49 [http-nio-8080-exec-1] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:30:49 [http-nio-8080-exec-1] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: 박종찬
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:30:49 [http-nio-8080-exec-1] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 199 { id: 199
+	workName: 박종찬
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:30:49 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:30:51 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - 06cb62f9f286953bb3577e73f75dbdfcf6242e0761007838f647f5a3cf000871
+2019-10-07 15:30:52 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricCCService - 964e9054baa3850e2932ab68ddb1f315e0d2b65c0302a349f63647e2b0abee08
+2019-10-07 15:30:52 [http-nio-8080-exec-1] INFO  c.b.application.impl.FabricCCService - Work 199 by Owner 22: 2019-10-07 06:30:51 ~ FALSE
+2019-10-07 15:30:52 [http-nio-8080-exec-1] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:30:51, ownerId=22, workId=199]
+2019-10-07 15:30:52 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 199)
+2019-10-07 15:30:52 [http-nio-8080-exec-1] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:31:01 [http-nio-8080-exec-3] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:31:01 [http-nio-8080-exec-3] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: asczxczxc
+	description: zxa
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:31:01 [http-nio-8080-exec-3] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 200 { id: 200
+	workName: asczxczxc
+	description: zxa
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:31:01 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:31:02 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - ca6f8d8c89ae45561812d7eeca757150c29a5a633dfef4ec0479c569602cea54
+2019-10-07 15:31:03 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - fb80f7d97b39acb58215d834351966c4243caa817d7c0d74750b50ecd90c3047
+2019-10-07 15:31:03 [http-nio-8080-exec-3] INFO  c.b.application.impl.FabricCCService - Work 200 by Owner 22: 2019-10-07 06:31:02 ~ FALSE
+2019-10-07 15:31:03 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:31:02, ownerId=22, workId=200]
+2019-10-07 15:31:03 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 200)
+2019-10-07 15:31:03 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:32:26 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:32:26 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:32:38 [http-nio-8080-exec-9] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:32:38 [http-nio-8080-exec-9] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: zxcz잘가
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:32:38 [http-nio-8080-exec-9] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 201 { id: 201
+	workName: zxcz잘가
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:32:38 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:32:39 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricCCService - 4b794055843142bc793b88c2e21160f79e4dbe7814957b0887436777412806b3
+2019-10-07 15:32:40 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricCCService - 3bf123819808dacd4dc07eab85abb1299643aaa70106c6afd77c54e6a96f1801
+2019-10-07 15:32:40 [http-nio-8080-exec-9] INFO  c.b.application.impl.FabricCCService - Work 201 by Owner 22: 2019-10-07 06:32:39 ~ FALSE
+2019-10-07 15:32:40 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:32:39, ownerId=22, workId=201]
+2019-10-07 15:32:40 [http-nio-8080-exec-9] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 201)
+2019-10-07 15:32:40 [http-nio-8080-exec-9] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:34:16 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:34:16 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:34:21 [http-nio-8080-exec-5] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:34:21 [http-nio-8080-exec-5] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: ccz
+	description: as
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:34:22 [http-nio-8080-exec-5] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 202 { id: 202
+	workName: ccz
+	description: as
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:34:22 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:34:23 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricCCService - 5f5a196719ce75f623eb82955f10b4bc6086af5fc5d91cd88c5b00c1417a6217
+2019-10-07 15:34:24 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricCCService - d037dd39fe2a3dd94c1f9e166c211732cd4310cd0a61cb5b1e286db2c78726f9
+2019-10-07 15:34:24 [http-nio-8080-exec-5] INFO  c.b.application.impl.FabricCCService - Work 202 by Owner 22: 2019-10-07 06:34:23 ~ FALSE
+2019-10-07 15:34:24 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:34:23, ownerId=22, workId=202]
+2019-10-07 15:34:24 [http-nio-8080-exec-5] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 202)
+2019-10-07 15:34:24 [http-nio-8080-exec-5] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:34:53 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:34:53 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:35:01 [http-nio-8080-exec-2] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:35:01 [http-nio-8080-exec-2] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: ccxxzzsswkp
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:35:01 [http-nio-8080-exec-2] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 203 { id: 203
+	workName: ccxxzzsswkp
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:35:01 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:35:02 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - 6e3e0051b9a3f5254bc774556db6b7c319ad67ccdf075cf8951e1228d14b5207
+2019-10-07 15:35:03 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - 1e66ea7869c1ab127d42c45feb6babfc3a97e5cc13a60d1d566d94df3335cdd7
+2019-10-07 15:35:03 [http-nio-8080-exec-2] INFO  c.b.application.impl.FabricCCService - Work 203 by Owner 22: 2019-10-07 06:35:02 ~ FALSE
+2019-10-07 15:35:03 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:35:02, ownerId=22, workId=203]
+2019-10-07 15:35:03 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 203)
+2019-10-07 15:35:03 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:35:40 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:35:40 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:35:48 [http-nio-8080-exec-7] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:35:48 [http-nio-8080-exec-7] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: zxcz
+	description: czxcz
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:35:48 [http-nio-8080-exec-7] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 204 { id: 204
+	workName: zxcz
+	description: czxcz
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:35:48 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:35:49 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricCCService - 0c717ae469ad1ce5702e8c9a1f2c6810578375428ddeb6da2aa81d5e84b42a80
+2019-10-07 15:35:50 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricCCService - 59e6904caaaab4869da0e01ebd08879c0c75767a36a5d72a5e9b12b7a894fc97
+2019-10-07 15:35:50 [http-nio-8080-exec-7] INFO  c.b.application.impl.FabricCCService - Work 204 by Owner 22: 2019-10-07 06:35:49 ~ FALSE
+2019-10-07 15:35:50 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:35:49, ownerId=22, workId=204]
+2019-10-07 15:35:50 [http-nio-8080-exec-7] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 204)
+2019-10-07 15:35:50 [http-nio-8080-exec-7] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:36:07 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:36:07 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:36:13 [http-nio-8080-exec-3] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:36:13 [http-nio-8080-exec-3] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: n njkk
+	description: g
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:36:13 [http-nio-8080-exec-3] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 205 { id: 205
+	workName: n njkk
+	description: g
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:36:13 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:36:14 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - 21773bb0cf6ed7d1dbed76e1c4b9df032853ce61ca9e3d9c478154f0bba4a9d6
+2019-10-07 15:36:15 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - 6830d4140736e0e7b5a322fce2635af863f6f1f3000b087714f54469e8bf5290
+2019-10-07 15:36:15 [http-nio-8080-exec-3] INFO  c.b.application.impl.FabricCCService - Work 205 by Owner 22: 2019-10-07 06:36:14 ~ FALSE
+2019-10-07 15:36:15 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:36:14, ownerId=22, workId=205]
+2019-10-07 15:36:15 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 205)
+2019-10-07 15:36:15 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:36:35 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:36:35 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:36:41 [http-nio-8080-exec-7] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:36:41 [http-nio-8080-exec-7] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: vxcv
+	description: xcv
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:36:41 [http-nio-8080-exec-7] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 206 { id: 206
+	workName: vxcv
+	description: xcv
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:36:41 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:36:42 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricCCService - 37d3f5b45b357b6e3dc8b473755c59ccce9696ccb34d56fb6fca93d4d1b9e82a
+2019-10-07 15:36:43 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricCCService - a6d99070c21917de94578f4c8779f00fe83e364b57e07a8e74aee86d3abbb75a
+2019-10-07 15:36:44 [http-nio-8080-exec-7] INFO  c.b.application.impl.FabricCCService - Work 206 by Owner 22: 2019-10-07 06:36:42 ~ FALSE
+2019-10-07 15:36:44 [http-nio-8080-exec-7] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:36:42, ownerId=22, workId=206]
+2019-10-07 15:36:44 [http-nio-8080-exec-7] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 206)
+2019-10-07 15:36:44 [http-nio-8080-exec-7] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:38:19 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:38:19 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:38:25 [http-nio-8080-exec-4] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:38:25 [http-nio-8080-exec-4] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: cczx
+	description: as
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:38:25 [http-nio-8080-exec-4] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 207 { id: 207
+	workName: cczx
+	description: as
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:38:25 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:38:26 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - d838fb6cbd91b480f07c8ccc00da9600dd82ea882e9114d78606b13590502950
+2019-10-07 15:38:27 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - d13bd078ec1ac3679fc480b331b781e7316dcc6b3f2aa06729fc631ea3223663
+2019-10-07 15:38:27 [http-nio-8080-exec-4] INFO  c.b.application.impl.FabricCCService - Work 207 by Owner 22: 2019-10-07 06:38:26 ~ FALSE
+2019-10-07 15:38:27 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:38:26, ownerId=22, workId=207]
+2019-10-07 15:38:27 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 207)
+2019-10-07 15:38:27 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:38:41 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:38:41 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:38:50 [http-nio-8080-exec-9] DEBUG c.b.api.DigitalWorkController - 0, 22
+2019-10-07 15:38:50 [http-nio-8080-exec-9] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: zxczxczxcasds
+	description: adas
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:38:50 [http-nio-8080-exec-9] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 208 { id: 208
+	workName: zxczxczxcasds
+	description: adas
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:38:50 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:38:51 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricCCService - 51afc8aafec8189887af6f8a6053e8f7d587ee58d25a01850d1d7f949ad025cf
+2019-10-07 15:38:52 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricCCService - 64714324c141c76e420c3c44679e9b84668fefdac097ae60452f31a119a5b978
+2019-10-07 15:38:52 [http-nio-8080-exec-9] INFO  c.b.application.impl.FabricCCService - Work 208 by Owner 22: 2019-10-07 06:38:51 ~ FALSE
+2019-10-07 15:38:52 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:38:51, ownerId=22, workId=208]
+2019-10-07 15:38:52 [http-nio-8080-exec-9] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 208)
+2019-10-07 15:38:52 [http-nio-8080-exec-9] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:41:08 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 13556 (started by multicampus in c:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3)
+2019-10-07 15:41:08 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-10-07 15:41:08 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-10-07 15:41:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-10-07 15:41:10 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-10-07 15:41:10 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-10-07 15:41:10 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-10-07 15:41:12 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-10-07 15:41:12 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-07 15:41:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-07 15:41:13 [main] INFO  com.bcauction.Application - Started Application in 5.31 seconds (JVM running for 5.99)
+2019-10-07 15:42:19 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 18560 (started by multicampus in c:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3)
+2019-10-07 15:42:19 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-10-07 15:42:19 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-10-07 15:42:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-10-07 15:42:21 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-10-07 15:42:21 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-10-07 15:42:21 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-10-07 15:42:22 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-10-07 15:42:23 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-07 15:42:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-07 15:42:23 [main] INFO  com.bcauction.Application - Started Application in 4.946 seconds (JVM running for 5.279)
+2019-10-07 15:42:29 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-07 15:42:29 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-10-07 15:42:29 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-10-07 15:42:29 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:42:29 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:42:35 [http-nio-8080-exec-4] DEBUG c.b.api.DigitalWorkController - 0, 22, 
+2019-10-07 15:42:35 [http-nio-8080-exec-4] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: czxczx
+	description: asda
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:42:35 [http-nio-8080-exec-4] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 209 { id: 209
+	workName: czxczx
+	description: asda
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:42:35 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:42:35 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-ca.pem
+2019-10-07 15:42:35 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-ca.pem
+2019-10-07 15:42:35 [http-nio-8080-exec-4] WARN  o.h.fabric_ca.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
+2019-10-07 15:42:36 [http-nio-8080-exec-4] WARN  o.h.fabric.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
+2019-10-07 15:42:36 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-peer.pem
+2019-10-07 15:42:36 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-peer.pem
+2019-10-07 15:42:36 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-orderer.pem
+2019-10-07 15:42:36 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-orderer.pem
+2019-10-07 15:42:38 [http-nio-8080-exec-4] INFO  org.hyperledger.fabric.sdk.Channel - Channel Channel{id: 3, name: auctionchannel001} eventThread started shutdown: false  thread: null 
+2019-10-07 15:42:39 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - db5071c5f85c0842816e609863954e374aa01290a77ffc435fce2475f41e59b2
+2019-10-07 15:42:40 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - 483886238dde12336dcfe4201409c6761f2dae9f6952d48fdf1dbdb48ef4ad35
+2019-10-07 15:42:40 [http-nio-8080-exec-4] INFO  c.b.application.impl.FabricCCService - Work 209 by Owner 22: 2019-10-07 06:42:39 ~ FALSE
+2019-10-07 15:42:40 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:42:39, ownerId=22, workId=209]
+2019-10-07 15:42:40 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 209)
+2019-10-07 15:42:40 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:46:19 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:46:19 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:48:27 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:48:27 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:48:35 [http-nio-8080-exec-4] DEBUG c.b.api.DigitalWorkController - 0, 22, 
+2019-10-07 15:48:35 [http-nio-8080-exec-4] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: testtt
+	description: 12
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:48:35 [http-nio-8080-exec-4] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 210 { id: 210
+	workName: testtt
+	description: 12
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:48:35 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:48:36 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - 3c099d36e08ce03f3a90b4de2283e5ad1cdc0a4f0fa95964339b1d2ff12263e9
+2019-10-07 15:48:37 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - 4f342e4bd3d4e551ce5807f7735f6674ec652e9cc473fa3e8fbdf17cf47fecfc
+2019-10-07 15:48:37 [http-nio-8080-exec-4] INFO  c.b.application.impl.FabricCCService - Work 210 by Owner 22: 2019-10-07 06:48:36 ~ FALSE
+2019-10-07 15:48:37 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:48:36, ownerId=22, workId=210]
+2019-10-07 15:48:37 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 210)
+2019-10-07 15:48:37 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:49:10 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:49:10 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:49:18 [http-nio-8080-exec-10] DEBUG c.b.api.DigitalWorkController - 0, 22, 
+2019-10-07 15:49:18 [http-nio-8080-exec-10] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: testttt
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 15:49:18 [http-nio-8080-exec-10] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 211 { id: 211
+	workName: testttt
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:49:18 [http-nio-8080-exec-10] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:49:19 [http-nio-8080-exec-9] DEBUG c.b.api.DigitalWorkController - 0, 22, https://i.imgur.com/Wypy7as.jpg
+2019-10-07 15:49:19 [http-nio-8080-exec-9] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: testttt
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: https://i.imgur.com/Wypy7as.jpg }
+2019-10-07 15:49:19 [http-nio-8080-exec-9] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 212 { id: 212
+	workName: testttt
+	description: asd
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: null }
+2019-10-07 15:49:19 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:49:19 [http-nio-8080-exec-10] DEBUG c.b.application.impl.FabricCCService - 6a5245109f25459a503c37a8e358d3544d017ed3d9ca3baa5c408aaf7d7ce4a8
+2019-10-07 15:49:19 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricCCService - 1b06a7dfbb69c9e6f944f00fd9ae828983c8300d75b1f0b9c25a89e8848acd3c
+2019-10-07 15:49:20 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricCCService - 1831bcd0466e1b850aaf1c6d8622d281afaab88b845ab1b41c8c43347df6db62
+2019-10-07 15:49:20 [http-nio-8080-exec-10] DEBUG c.b.application.impl.FabricCCService - c13f140d3c88cb2d61ff30a4a61e838a49bac12f8cb87318bfcd688655a0180e
+2019-10-07 15:49:21 [http-nio-8080-exec-9] INFO  c.b.application.impl.FabricCCService - Work 212 by Owner 22: 2019-10-07 06:49:19 ~ FALSE
+2019-10-07 15:49:21 [http-nio-8080-exec-9] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:49:19, ownerId=22, workId=212]
+2019-10-07 15:49:21 [http-nio-8080-exec-10] INFO  c.b.application.impl.FabricCCService - Work 211 by Owner 22: 2019-10-07 06:49:19 ~ FALSE
+2019-10-07 15:49:21 [http-nio-8080-exec-10] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:49:19, ownerId=22, workId=211]
+2019-10-07 15:49:21 [http-nio-8080-exec-9] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 212)
+2019-10-07 15:49:21 [http-nio-8080-exec-10] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 211)
+2019-10-07 15:49:21 [http-nio-8080-exec-9] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:49:21 [http-nio-8080-exec-10] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:55:53 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 13796 (started by multicampus in c:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3)
+2019-10-07 15:55:53 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-10-07 15:55:53 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-10-07 15:55:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-10-07 15:55:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-10-07 15:55:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-10-07 15:55:55 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-10-07 15:55:56 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-10-07 15:55:56 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-07 15:55:56 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-07 15:55:56 [main] INFO  com.bcauction.Application - Started Application in 3.897 seconds (JVM running for 4.23)
+2019-10-07 15:56:04 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-07 15:56:04 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2019-10-07 15:56:05 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2019-10-07 15:56:05 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:56:05 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:56:15 [http-nio-8080-exec-4] DEBUG c.b.api.DigitalWorkController - 0, 22, https://i.imgur.com/EfkGt7y.jpg
+2019-10-07 15:56:15 [http-nio-8080-exec-4] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: Testttttttttttttttttttt
+	description: 121212
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: https://i.imgur.com/EfkGt7y.jpg }
+2019-10-07 15:56:15 [http-nio-8080-exec-4] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 213 { id: 213
+	workName: Testttttttttttttttttttt
+	description: 121212
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: https://i.imgur.com/EfkGt7y.jpg }
+2019-10-07 15:56:15 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:56:15 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-ca.pem
+2019-10-07 15:56:15 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-ca.pem
+2019-10-07 15:56:15 [http-nio-8080-exec-4] WARN  o.h.fabric_ca.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
+2019-10-07 15:56:15 [http-nio-8080-exec-4] WARN  o.h.fabric.sdk.helper.Config - Failed to load any configuration from: config.properties. Using toolkit defaults
+2019-10-07 15:56:16 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-peer.pem
+2019-10-07 15:56:16 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-peer.pem
+2019-10-07 15:56:16 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - file| url=file:/C:/Users/multicampus/Desktop/새%20폴더%20(4)/blockchain-sub3/haribo-backend/target/classes/fabric-orderer.pem
+2019-10-07 15:56:16 [http-nio-8080-exec-4] INFO  com.bcauction.domain.CommonUtil - C:\Users\multicampus\Desktop\새 폴더 (4)\blockchain-sub3\haribo-backend\target\classes\fabric-orderer.pem
+2019-10-07 15:56:18 [http-nio-8080-exec-4] INFO  org.hyperledger.fabric.sdk.Channel - Channel Channel{id: 3, name: auctionchannel001} eventThread started shutdown: false  thread: null 
+2019-10-07 15:56:19 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - 8c30a4047e83636f893e9acc6011304b085305d1d8ffff95ba2bbeb2f3346551
+2019-10-07 15:56:20 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - 946bc5d4911419e44ca11aa2b0efa8e546b47861635b917db95183fdcaf86841
+2019-10-07 15:56:20 [http-nio-8080-exec-4] INFO  c.b.application.impl.FabricCCService - Work 213 by Owner 22: 2019-10-07 06:56:19 ~ FALSE
+2019-10-07 15:56:20 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:56:19, ownerId=22, workId=213]
+2019-10-07 15:56:20 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 213)
+2019-10-07 15:56:20 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:58:15 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:58:15 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:58:36 [http-nio-8080-exec-4] DEBUG c.b.api.DigitalWorkController - 0, 22, https://i.imgur.com/qOsjoB9.jpg
+2019-10-07 15:58:36 [http-nio-8080-exec-4] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: 박종찬
+	description: 12
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: https://i.imgur.com/qOsjoB9.jpg }
+2019-10-07 15:58:36 [http-nio-8080-exec-4] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 214 { id: 214
+	workName: 박종찬
+	description: 12
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: https://i.imgur.com/qOsjoB9.jpg }
+2019-10-07 15:58:36 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 15:58:37 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - c46e83a7374f86b59b1731123264c5a05bbbcca327139569c948f0d4fb77d31f
+2019-10-07 15:58:38 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - b73822875af764cdd33c286c4d80a5beba4c029ea2378b3610dfeeefd91bd3f8
+2019-10-07 15:58:38 [http-nio-8080-exec-4] INFO  c.b.application.impl.FabricCCService - Work 214 by Owner 22: 2019-10-07 06:58:37 ~ FALSE
+2019-10-07 15:58:38 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T06:58:37, ownerId=22, workId=214]
+2019-10-07 15:58:38 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 214)
+2019-10-07 15:58:38 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 15:58:54 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 15:58:54 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:00:27 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:00:27 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:00:34 [http-nio-8080-exec-4] DEBUG c.b.api.DigitalWorkController - 0, 22, 
+2019-10-07 16:00:34 [http-nio-8080-exec-4] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: czxc
+	description: xzc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 16:00:34 [http-nio-8080-exec-4] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 215 { id: 215
+	workName: czxc
+	description: xzc
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 16:00:34 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 16:00:35 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - 625aaac216ba1e5c1728911acca904268fbbb8b1de2755fbdb56fa134c32ad12
+2019-10-07 16:00:36 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricCCService - 87321bb8b4cc4b18f28610acbd66aff306a1f597c04fd83d671c63d9e85d2a4c
+2019-10-07 16:00:36 [http-nio-8080-exec-4] INFO  c.b.application.impl.FabricCCService - Work 215 by Owner 22: 2019-10-07 07:00:35 ~ FALSE
+2019-10-07 16:00:36 [http-nio-8080-exec-4] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T07:00:35, ownerId=22, workId=215]
+2019-10-07 16:00:36 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 215)
+2019-10-07 16:00:36 [http-nio-8080-exec-4] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 16:01:25 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:01:25 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:02:06 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:02:06 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:02:47 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:02:47 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:03:00 [http-nio-8080-exec-5] DEBUG c.b.api.DigitalWorkController - 0, 22, 
+2019-10-07 16:03:00 [http-nio-8080-exec-5] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: 박종찬
+	description: 박종찬 증명사진
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 16:03:00 [http-nio-8080-exec-5] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 216 { id: 216
+	workName: 박종찬
+	description: 박종찬 증명사진
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url:  }
+2019-10-07 16:03:00 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 16:03:01 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricCCService - 8f895ea4625f1b2faab73319d8c5bf7412f330414e63ad6d2c90aa3de3910925
+2019-10-07 16:03:02 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricCCService - 81e4cb54712794ee006ec6225ee3c8e5514ec28f97ed311c6b80851da2b584a1
+2019-10-07 16:03:02 [http-nio-8080-exec-5] INFO  c.b.application.impl.FabricCCService - Work 216 by Owner 22: 2019-10-07 07:03:01 ~ FALSE
+2019-10-07 16:03:02 [http-nio-8080-exec-5] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T07:03:01, ownerId=22, workId=216]
+2019-10-07 16:03:02 [http-nio-8080-exec-5] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 216)
+2019-10-07 16:03:02 [http-nio-8080-exec-5] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 16:04:22 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:04:22 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:05:02 [http-nio-8080-exec-2] DEBUG c.b.api.DigitalWorkController - 0, 22, https://i.imgur.com/BE1rM7O.jpg
+2019-10-07 16:05:02 [http-nio-8080-exec-2] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: 박종찬test
+	description: 증명사진
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: https://i.imgur.com/BE1rM7O.jpg }
+2019-10-07 16:05:02 [http-nio-8080-exec-2] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 217 { id: 217
+	workName: 박종찬test
+	description: 증명사진
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: https://i.imgur.com/BE1rM7O.jpg }
+2019-10-07 16:05:02 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 16:05:03 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - cccf9b970fd421070c63d7b09d427ed70a4d4327ab98ba5f22cb12237d227963
+2019-10-07 16:05:04 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricCCService - 50bcb6b8b4a3cda54438714cf84c998dd7fd97a61c13c3f46e4755ce85e84c9d
+2019-10-07 16:05:04 [http-nio-8080-exec-2] INFO  c.b.application.impl.FabricCCService - Work 217 by Owner 22: 2019-10-07 07:05:03 ~ FALSE
+2019-10-07 16:05:04 [http-nio-8080-exec-2] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T07:05:03, ownerId=22, workId=217]
+2019-10-07 16:05:04 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 217)
+2019-10-07 16:05:04 [http-nio-8080-exec-2] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 16:05:25 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:05:25 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:06:58 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:06:58 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:07:39 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:07:39 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:09:10 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:09:10 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:09:37 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:09:37 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:12:49 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:12:50 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:13:07 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:13:07 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:14:08 [http-nio-8080-exec-8] DEBUG c.b.api.DigitalWorkController - 0, 22, https://i.imgur.com/w7QGFRZ.jpg
+2019-10-07 16:14:08 [http-nio-8080-exec-8] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: fghgh
+	description: fhghghfgh
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: https://i.imgur.com/w7QGFRZ.jpg }
+2019-10-07 16:14:08 [http-nio-8080-exec-8] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 218 { id: 218
+	workName: fghgh
+	description: fhghghfgh
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: https://i.imgur.com/w7QGFRZ.jpg }
+2019-10-07 16:14:08 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 16:14:09 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricCCService - f1c1b79bd7141725f8d9accb977f6c004ecefb35a5b289401a2d460d209b93a6
+2019-10-07 16:14:10 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricCCService - 42846d5e2f27d7b155aa1486052b3a3722809c619eadbe13b9edfa1f5c50bc20
+2019-10-07 16:14:10 [http-nio-8080-exec-8] INFO  c.b.application.impl.FabricCCService - Work 218 by Owner 22: 2019-10-07 07:14:09 ~ FALSE
+2019-10-07 16:14:10 [http-nio-8080-exec-8] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T07:14:09, ownerId=22, workId=218]
+2019-10-07 16:14:10 [http-nio-8080-exec-8] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 218)
+2019-10-07 16:14:10 [http-nio-8080-exec-8] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 16:15:29 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:15:29 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:16:21 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:16:21 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:17:38 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:17:38 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:18:06 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:18:06 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:21:01 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:21:01 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:22:18 [http-nio-8080-exec-4] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:22:18 [http-nio-8080-exec-4] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:22:38 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:22:38 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:23:19 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:23:19 [http-nio-8080-exec-10] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:23:31 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:23:31 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:28:28 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:28:28 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:29:15 [http-nio-8080-exec-3] DEBUG c.b.api.DigitalWorkController - 0, 22, https://i.imgur.com/5MbjuKi.jpg
+2019-10-07 16:29:15 [http-nio-8080-exec-3] DEBUG c.b.i.r.DigitalWorkRepository - 추가{ id: 0
+	workName: 박종찬
+	description: 증명사진
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: https://i.imgur.com/5MbjuKi.jpg }
+2019-10-07 16:29:15 [http-nio-8080-exec-3] DEBUG c.b.a.impl.DigitalWorkService - temp in~~ 219 { id: 219
+	workName: 박종찬
+	description: 증명사진
+	isDisclosure: Y
+	isVaild: Y
+	memberId: 22
+	work_url: https://i.imgur.com/5MbjuKi.jpg }
+2019-10-07 16:29:15 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권등록----------------------------------------------------
+2019-10-07 16:29:17 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - 05111eda2d218f49a83500cff3e739e0ba21a8029004bfbd9eda5e4195629eea
+2019-10-07 16:29:18 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricCCService - e54023cba87d951599a045c3f5ff78c49641a8cc64430830813a01ab45413685
+2019-10-07 16:29:18 [http-nio-8080-exec-3] INFO  c.b.application.impl.FabricCCService - Work 219 by Owner 22: 2019-10-07 07:29:17 ~ FALSE
+2019-10-07 16:29:18 [http-nio-8080-exec-3] DEBUG c.b.application.impl.FabricService - 소유권Ownership [id=0, ownEndDate=null, ownStartDate=2019-10-07T07:29:17, ownerId=22, workId=219]
+2019-10-07 16:29:18 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - 조회 (소유자id, 작품id) = (22, 219)
+2019-10-07 16:29:18 [http-nio-8080-exec-3] INFO  c.b.i.repository.OwnershipRepository - true
+2019-10-07 16:31:26 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:31:26 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:32:03 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:32:03 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:33:13 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:33:13 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:33:23 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:33:23 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:33:45 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:33:45 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:41:43 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:41:43 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:42:07 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:42:07 [http-nio-8080-exec-9] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:42:25 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:42:25 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:43:33 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:43:33 [http-nio-8080-exec-6] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:48:35 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:48:35 [http-nio-8080-exec-3] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:49:25 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:49:25 [http-nio-8080-exec-8] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:52:38 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 16:52:39 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 17:01:35 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 17:01:35 [http-nio-8080-exec-1] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 17:02:10 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 17:02:11 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 17:02:39 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 17:02:39 [http-nio-8080-exec-7] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 17:02:48 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000
+2019-10-07 17:02:48 [http-nio-8080-exec-2] DEBUG c.b.application.impl.EthereumService - 잔액갱신5000000000000000000

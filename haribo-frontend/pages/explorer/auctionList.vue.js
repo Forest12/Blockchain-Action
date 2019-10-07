@@ -19,7 +19,7 @@ var explorerAuctionView = Vue.component('ExplorerView', {
                         </thead>
                         <tbody>
                             <tr v-for="(item, index) in contracts">
-                                <td><router-link :to="{ name: 'explorer.auction.detail', params: { txsAddress: item , auction : items[index] }}">{{ item | truncate(15) }}</router-link></td>
+                                <td><router-link :to="{ name: 'explorer.auction.detail', params: { txsAddress: item }}">{{ item | truncate(15) }}</router-link></td>
                                 <td>
                                     <span class="badge badge-primary" v-if="items[index] && !items[index].ended">Processing</span>
                                     <span class="badge badge-danger" v-if="items[index] && items[index].ended">Ended</span>
@@ -65,7 +65,7 @@ var explorerAuctionView = Vue.component('ExplorerView', {
 
                     auctionService.findById(id, function(work){
                         var higestBidder;
-                        userService.findById(16,function(user){
+                        userService.findById(work.최고입찰자id,function(user){
                             higestBidder = user.username;
                         });
                         scope.items.push({

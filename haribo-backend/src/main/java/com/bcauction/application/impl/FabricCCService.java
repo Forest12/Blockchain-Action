@@ -389,10 +389,6 @@ public class FabricCCService implements IFabricCCService
 							return falist;
 						}
 					}
-
-					// JsonReader parse = Json.createReader(new ByteArrayInputStream(pres.getChaincodeActionResponsePayload()));	
-					// logger.debug(parse.readObject().toString());
-               		// falist.add(getAssetRecord(parse.readObject()));
 				}
 				return falist;
 			} catch (Exception e) {

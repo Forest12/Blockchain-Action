@@ -6,6 +6,7 @@ import com.bcauction.domain.exception.ApplicationException;
 import com.bcauction.domain.repository.ITransactionRepository;
 import com.bcauction.domain.wrapper.Block;
 import com.bcauction.domain.wrapper.EthereumTransaction;
+import com.bcauction.domain.Transaction;
 
 import org.hibernate.validator.internal.util.logging.Log;
 import org.slf4j.Logger;
@@ -23,7 +24,9 @@ import org.web3j.protocol.admin.methods.response.PersonalUnlockAccount;
 import org.web3j.protocol.core.DefaultBlockParameter;
 import org.web3j.protocol.core.DefaultBlockParameterName;
 import org.web3j.protocol.core.DefaultBlockParameterNumber;
+import org.web3j.protocol.core.Request;
 import org.web3j.protocol.core.methods.response.*;
+import org.web3j.protocol.core.methods.response.EthBlock.TransactionResult;
 import org.web3j.protocol.exceptions.TransactionException;
 import org.web3j.protocol.http.HttpService;
 import org.web3j.tx.Transfer;
@@ -92,7 +95,7 @@ public class EthereumService implements IEthereumService {
         
         List<Block> list = new ArrayList<>();
         Block block=null;
-        Block block2=block.fromOriginalBlock(this.최근블록(true))));
+        Block block2=block.fromOriginalBlock(this.최근블록(true));
         BigInteger big=block2.getBlockNo();
         int Number=big.intValue();
         for(int i=Number-20;i<=Number;i++){
@@ -105,15 +108,18 @@ public class EthereumService implements IEthereumService {
     }
 
 	/**
-	 * 최근 생성된 블록에 포함된 트랜잭션 조회
-	 * 이더리움 트랜잭션을 EthereumTransaction으로 변환해야 한다.
+	 * 최근 생성된 블록에 포함된 트랜잭션 조회 이더리움 트랜잭션을 EthereumTransaction으로 변환해야 한다.
+	 * 
 	 * @return List<EthereumTransaction>
 	 */
 	@Override
-	public List<EthereumTransaction> 최근트랜잭션조회()
-	{
+	public List<EthereumTransaction> 최근트랜잭션조회() {
 		// TODO
-		return null;
+        Block block=null;
+		Block lastBlock=block.fromOriginalBlock(this.최근블록(true));
+		List<EthereumTransaction> list = lastBlock.getTrans();
+
+		return list;
 	}
 
 	/**
@@ -136,8 +142,6 @@ public class EthereumService implements IEthereumService {
             e.printStackTrace();
         }
         return null;
-        
-    
     }
 
 	/**
@@ -150,7 +154,16 @@ public class EthereumService implements IEthereumService {
 	public EthereumTransaction 트랜잭션검색(String 트랜잭션Hash)
 	{
 		// TODO
-		return null;
+        org.web3j.protocol.core.methods.response.Transaction transaction;
+		try {
+			transaction = web3j.ethGetTransactionByHash(트랜잭션Hash).send().getResult();
+			EthereumTransaction temp = null;
+				return temp.convertTransaction(transaction);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        		return null;
 	}
 
 	/**
@@ -164,6 +177,35 @@ public class EthereumService implements IEthereumService {
 	public Address 주소검색(String 주소)
 	{
 		// TODO
+
+		Address address= null;
+    	address.setId(주소);
+		List<Transaction> list = this.transactionRepository.조회By주소(주소);
+		List<EthereumTransaction> addlist = null;
+		for(int i=0;i<list.size();i++){			
+			EthereumTransaction eth = this.트랜잭션검색(list.get(i).getHash());
+			addlist.add(eth);
+		}
+		address.setTrans(addlist);
+		address.setTxCount(BigInteger.valueOf(list.size()));
+
+		EthGetBalance ethGetBalance = null;
+		try {
+
+			//이더리움 노드에게 지정한 Address 의 잔액을 조회한다.
+			ethGetBalance = web3j.ethGetBalance(주소, DefaultBlockParameterName.PENDING).sendAsync().get();
+			
+			//wei 단위를 ETH 단위로 변환 한다.
+			BigInteger balance = Convert.fromWei(ethGetBalance.getBalance()+"", Convert.Unit.ETHER).toBigInteger();
+
+			address.setBalance(balance);
+			
+			return address;
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 

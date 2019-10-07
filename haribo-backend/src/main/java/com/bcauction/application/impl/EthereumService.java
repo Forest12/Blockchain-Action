@@ -86,30 +86,23 @@ public class EthereumService implements IEthereumService {
 	 * @return List<Block>
 	 */
 	@Override
-	public List<Block> 최근블록조회() {
-	
-		try {
-			EthBlock latestBlockResponse = web3j.ethGetBlockByNumber(DefaultBlockParameterName.LATEST, true).sendAsync()
-					.get();
-			Block blo=null;
-			Block realblock=blo.fromOriginalBlock(latestBlockResponse.getBlock());
-
-			List<Block> block = new ArrayList<>();
-			BigInteger big = realblock.getBlockNo();
-			int number=big.intValue();
-			for(int number)
-
-		} catch (InterruptedException | ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	
-		
-		
-		// TODO
-		return null;
-	}
+	public List<Block> 최근블록조회()
+    {
+        // TODO
+        
+        List<Block> list = new ArrayList<>();
+        Block block=null;
+        Block block2=block.fromOriginalBlock(this.최근블록(true));
+        BigInteger big=block2.getBlockNo();
+        int Number=big.intValue();
+        for(int i=Number-20;i<=Number;i++){
+            if(i>0){
+                Block blocktemp=this.블록검색(i+"");
+                list.add(blocktemp);
+           }    
+        }
+        return list;
+    }
 
 	/**
 	 * 최근 생성된 블록에 포함된 트랜잭션 조회
@@ -130,11 +123,22 @@ public class EthereumService implements IEthereumService {
 	 * @return Block
 	 */
 	@Override
-	public Block 블록검색(String 블록No)
-	{
-		// TODO
-		return null;
-	}
+	public Block 블록검색(String 블록No) {
+        // TODO
+       Block block=null;
+        EthBlock latestBlockResponse;
+        try {
+            latestBlockResponse = web3j.ethGetBlockByNumber(DefaultBlockParameterName.valueOf(블록No), true).sendAsync()
+                    .get();
+                    return block.fromOriginalBlock(latestBlockResponse.getBlock());
+        } catch (InterruptedException | ExecutionException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return null;
+        
+    
+    }
 
 	/**
 	 * 특정 hash 값을 갖는 트랜잭션 검색

@@ -63,6 +63,17 @@ function fetchBlocks(from, end, callback) {
     });
 }
 
+function fetchTxesList(transaction, from, end, callback) {
+  web3.eth.getTransaction(transaction.transactions[from])
+  .then(function(block){
+      callback(block);
+      var f = from += 1;
+      if(f <= end) {
+        fetchTxesList(transaction, f, end, callback);
+      }
+  });
+}
+
 // timestamp 포맷을 사람이 읽을 수 있는 형태로 변환한다.
 function timeSince(date) {
     var seconds = Math.floor((new Date() - (date * 1000)) / 1000);

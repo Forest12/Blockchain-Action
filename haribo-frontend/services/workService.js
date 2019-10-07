@@ -22,7 +22,7 @@ var workService = {
     findHistoryById: function(workId, callback){
         $.get(API_BASE_URL + "/api/works/history/" + workId, function(data){
             var result = [];
-
+            console.log(data);
             function loadUser(from, until){
                 if(from == until) {
                     callback(result);

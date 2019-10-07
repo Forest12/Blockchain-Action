@@ -53,29 +53,31 @@ var explorerAuctionView = Vue.component('ExplorerView', {
         var scope = this;
 
         auctionService.findAll(function(data){
-            var result = data;
-            var address=[];
-            // 각 경매별 작품 정보를 불러온다.
-            function fetchData(start, end){
-                if(start == end) {
-                    scope.contracts = address;
-                } else {
-                    address.push(result[start]['txsAddress']);
-                    var id = result[start]['id'];
+                var result = data;
+                console.log(result);
+                var address=[];
+                // 각 경매별 작품 정보를 불러온다.
+                function fetchData(start, end){
+                    if(start == end) {
+                        scope.contracts = address;
+                    } else {
+                        address.push(result[start]['txsAddress']);
+                        var id = result[start]['id'];
 
-                    auctionService.findById(id, function(work){
-                        var higestBidder;
-                        userService.findById(work.최고입찰자id,function(user){
-                            higestBidder = user.username;
+                        auctionService.findById(id, function(work){
+                            var higestBidder;
+                            userService.findById(work.최고입찰자id,function(user){
+                                higestBidder = user.username;
+                            });
+                            scope.items.push({
+                                "ended" : work.종료, "higestBid":work.최고입찰액,"higestBidder":higestBidder,"endTime":work.경매종료시간 
+                            });
+                            fetchData(start+1, end);
                         });
-                        scope.items.push({
-                            "ended" : work.종료, "higestBid":work.최고입찰액,"higestBidder":higestBidder,"endTime":work.경매종료시간 
-                        });
-                        fetchData(start+1, end);
-                    });
+                    }
                 }
-            }
-            fetchData(0, result.length);
+                fetchData(0, data.length);
+            
         });
     }
 })

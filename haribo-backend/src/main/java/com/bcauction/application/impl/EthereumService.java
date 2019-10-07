@@ -63,21 +63,19 @@ public class EthereumService implements IEthereumService {
 	@Autowired
 	private Web3j web3j;
 
-
 	@Autowired
 	public EthereumService(ITransactionRepository transactionRepository) {
 		this.transactionRepository = transactionRepository;
 	}
 
-	private EthBlock.Block 최근블록(final boolean fullFetched)
-	{
+	private EthBlock.Block 최근블록(final boolean fullFetched) {
 		try {
 			EthBlock latestBlockResponse;
-			latestBlockResponse
-					= web3j.ethGetBlockByNumber(DefaultBlockParameterName.LATEST, fullFetched).sendAsync().get();
+			latestBlockResponse = web3j.ethGetBlockByNumber(DefaultBlockParameterName.LATEST, fullFetched).sendAsync()
+					.get();
 
 			return latestBlockResponse.getBlock();
-		}catch (ExecutionException | InterruptedException e){
+		} catch (ExecutionException | InterruptedException e) {
 			throw new ApplicationException(e.getMessage());
 		}
 	}
@@ -91,32 +89,55 @@ public class EthereumService implements IEthereumService {
 	public List<Block> 최근블록조회()
 	{
 		// TODO
-		return null;
+		
+		List<Block> list = new ArrayList<>();
+		Block block=null;
+		Block block2=block.fromOriginalBlock(this.최근블록(true))));
+		BigInteger big=block2.getBlockNo();
+		int Number=big.intValue();
+		for(int i=Number-20;i<=Number;i++){
+			if(i>0){
+				Block blocktemp=this.블록검색(i+"");
+				list.add(blocktemp);
+		   }	
+		}
+		return list;
 	}
 
 	/**
-	 * 최근 생성된 블록에 포함된 트랜잭션 조회
-	 * 이더리움 트랜잭션을 EthereumTransaction으로 변환해야 한다.
+	 * 최근 생성된 블록에 포함된 트랜잭션 조회 이더리움 트랜잭션을 EthereumTransaction으로 변환해야 한다.
+	 * 
 	 * @return List<EthereumTransaction>
 	 */
 	@Override
-	public List<EthereumTransaction> 최근트랜잭션조회()
-	{
+	public List<EthereumTransaction> 최근트랜잭션조회() {
 		// TODO
 		return null;
 	}
 
 	/**
-	 * 특정 블록 검색
-	 * 조회한 블록을 Block으로 변환해야 한다.
+	 * 특정 블록 검색 조회한 블록을 Block으로 변환해야 한다.
+	 * 
 	 * @param 블록No
 	 * @return Block
 	 */
 	@Override
-	public Block 블록검색(String 블록No)
-	{
+	public Block 블록검색(String 블록No) {
 		// TODO
+        Block block=null;
+		EthBlock latestBlockResponse;
+		try {
+			latestBlockResponse = web3j.ethGetBlockByNumber(DefaultBlockParameterName.valueOf(블록No), true).sendAsync()
+					.get();
+					return block.fromOriginalBlock(latestBlockResponse.getBlock());
+		} catch (InterruptedException | ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		return null;
+		
+	
 	}
 
 	/**

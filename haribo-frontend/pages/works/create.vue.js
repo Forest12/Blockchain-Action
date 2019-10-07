@@ -17,6 +17,10 @@ var worksCreateView = Vue.component("worksCreateView", {
                                     <textarea class="form-control" id="description" v-model="work.description"></textarea>
                                 </div>
                                 <div class="form-group">
+                                <label id="description">작품 사진</label>
+                                <input type="file" @change="processImg">
+                            </div>
+                                <div class="form-group">
                                     <label id="isActive">공개여부(공개하려면 체크)</label><br>
                                     <input type="checkbox" id="isActive" v-model="work.isActive">
                                 </div>
@@ -28,35 +32,64 @@ var worksCreateView = Vue.component("worksCreateView", {
             </div>
         </div>
     `,
-    data(){
+    data() {
         return {
             work: {
                 name: "",
                 description: "",
                 isActive: true,
-                status: true
+                status: true,
+                img: ''
             },
+            image: '',
+            imagelink: '',
             sharedStates: store.state
         }
     },
     methods: {
-        save: function(){
+        processImg: function(event) {
+            var scope = this;
+            this.image = event.target.files[0]
+            console.log(this.image);
+            let form = new FormData();
+            form.append('image', this.image);
+            console.log(this.image);
+            auctionService.imgupload(form, function(res) {
+                // console.log("일단왔다");
+                console.log(res);
+                var obj = JSON.parse(res);
+                console.log(obj.data.link);
+                this.imagelink = obj.data.link;
+                console.log(this.imagelink);
+                scope.work.img = obj.data.link;
+                console.log(scope.work.img);
+
+
+
+
+                //     console.log(data.data.link);
+                // this.work.img = data.data.link;
+            })
+        },
+        save: function() {
             var scope = this;
 
+
             workService.create({
-                "workName": this.work.name,
-                "description": this.work.description,
-                "isDisclosure": this.work.isActive ? "Y" : "N",
-                "isValid": this.work.status ? "Y" : "N",
-                "memberId": this.sharedStates.user.id
-            },
-            function(){
-                alert('작품이 등록되었습니다.');
-                scope.$router.push('/artworks');
-            },
-            function(error){
-                alert("입력폼을 모두 입력해주세요.");
-            });
+                    "workName": this.work.name,
+                    "description": this.work.description,
+                    "isDisclosure": this.work.isActive ? "Y" : "N",
+                    "isValid": this.work.status ? "Y" : "N",
+                    "memberId": this.sharedStates.user.id,
+                    "work_url": this.work.img
+                },
+                function() {
+                    alert('작품이 등록되었습니다.');
+                    scope.$router.push('/artworks');
+                },
+                function(error) {
+                    alert("입력폼을 모두 입력해주세요.");
+                });
         }
     }
 });

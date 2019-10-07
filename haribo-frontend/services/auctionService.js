@@ -27,9 +27,10 @@ var auctionService = {
         var data = {
             "auctionPartId": bidder,
             "auctionId": auctionId,
-            "bidAmount": bidPrice,
+            "bidAmount": bidPrice/(10 ** 18),
             "bidDate": new Date()
         }
+        console.log(data);
         $.ajax({
             type: "PUT",
             url: API_BASE_URL + "/api/auctions/bid",

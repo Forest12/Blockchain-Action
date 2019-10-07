@@ -49,7 +49,7 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
             fetchLatestBlock().then(data =>{
                scope.lastReadBlock = data;
                // console.log(data);
-               for(var i=0;i<100;i++){
+               for(var i=0;i<100&&i<scope.lastReadBlock;i++){
                    getBlock(scope.lastReadBlock-i).then(data=>{
                        // console.log(data);
                        // console.log(data.hash);

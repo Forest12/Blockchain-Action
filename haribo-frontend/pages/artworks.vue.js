@@ -29,7 +29,7 @@ var artworksView = Vue.component('artworksView', {
                 </div>
                 <div id="list">
                     <div class="row" v-for="item in artworks">
-                            <div class="col-md-3"><img width="50px" src="./assets/images/artworks/artwork1.jpg"></div>
+                            <div class="col-md-3"><img width="50px" src="https://i.imgur.com/BE1rM7O.jpg"></div>
                             <div class="col-md-3"><h4>{{ item["workName"] }}</h4></div>
                             <div class="col-md-3"> 
                                 <p v-if="item['description'] != null">{{ item["description"] }}</p>

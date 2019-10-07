@@ -130,18 +130,17 @@ public class EthereumService implements IEthereumService {
 	 */
 	@Override
 	public Block 블록검색(String 블록No) {
-        // TODO
-       Block block=null;
+		// TODO
+		Block block = null;
         EthBlock latestBlockResponse;
         try {
-            latestBlockResponse = web3j.ethGetBlockByNumber(DefaultBlockParameterName.valueOf(블록No), true).sendAsync()
-                    .get();
+            latestBlockResponse = web3j.ethGetBlockByNumber(DefaultBlockParameterName.valueOf(블록No), false).sendAsync()
+					.get();
+			log.debug("latestBlock"+latestBlockResponse.toString());
                     return block.fromOriginalBlock(latestBlockResponse.getBlock());
         } catch (InterruptedException | ExecutionException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+			throw new ApplicationException(e.getMessage());
         }
-        return null;
     }
 
 	/**

@@ -35,6 +35,7 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
     `,
     data(){
         return {
+            lastReadBlock : 0,
             transactions: [],
             block: {}
         };
@@ -44,6 +45,29 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
             /**
              * TODO 최근 블록에 포함된 트랜잭션 리스트를 반환합니다. 
              */
+            var scope = this;
+            fetchLatestBlock().then(data =>{
+               scope.lastReadBlock = data;
+               // console.log(data);
+               for(var i=0;i<100&&i<scope.lastReadBlock;i++){
+                   getBlock(scope.lastReadBlock-i).then(data=>{
+                       // console.log(data);
+                       // console.log(data.hash);
+                       // console.log("tx.length : "+ data.transactions.length);
+                       for(var i=0;i<data.transactions.length;i++){
+                           getTransactionFromBlock(data.hash, i).then(data1=>{
+                               // console.log(data1);
+                               data1.timestamp = timeSince(data.timestamp);
+                               // console.log("tx : ");
+                               scope.transactions.unshift(data1);
+                           })
+                       }
+                   })
+                   if(scope.transactions.length>9){
+                       break;
+                   }
+               }   
+           })
         }      
     },
     mounted: function(){

@@ -67,6 +67,7 @@ var artworksView = Vue.component('artworksView', {
     data() {
         return {
             artworks: [{
+                "id": "",
                 "workName": "",
                 "description": ""
             }]

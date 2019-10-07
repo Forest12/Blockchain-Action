@@ -59,7 +59,9 @@ var myArtworkView = Vue.component('MyArtworkView', {
                 workName:"",
                 description:"",
             }],
-            auctions: []
+            auctions: [{
+                '작품정보':[]
+            }]
         }
     },
     methods: {
@@ -105,6 +107,10 @@ var myArtworkView = Vue.component('MyArtworkView', {
          * 경매 중인 작품 마다 소유권 이력을 보여줄 수 있어야 합니다.
          */
          // 여기에 작성하세요.
-       
+       auctionService.findAllByUser(userId,function(data){
+           scope.auctions['작품정보']=data;
+           console.log(scope.auctions['작품정보']);
+       })
+      
     }
 })

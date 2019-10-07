@@ -2,10 +2,10 @@ package com.bcauction.api;
 
 import com.bcauction.application.IAuctionContractService;
 import com.bcauction.application.IAuctionService;
+import com.bcauction.application.IEthBlockListeningService;
 import com.bcauction.domain.Auction;
 import com.bcauction.domain.AuctionInfo;
 import com.bcauction.domain.Bid;
-import com.bcauction.domain.exception.ApplicationException;
 import com.bcauction.domain.exception.EmptyListException;
 import com.bcauction.domain.exception.NotFoundException;
 import org.slf4j.Logger;
@@ -26,13 +26,17 @@ public class AuctionController
 
 	private IAuctionService auctionService;
 	private IAuctionContractService auctionContractService;
+	private IEthBlockListeningService ethBlockListeningService;
 
 	@Autowired
 	public AuctionController(IAuctionService auctionService,
-	                         IAuctionContractService auctionContractService) {
+							 IAuctionContractService auctionContractService,
+							 IEthBlockListeningService ethBlockListeningService) {
 		Assert.notNull(auctionService, "auctionService 개체가 반드시 필요!");
 		Assert.notNull(auctionContractService, "auctionContractService 개체가 반드시 필요!");
-
+		Assert.notNull(ethBlockListeningService, "ethBlockListeningService 개체가 반드시 필요!");
+		
+		this.ethBlockListeningService = ethBlockListeningService;
 		this.auctionService = auctionService;
 		this.auctionContractService = auctionContractService;
 	}
@@ -52,6 +56,7 @@ public class AuctionController
 		if (목록 == null || 목록.isEmpty() )
 			throw new EmptyListException("NO DATA");
 
+		ethBlockListeningService.listen();
 		return 목록;
 	}
 	
@@ -63,7 +68,8 @@ public class AuctionController
 			logger.error("NOT FOUND ID: ", txsAddress);
 			throw new NotFoundException(txsAddress + " 작품 정보를 찾을 수 없습니다.");
 		}
-
+		
+		ethBlockListeningService.listen();
 		return 작품;
 	}
 
@@ -82,23 +88,31 @@ public class AuctionController
 		경매정보.set경매시작시간(경매.getStartTime());
 		경매정보.set경매종료시간(경매.getEndTime());
 
+		ethBlockListeningService.listen();
 		return 경매정보;
 	}
 
 	@RequestMapping(value = "/auctions/{aid}/by/{mid}", method = RequestMethod.DELETE)
 	public Auction 경매취소(@PathVariable long aid, @PathVariable long mid) {
+		
+		ethBlockListeningService.listen();
 		return auctionService.경매취소(aid, mid);
 	}
 
 	@RequestMapping(value = "/auctions/{aid}/by/{mid}", method = RequestMethod.PUT)
 	public Auction 경매종료(@PathVariable long aid, @PathVariable long mid) { //mid = 최고가 입찰자 id
 		logger.debug(aid + ", " + mid);
+		
+		ethBlockListeningService.listen();
+
 		return this.auctionService.경매종료(aid, mid);
 	}
 
 	@RequestMapping(value = "/auctions/bid", method = RequestMethod.PUT)
 	public Bid 입찰(@RequestBody Bid bid) {
 		logger.debug("입찰" + bid.getBidAmount());
+		
+		ethBlockListeningService.listen();
 		return auctionService.입찰(bid);
 	}
 
@@ -129,6 +143,8 @@ public class AuctionController
 			}
 		}
 		logger.debug("필터후 : "+ownerAuctions);
+		
+		ethBlockListeningService.listen();
 		return ownerAuctions;
 	}
 

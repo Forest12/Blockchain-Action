@@ -17,6 +17,7 @@ public class DigitalWorkFactory
 		작품.setDescription(rs.getString("description"));
 		작품.setIsValid(rs.getString("is_valid"));
 		작품.setIsDisclosure(rs.getString("is_disclosure"));
+		작품.setWork_url(rs.getString("work_url"));
 		// System.out.println("**************************아노오냐!!!!!!!!!!!!!!***********************"+rs.getString("work_name"));
 		return 작품;
 	}

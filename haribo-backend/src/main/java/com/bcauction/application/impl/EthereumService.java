@@ -123,8 +123,8 @@ public class EthereumService implements IEthereumService {
 	}
 
 	/**
-	 * 특정 블록 검색
-	 * 조회한 블록을 Block으로 변환해야 한다.
+	 * 특정 블록 검색 조회한 블록을 Block으로 변환해야 한다.
+	 * 
 	 * @param 블록No
 	 * @return Block
 	 */

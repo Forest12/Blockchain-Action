@@ -92,7 +92,7 @@ public class EthereumService implements IEthereumService {
 		
 		List<Block> list = new ArrayList<>();
 		Block block=null;
-		Block block2=block.fromOriginalBlock(this.최근블록(true))));
+		Block block2=block.fromOriginalBlock(this.최근블록(true));
 		BigInteger big=block2.getBlockNo();
 		int Number=big.intValue();
 		for(int i=Number-20;i<=Number;i++){

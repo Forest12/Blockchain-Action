@@ -1,41 +1,41 @@
 var workService = {
-    findAll: function(callback){
-        $.get(API_BASE_URL + "/api/works", function(data){
+    findAll: function(callback) {
+        $.get(API_BASE_URL + "/api/works", function(data) {
             callback(data);
         });
     },
-    findWorksByOwner: function(userId, callback){
-        $.get(API_BASE_URL + '/api/works/owner/' + userId, function(data){
+    findWorksByOwner: function(userId, callback) {
+        $.get(API_BASE_URL + '/api/works/owner/' + userId, function(data) {
             callback(data);
         });
     },
-    findById: function(workId, callback){
-        $.get(API_BASE_URL + "/api/works/" + workId, function(data){
+    findById: function(workId, callback) {
+        $.get(API_BASE_URL + "/api/works/" + workId, function(data) {
             callback(data);
         });
     },
-    findByTxs: function(txsAddress, callback){
-        $.get(API_BASE_URL + "/api/work/" + txsAddress, function(data){
+    findByTxs: function(txsAddress, callback) {
+        $.get(API_BASE_URL + "/api/work/" + txsAddress, function(data) {
             callback(data);
         });
     },
-    findHistoryById: function(workId, callback){
-        $.get(API_BASE_URL + "/api/works/history/" + workId, function(data){
+    findHistoryById: function(workId, callback) {
+        $.get(API_BASE_URL + "/api/works/history/" + workId, function(data) {
             var result = [];
 
-            function loadUser(from, until){
-                if(from == until) {
+            function loadUser(from, until) {
+                if (from == until) {
                     callback(result);
                 } else {
                     var history = data[from];
 
-                    userService.findById(history.owner, function(user){
+                    userService.findById(history.owner, function(user) {
                         result.push({
                             createdAt: history.createdAt,
-                            owner: user['username'] + " (" + user['email']+ ")"
+                            owner: user['username'] + " (" + user['email'] + ")"
                         });
 
-                        loadUser(from+1, until);
+                        loadUser(from + 1, until);
                     });
                 }
             }
@@ -43,7 +43,7 @@ var workService = {
             loadUser(0, data.length);
         });
     },
-    create: function(body, success, whenError){
+    create: function(body, success, whenError) {
         $.ajax({
             type: 'POST',
             url: API_BASE_URL + '/api/works',
@@ -53,7 +53,7 @@ var workService = {
             error: whenError
         })
     },
-    update: function(body, success, whenError){
+    update: function(body, success, whenError) {
         $.ajax({
             type: 'PUT',
             url: API_BASE_URL + '/api/works',
@@ -63,7 +63,7 @@ var workService = {
             error: whenError
         })
     },
-    delete: function(id, success, whenError){
+    delete: function(id, success, whenError) {
         $.ajax({
             type: 'DELETE',
             url: API_BASE_URL + "/api/works/" + id,

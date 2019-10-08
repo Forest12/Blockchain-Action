@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    color: #293046;
+    color: #442C2E;
 }
 
 a {
@@ -66,20 +66,24 @@ a {
 /* 로그인 & 회원가입 스타일 시트 */
 #register-form,
 #login-form {
+    border: 5px solid #442C2E;
+    border-radius: 50px 0 50px 0;
     margin-top: 150px;
     padding: 30px;
 }
 
 /* 마이페이지 > 서브 메뉴 */
 .sub-nav .nav-item.nav-link {
-    background: #fff;
+    color:#442C2E;
+    background: #FEDBD0;
     margin-right: 10px;
-    border: 1px solid #eaeaea;
+    border: 1px solid #FEDBD0;
 }
 
 .sub-nav .nav-item.nav-link.active {
-    background: #007bff;
-    border: 1px solid #007bff;
+    color:#fff;
+    background: #442C2E;
+    border: 1px solid #442C2E;
 }
 
 /* 마이페이지 > 내 작품 스타일 시트 */
@@ -111,7 +115,7 @@ nav.bottom-pagination {
 /* 작품 리스트 > 작품 상세 정보 > 사용자 별 작품 조회 */
 .work-list-item {
     display: block;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid ;
     color: #aaa;
     padding: 10px;
 }
@@ -122,15 +126,15 @@ nav.bottom-pagination {
 }
 
 .work-list-item:hover h4 {
-    color: #4444bb;
+    color: #FEDBD0;
 }
 
 .work-list-item:hover p {
-    color: #4444bb;
+    color: #FEDBD0;
 }
 
 .work-list-item h4 {
-    color: #333;
+    color: #442C2E;
     padding: 0;
     margin: 0;
 }

@@ -5,12 +5,12 @@ var auctionView = Vue.component('AuctionView', {
             <v-breadcrumb title="경매 참여하기" description="경매 중인 작품을 보여줍니다."></v-breadcrumb>
             <div id="auction-list" class="container">
                 <div class="row">
-                    <div class="col-md-12 text-right">
+                    <div class="col-md-12 text-right" style="margin-bottom:20px;">
                         <router-link :to="{ name: 'auction.regsiter' }" class="btn btn-outline-secondary">경매 생성하기</router-link>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-3 auction" v-for="item in auctions">
+                <div class="ddiivv1">
+                    <div class="auction ddiivv2" v-for="item in auctions">
                         <div class="card">
                             <div class="card-body">
                                 <img :src="item['작품정보']['work_url']"/>

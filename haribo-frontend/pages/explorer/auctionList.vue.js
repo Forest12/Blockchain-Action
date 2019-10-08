@@ -76,13 +76,16 @@ var explorerAuctionView = Vue.component('ExplorerView', {
                         var id = result[start]['id'];
 
                         auctionService.findById(id, function(work){
+                            // console.log(work);
                             var higestBidder;
                             userService.findById(work.최고입찰자id,function(user){
+                                console.log(user);
                                 higestBidder = user.username;
+                                scope.items.push({
+                                    "ended" : work.종료, "higestBid":(work.최고입찰액)/10**18, "higestBidder":higestBidder,"endTime":work.경매종료시간 
+                                });
                             });
-                            scope.items.push({
-                                "ended" : work.종료, "higestBid":work.최고입찰액,"higestBidder":higestBidder,"endTime":work.경매종료시간 
-                            });
+                            
                             fetchData(start+1, end);
                         });
                     }

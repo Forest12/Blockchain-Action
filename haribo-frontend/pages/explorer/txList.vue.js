@@ -6,15 +6,22 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
             <div class="container">
                 <explorer-nav></explorer-nav>
                 <div class="row" v-if="transactions.length == 0">
-                    <div class="col-md-8 mx-auto">
-                        <div class="alert alert-warning">No transaction recorded at. #{{ block && block.number }} blocks</div>
-                    </div>
+                <div class="col-md-8 mx-auto" style="height: 400px;" v-if="load === true">
+                <div class="semipolar-spinner" :style="spinnerStyle" style="margin:100px auto;">
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                    <div class="ring"></div>
+                </div>
+            </div>
                 </div>
                 <div class="row">
                     <div id="transactions" class="col-md-8 mx-auto">
-                        <div class="card shadow-sm">
+                        <div class="card shadow-sm" v-if="load === false">
                             <div class="card-header">Transactions</div>
                             <div class="card-body">
+    
                                 <div class="row tx-info" v-for="item in transactions">
                                     <div class="col-md-2">Tx</div>
                                     <div class="col-md-4">
@@ -37,8 +44,8 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
         return {
             lastReadBlock : 0,
             transactions: [],
-            tmpblock: [],
-            block: {}
+            block: {},
+            load:true,
         };
     },
     methods: {
@@ -47,30 +54,7 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
              * TODO 최근 블록에 포함된 트랜잭션 리스트를 반환합니다. 
              */
             var scope = this;
-            // fetchLatestBlock().then(data =>{
-            //    scope.lastReadBlock = data;
-            //    console.log(scope.lastReadBlock);
-            //    for(var i=0;i<100;i++){
-                //    getBlock(scope.lastReadBlock-i).then(datagb=>{
-                    // scope.transactions = datagb;
-                    //    console.log(datagb);
-                    //    console.log(datagb.hash);
-                       // console.log("tx.length : "+ data.transactions.length);
-                    //    for(var i=0;i<datagb.transactions.length;i++){
-                    //     // console.log(datagb.transactions);
-                    //        getTransactionFromBlock(datagb.hash, i).then(data1=>{
-                    //         //    console.log(data1);
-                    //            data1.timestamp = timeSince(datagb.timestamp);
-                    //            // console.log("tx : ");
-                    //            scope.transactions.unshift(data1);
-                    //        })
-                    //    }
-                //    })
-                //    if(scope.transactions.length>9){
-                    //    break;
-                //    }
-            //    }   
-        //    })
+            
             fetchLatestBlock().then(res0=>{
                     getBlock(res0)
                     .then(res1=>{

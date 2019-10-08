@@ -3,7 +3,8 @@ var loginView = Vue.component('LoginView', {
         <div class="container">
             <div class="row">
                 <div id="login-form" class="col-md-6 mx-auto bg-white">
-                    <router-link to="/">Auction | HARIBO</router-link>
+                    <div><router-link to="/">Auction | HARIBO</router-link> <img src="./assets/images/artworks/ethereum.png" style="width: 20%;float: right;"></div>
+                   
                     <div class="mt-4">
                         <div class="form-group">
                             <label for="email">이메일</label>
@@ -34,21 +35,21 @@ var loginView = Vue.component('LoginView', {
             userService.login(
                 this.user.email,
                 this.user.password,
-                function(data){
+                function(data) {
                     store.state.isSigned = true;
                     store.state.user.id = data.id;
                     // console.log(data);
-                    walletService.findById(store.state.user.id, function(response){
+                    walletService.findById(store.state.user.id, function(response) {
                         console.log(response);
-                        if(response.status == 204) {
+                        if (response.status == 204) {
                             store.state.user.hasWallet = false;
-                        } else if(response.status == 200) {
+                        } else if (response.status == 200) {
                             // alert("성공");
                             store.state.user.hasWallet = true;
                         } else {
-                            if(response == null){
+                            if (response == null) {
                                 alert("Unexpected status code : " + response.status);
-                            }else{
+                            } else {
                                 store.state.user.hasWallet = true;
                             }
                         }
@@ -56,7 +57,7 @@ var loginView = Vue.component('LoginView', {
 
                     scope.$router.push('/');
                 },
-                function(error){
+                function(error) {
                     alert("유저 이메일 혹은 비밀번호가 일치하지 않습니다.");
                 }
             );

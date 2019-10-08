@@ -10,23 +10,23 @@ var navVue = Vue.component("v-nav", {
                             <router-link class="nav-link" to="/artworks">Artworks</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link" to="/auction">경매참여하기</router-link>
+                            <router-link class="nav-link" to="/auction">Auction</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link class="nav-link" to="/explorer/auctions">익스플로러</router-link>
+                            <router-link class="nav-link" to="/explorer/auctions">Explorer</router-link>
                         </li>
                         <li class="nav-item" v-if="sharedState.isSigned">
                             <router-link class="nav-link" to="/mypage/wallet_create" v-if="!sharedState.user.hasWallet">마이페이지</router-link>
                             <router-link class="nav-link" to="/mypage/wallet_info" v-if="sharedState.user.hasWallet">마이페이지</router-link>
                         </li>
                         <li class="nav-item" v-if="!sharedState.isSigned">
-                            <router-link class="nav-link" to="/login">로그인</router-link>
+                            <router-link class="nav-link" to="/login">Login</router-link>
                         </li>
                         <li class="nav-item" v-if="!sharedState.isSigned">
-                            <router-link class="nav-link" to="/register">회원가입</router-link>
+                            <router-link class="nav-link" to="/register">Register</router-link>
                         </li>
                         <li class="nav-item" v-if="sharedState.isSigned">
-                            <router-link class="nav-link" to="/logout">로그아웃</router-link>
+                            <router-link class="nav-link" to="/logout">Logout</router-link>
                         </li>
                     </ul>
                 </div>

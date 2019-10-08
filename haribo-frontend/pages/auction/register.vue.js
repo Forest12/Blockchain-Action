@@ -126,12 +126,14 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                 var endD = new Date(scope.before.input.untilDate);
 
                 if(startD.getTime() > new Date().getTime()) {
-                    alert("시작 날짜는 현재 시간보다 이후일 수 없습니다!");
+                    // alert("시작 날짜는 현재 시간보다 이후일 수 없습니다!");
+                    swal("Start Date", "시작 날짜는 현재 시간보다 이후일 수 없습니다!", "warning");
                     document.getElementById("startDate").focus();
                     return;
                 }
                 if(endD.getTime() <= new Date().getTime()) {
-                    alert("종료 날짜는 현재 시간보다 이전일 수 없습니다!");
+                    // alert("종료 날짜는 현재 시간보다 이전일 수 없습니다!");
+                    swal("End Date", "종료 날짜는 현재 시간보다 이전일 수 없습니다!", "warning");
                     document.getElementById("untilDate").focus();
                     return;
                 }

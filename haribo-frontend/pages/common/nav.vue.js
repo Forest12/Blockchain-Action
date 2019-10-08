@@ -16,8 +16,8 @@ var navVue = Vue.component("v-nav", {
                             <router-link class="nav-link" to="/explorer/auctions">Explorer</router-link>
                         </li>
                         <li class="nav-item" v-if="sharedState.isSigned">
-                            <router-link class="nav-link" to="/mypage/wallet_create" v-if="!sharedState.user.hasWallet">마이페이지</router-link>
-                            <router-link class="nav-link" to="/mypage/wallet_info" v-if="sharedState.user.hasWallet">마이페이지</router-link>
+                            <router-link class="nav-link" to="/mypage/wallet_create" v-if="!sharedState.user.hasWallet">Mypage</router-link>
+                            <router-link class="nav-link" to="/mypage/wallet_info" v-if="sharedState.user.hasWallet">Mypage</router-link>
                         </li>
                         <li class="nav-item" v-if="!sharedState.isSigned">
                             <router-link class="nav-link" to="/login">Login</router-link>

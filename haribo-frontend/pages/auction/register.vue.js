@@ -33,11 +33,11 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label id="startDate">경매 시작일시</label>
+                                    <label id="startDateL">경매 시작일시</label>
                                     <input id="startDate" v-model="before.input.startDate" type="text" class="form-control" placeholder="yyyy-MM-dd HH:mm:ss, 예: 2019-04-21 21:00:00">
                                 </div>
                                 <div class="form-group">
-                                    <label id="untilDate">경매 종료일시</label>
+                                    <label id="untilDateL">경매 종료일시</label>
                                     <input id="untilDate" v-model="before.input.untilDate" type="text" class="form-control" placeholder="yyyy-MM-dd HH:mm:ss, 예: 2019-05-03 12:00:00">
                                 </div>
                                 <div class="row">
@@ -115,7 +115,6 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
              */
             
             var scope = this;
-            this.isCreatingContract = true;
 
             // 1. 내 지갑 주소를 가져옵니다.
             walletService.findAddressById(this.sharedStates.user.id, function(walletAddress){
@@ -123,6 +122,21 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                 // 2. 경매 컨트랙트를 블록체인에 생성합니다.
                 // components/auctionFactory.js의 createAuction 함수를 호출합니다.
                 // TODO createAuction 함수의 내용을 완성합니다. 
+                var startD = new Date(scope.before.input.startDate);
+                var endD = new Date(scope.before.input.untilDate);
+
+                if(startD.getTime() > new Date().getTime()) {
+                    alert("시작 날짜는 현재 시간보다 이후일 수 없습니다!");
+                    document.getElementById("startDate").focus();
+                    return;
+                }
+                if(endD.getTime() <= new Date().getTime()) {
+                    alert("종료 날짜는 현재 시간보다 이전일 수 없습니다!");
+                    document.getElementById("untilDate").focus();
+                    return;
+                }
+                this.isCreatingContract = true;
+
                 createAuction({
                     workId: scope.before.selectedWork,
                     minValue: scope.before.input.minPrice,
@@ -141,6 +155,7 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                         "txsAddress": contractAddress,
                     }
                     
+
                     // 3. 선택한 작업 정보를 가져옵니다.
                     workService.findById(scope.before.selectedWork, function(result){
                         scope.after.work = result;

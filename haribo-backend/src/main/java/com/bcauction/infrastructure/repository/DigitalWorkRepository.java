@@ -97,6 +97,7 @@ public class DigitalWorkRepository implements IDigitalWorkRepository
 			paramMap.put("is_disclosure", 작품.getIsDisclosure());
 			paramMap.put("is_valid", 작품.getIsValid());
 			paramMap.put("member_id", 작품.getMemberId());
+			paramMap.put("work_url", 작품.getWork_url());
 
 			this.simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate)
 					.withTableName("DigitalWork")

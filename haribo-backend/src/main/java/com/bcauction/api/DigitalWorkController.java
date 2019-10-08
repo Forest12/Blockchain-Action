@@ -36,7 +36,7 @@ public class DigitalWorkController
 
 	@RequestMapping(value = "/works", method = RequestMethod.POST)
 	public DigitalWork 등록(@RequestBody DigitalWork work) {
-		logger.debug(work.getId() + ", "+work.getMemberId());
+		logger.debug(work.getId() + ", "+work.getMemberId()+", "+work.getWork_url());
 		return  digitalWorkService.작품등록(work);
 	}
 

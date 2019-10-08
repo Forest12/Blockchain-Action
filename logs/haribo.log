@@ -617,3 +617,14 @@ Caused by: com.bcauction.domain.exception.ApplicationException: java.net.Connect
 2019-10-08 11:23:44 [http-nio-8080-exec-4] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
 2019-10-08 11:23:44 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신4998133370000000000
 2019-10-08 11:23:44 [http-nio-8080-exec-5] DEBUG c.b.application.impl.EthereumService - 잔액갱신4998133370000000000
+2019-10-08 13:10:29 [main] INFO  com.bcauction.Application - Starting Application on DESKTOP-KVCQHCD with PID 11280 (C:\Users\multicampus\block1week\blockchain-sub3\haribo-backend\target\classes started by multicampus in C:\Users\multicampus\block1week\blockchain-sub3)
+2019-10-08 13:10:29 [main] DEBUG com.bcauction.Application - Running with Spring Boot v2.1.4.RELEASE, Spring v5.1.6.RELEASE
+2019-10-08 13:10:29 [main] INFO  com.bcauction.Application - No active profile set, falling back to default profiles: default
+2019-10-08 13:10:31 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2019-10-08 13:10:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2019-10-08 13:10:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2019-10-08 13:10:32 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2019-10-08 13:10:32 [main] INFO  c.b.a.impl.EthBlockListeningService - New Block Subscribed Here
+2019-10-08 13:10:33 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-08 13:10:33 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-08 13:10:33 [main] INFO  com.bcauction.Application - Started Application in 5.107 seconds (JVM running for 6.762)

@@ -8,6 +8,7 @@ public class DigitalWork
 	private String isDisclosure = "Y";
 	private String isValid = "Y";
 	private long memberId;
+	private String work_url;
 
 
 
@@ -21,6 +22,7 @@ public class DigitalWork
 				.append("\n\tisDisclosure: " + isDisclosure)
 				.append("\n\tisVaild: " + isValid)
 				.append("\n\tmemberId: " + memberId)
+				.append("\n\twork_url: "+ work_url)
 				.append(" }")
 				.toString();
 	}
@@ -71,5 +73,12 @@ public class DigitalWork
 
 	public void setMemberId(long memberId) {
 		this.memberId = memberId;
+	}
+
+	public String getWork_url(){
+		return work_url;
+	}
+	public void setWork_url(String work_url){
+		this.work_url=work_url;
 	}
 }

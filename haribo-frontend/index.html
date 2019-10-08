@@ -65,9 +65,21 @@
         <script type="text/javascript" src="./pages/explorer/txDetail.vue.js"></script>
         <script type="text/javascript" src="./pages/explorer/txList.vue.js"></script>
 
+        <!-- swal Sweet Alert -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        
         <style>
             #album{
                 display:none;
+            }
+            .swal-button {
+                padding: 7px 19px;
+                border-radius: 2px;
+                background-color: #FEEAE6;
+                font-size: 12px;
+                border: 1px solid #FEEAE6;
+                color: black; 
+                text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
             }
 
         </style>
@@ -92,7 +104,15 @@
 
                 // 회원 가입도 하지 않았고 게스트에게 허용된 주소가 아니라면 로그인 화면으로 이동한다.
                 if(!isSigned && !isAvailableToGuest) {
-                    alert("로그인을 하신 뒤에 사용이 가능합니다.");
+                    // alert("로그인을 하신 뒤에 사용이 가능합니다.");
+                    // swal("Login Please", "로그인을 하신 뒤에 사용이 가능합니다.!", "warning", true, true);
+                    swal({
+                        title: "Login Please",
+                        text: "로그인을 하신 뒤에 사용이 가능합니다!",
+                        icon: "warning",
+                        // buttons: true,
+                        dangerMode: true,
+                    });
                     next('/login');
                 } else {
                     next();

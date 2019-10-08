@@ -3,7 +3,8 @@ var loginView = Vue.component('LoginView', {
         <div class="container">
             <div class="row">
                 <div id="login-form" class="col-md-6 mx-auto bg-white">
-                    <div><router-link to="/">Auction | HARIBO</router-link> <img src="./assets/images/artworks/ethereum.png" style="width: 20%;float: right;"></div>
+                    <div><router-link to="/">Auction | HARIBO</router-link> 
+                    <img src="./assets/images/artworks/ethereum.png" style="width: 80px;position: absolute;top: 10px;right: 30px;"></div>
                    
                     <div class="mt-4">
                         <div class="form-group">

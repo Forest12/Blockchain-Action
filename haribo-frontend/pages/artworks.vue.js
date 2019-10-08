@@ -29,14 +29,14 @@ var artworksView = Vue.component('artworksView', {
                 </div>
                 <div id="list">
                     <div class="row" v-for="item in artworks">
-                            <div class="col-md-3"><img width="50px" :src="item['work_url']"/></div>
-                            <div class="col-md-3"><h4>{{ item["workName"] }}</h4></div>
-                            <div class="col-md-3"> 
+                            <div class="col-md-3 ssb"><img width="50px" :src="item['work_url']"/></div>
+                            <div class="col-md-3 ssb"><h4>{{ item["workName"] }}</h4></div>
+                            <div class="col-md-3 ssb"> 
                                 <p v-if="item['description'] != null">{{ item["description"] }}</p>
                                 <p v-if="item['description'] == null">-</p>
                             </div>
-                            <div class="col-md-3" style="margin-top:5px"> <router-link :to="{ name: 'work.detail', params: { id: item['id'] } }" class="btn btn-block btn-secondary">이력보기</router-link></div>
-                            <div class="col-xs-12" style="margin:10px"></div>
+                            <div class="col-md-3 ssb"> <router-link :to="{ name: 'work.detail', params: { id: item['id'] } }" class="btn btn-block btn-secondary">이력보기</router-link></div>
+                            <div class="col-xs-12 ssb" style="margin:10px"></div>
                     </div>
                 </div>
 

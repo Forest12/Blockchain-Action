@@ -19,7 +19,7 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                                 </div>
                                 <div class="form-group">
                                     <label id="work">작품 선택</label>
-                                    <select v-model="before.selectedWork" class="form-control">
+                                    <select v-model="before.selectedWork" class="form-control" @change="selectArt()">
                                         <option v-for="work in before.works" :value="work.id">{{ work['workName'] }}</option>
                                     </select>
                                 </div>
@@ -87,14 +87,15 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
             isCreatingContract:false,
             registered: false,
             sharedStates: store.state,
-
+            artidoverlap: false,
             // 경매 등록전 입력값
             before: {
                 works: [],
                 selectedWork: null,
                 input: {
 
-                }
+                },
+                auctions: [],
             },
 
             // 경매 등록 후 등록 결과 완료 표시 용도
@@ -108,6 +109,26 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
         goBack: function(){
             this.$router.go(-1);
         },
+        selectArt: function() {
+            
+            var scope = this;
+            console.log(scope.before.selectedWork);
+
+            for (let i = 0; i < scope.before.auctions.length; i++) {
+                if(scope.before.auctions[i].auctionId == scope.before.selectedWork) {
+                    scope.artidoverlap = true;
+                    swal({
+                        title: "Already Registerd",
+                        text: "이미 있는 경매품입니다",
+                        icon: "warning",
+                    });
+                    scope.before.selectedWork = null;
+                    return;
+                }
+            }
+            scope.artidoverlap = false;
+        }
+        ,
         register: function(){
            /**
              * 컨트랙트를 호출하여 경매를 생성하고
@@ -135,6 +156,12 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                     // alert("종료 날짜는 현재 시간보다 이전일 수 없습니다!");
                     swal("End Date", "종료 날짜는 현재 시간보다 이전일 수 없습니다!", "warning");
                     document.getElementById("untilDate").focus();
+                    return;
+                }
+                if(scope.artidoverlap) {
+                    // alert("종료 날짜는 현재 시간보다 이전일 수 없습니다!");
+                    swal("End Date", "이미 있는 작품입니다", "warning");
+                    document.getElementById("work").focus();
                     return;
                 }
                 this.isCreatingContract = true;
@@ -182,6 +209,10 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
         // 내 작품 목록 가져오기
         workService.findWorksByOwner(this.sharedStates.user.id, function(result){
             scope.before.works = result;
+        });
+        auctionService.findAllByUser(this.sharedStates.user.id ,function(result) {
+            console.log(result);
+            scope.before.auctions = result;
         });
     }
 })

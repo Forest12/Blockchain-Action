@@ -4,6 +4,19 @@ body {
     color: #442C2E;
 }
 
+.ddiivv1 {
+    width: 1000px;
+    column-count: 3;
+    column-gap: 1px;
+    margin:auto;
+}
+
+.ddiivv2 {    
+    display: inline-block;
+    width: 300px;
+    margin-bottom: 40px;
+}
+
 a {
     text-decoration: none;
 }
@@ -44,7 +57,6 @@ a {
 
 #auction-list .auction,
 #artwork-list .artwork {
-    padding: 20px 10px;
     text-align: center;
 }
 

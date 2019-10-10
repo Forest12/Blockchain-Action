@@ -58,11 +58,21 @@ var worksUpdateView = Vue.component("worksUpdateView", {
                 "isValid": this.work.status ? "Y" : "N"
             },
             function(){
-                alert('작품이 수정되었습니다.');
+                // alert('작품이 수정되었습니다.');
+                swal({
+                    title: "Update Success",
+                    text: "작품이 수정되었습니다.",
+                    icon: "success",
+                });
                 scope.$router.push('/works/detail/' + workId);
             }, 
             function(error){
-                alert("입력폼을 모두 입력해주세요.");
+                // alert("입력폼을 모두 입력해주세요.");
+                swal({
+                    title: "Update Fail",
+                    text: "입력폼을 모두 입력해주세요.",
+                    icon: "error",
+                });
             });
         }
     },

@@ -104,8 +104,13 @@ public class DigitalWorkController
 	 * week. 4-7
 	 * mission. 3
 	 * Req. 1-2
+	 * @param id
+	 * @return
 	 */
+	
+	@RequestMapping(value = "/works/history/{id}", method = RequestMethod.GET)
 	public List<FabricAsset> 작품이력조회(@PathVariable int id){
+		logger.debug("작품이력조회" + id);
 		List<FabricAsset> history = this.fabricService.작품이력조회(id);
 		if(history == null || history.isEmpty())
 			throw new EmptyListException("조회된 작품 이력이 없습니다.");

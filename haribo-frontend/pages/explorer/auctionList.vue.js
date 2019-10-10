@@ -7,7 +7,16 @@ var explorerAuctionView = Vue.component('ExplorerView', {
             <explorer-nav></explorer-nav>
             <div class="row">
                 <div class="col-md-12">
-                    <table class="table table-bordered table-striped">
+                <div style="height: 400px;" v-if="load === true">
+                                    <div class="semipolar-spinner" :style="spinnerStyle" style="margin:100px auto;">
+                                        <div class="ring"></div>
+                                        <div class="ring"></div>
+                                        <div class="ring"></div>
+                                        <div class="ring"></div>
+                                        <div class="ring"></div>
+                                    </div>
+                                </div>
+                    <table class="table table-bordered table-striped" v-if="load === false">
                         <thead>
                             <tr>
                                 <th>Auction</th>
@@ -17,7 +26,7 @@ var explorerAuctionView = Vue.component('ExplorerView', {
                                 <th>Expire Date</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody>          
                             <tr v-for="(item, index) in contracts">
                                 <td><router-link :to="{ name: 'explorer.auction.detail', params: { txsAddress: item }}">{{ item | truncate(15) }}</router-link></td>
                                 <td>
@@ -41,7 +50,8 @@ var explorerAuctionView = Vue.component('ExplorerView', {
     data(){
         return {
             contracts: [],
-            items: []
+            items: [],
+            load:true
         }
     },
     mounted: async function(){
@@ -51,7 +61,7 @@ var explorerAuctionView = Vue.component('ExplorerView', {
          * 2. 각 컨트랙트 주소로부터 경매의 상태(state) 정보를 가져옵니다. 
          * */ 
         var scope = this;
-
+        scope.load=true;
         auctionService.findAll(function(data){
                 var result = data;
                 console.log(result);
@@ -61,17 +71,21 @@ var explorerAuctionView = Vue.component('ExplorerView', {
                     if(start == end) {
                         scope.contracts = address;
                     } else {
+                        scope.load=false;
                         address.push(result[start]['txsAddress']);
                         var id = result[start]['id'];
 
                         auctionService.findById(id, function(work){
+                            // console.log(work);
                             var higestBidder;
                             userService.findById(work.최고입찰자id,function(user){
+                                console.log(user);
                                 higestBidder = user.username;
+                                scope.items.push({
+                                    "ended" : work.종료, "higestBid":(work.최고입찰액)/10**18, "higestBidder":higestBidder,"endTime":work.경매종료시간 
+                                });
                             });
-                            scope.items.push({
-                                "ended" : work.종료, "higestBid":work.최고입찰액,"higestBidder":higestBidder,"endTime":work.경매종료시간 
-                            });
+                            
                             fetchData(start+1, end);
                         });
                     }

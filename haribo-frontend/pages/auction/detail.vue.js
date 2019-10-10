@@ -5,7 +5,16 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
             <v-breadcrumb title="경매 작품 상세 정보" description="선택하신 경매 작품의 상세 정보를 보여줍니다."></v-breadcrumb>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
+                        <div class="col-md-8 mx-auto" style="height: 400px;" v-if="load === true">
+                                 <div class="semipolar-spinner" :style="spinnerStyle" style="margin:100px auto;">
+                                        <div class="ring"></div>
+                                         <div class="ring"></div>
+                                           <div class="ring"></div>
+                                            <div class="ring"></div>
+                                             <div class="ring"></div>
+                                            </div>
+                             </div>
+                    <div class="col-md-12" v-if="load === false">
                         <div class="card">
                             <div class="card-body">
                                 <table class="table table-bordered">
@@ -89,7 +98,8 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
             bidder: {},
             isCanceling: false,
             isClosing: false,
-            address: null
+            address: null,
+            load: true
         }
     },
     methods: {
@@ -100,10 +110,10 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
              */
 
             var scope = this;
-            var privateKey = window.prompt("경매를 종료하시려면 지갑 비밀키를 입력해주세요.","");
-            
+            var privateKey = window.prompt("경매를 종료하시려면 지갑 비밀키를 입력해주세요.", "");
+
             // console.log(creator_id)
-           
+
             // register.vue.js, bid.vue.js를 참조하여 완성해 봅니다. 
             var options = {
                 contractAddress: this.auction['경매컨트랙트주소'],
@@ -119,17 +129,27 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
             auction_close(options, function(receipt) {
                 var auctionId = scope.$route.params.id;
                 var bidderId = scope.bidder.id;
-            
-                auctionService.close(auctionId, bidderId, 
-                function(result){
-                    alert("경매 종료 성공");
-                    scope.isClosing = true;
-                    scope.$router.go(-1);
-                }, 
-                function(error) {
-                    alert("경매 종료 실패");
-                    console.log(error);
-                });
+
+                auctionService.close(auctionId, bidderId,
+                    function(result) {
+                        // alert("경매 종료 성공");
+                        swal({
+                            title: "Auction Close",
+                            text: "경매 종료 성공",
+                            icon: "success",
+                        });
+                        scope.isClosing = true;
+                        scope.$router.go(-1);
+                    },
+                    function(error) {
+                        // alert("경매 종료 실패");
+                        swal({
+                            title: "Auction Close",
+                            text: "경매 종료 실패",
+                            icon: "error",
+                        });
+                        console.log(error);
+                    });
             });
         },
         cancelAuction: function() {
@@ -158,11 +178,21 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
                     if (publicKey.address == scope.address) {
                         auction_cancel(options, function(cancel) {
                             auctionService.cancel(auctionId, scope.sharedStates.user.id);
-                            alert("경매가 취소되었습니다.");
+                            // alert("경매가 취소되었습니다.");
+                            swal({
+                                title: "Auction Cancel",
+                                text: "경매가 취소되었습니다.",
+                                icon: "success",
+                            });
                             scope.$router.go(-1);
                         });
                     } else {
-                        alert("경매 본인이 아닙니다.")
+                        // alert("경매 본인이 아닙니다.")
+                        swal({
+                            title: "Auction Cancel",
+                            text: "경매 본인이 아닙니다.",
+                            icon: "error",
+                        });
                     }
                 });
             });
@@ -177,10 +207,8 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
         // 경매 정보 조회
         auctionService.findById(auctionId, function(auction) {
             console.log(auction);
-            //var amount = Number(auction['최소금액']).toLocaleString().split(",").join("")
-            // console.log(amount);
-            //auction['최소금액'] = web3.utils.fromWei(amount, 'ether');
-            auction['최소금액']=auction.최소금액;
+
+            auction['최소금액'] = auction.최소금액;
 
             var workId = auction['작품id'];
 
@@ -223,6 +251,7 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
 
             scope.auction = auction;
             console.log(scope.auction);
+            scope.load = false;
         });
     }
 });

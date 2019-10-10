@@ -1,8 +1,8 @@
-var explorerTxListView = Vue.component('ExplorerTxListView', {
+var explorerAddressTxListView = Vue.component('ExplorerAddressTxListView', {
     template: `
         <div>
             <v-nav></v-nav>
-            <v-breadcrumb title="Transaction Explorer" description="블록체인에서 생성된 거래내역을 보여줍니다."></v-breadcrumb>
+            <v-breadcrumb title="Address Explorer" description="특정 주소의 거래내역을 보여줍니다."></v-breadcrumb>
             <div class="container">
                 <explorer-nav></explorer-nav>
                 <div class="row" v-if="transactions.length == 0">
@@ -19,8 +19,7 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
                 <div class="row">
                     <div id="transactions" class="col-md-8 mx-auto">
                         <div class="card shadow-sm" v-if="load === false">
-                            <div class="card-header">Transactions
-                            </div>
+                            <div class="card-header address">address = {{ address }}</div>
                             <div class="card-body">
     
                                 <div class="row tx-info" v-for="item in transactions">
@@ -43,17 +42,19 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
     `,
     data(){
         return {
+            address : "-",
             lastReadBlock : 0,
             transactions: [],
             block: {},
             load:true,
-            searchTx:'',
         };
     },
     mounted: function() {
         var scope = this;
-
-            txService.find10(function(data) {
+        scope.address = scope.$route.params.address;  // 조회할 주소를 초기화합니다. 
+        console.log(scope.address);
+            txService.findaddress(scope.address,function(data) {
+                console.log(data);
                 var x = [];
                 for(var i=0;i<data.length;i++){
                     x[i] = {};
@@ -67,13 +68,5 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
                 }
                 scope.load = false;
         });
-    },
-    methods:{
-        search:function(){
-            console.log(this.searchTx);
-            txService.findaddress(this.searchTx, function(res){
-                console.log(res);
-            })
-        }
     }
 });

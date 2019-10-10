@@ -4,9 +4,11 @@ import com.bcauction.application.IAuctionContractService;
 import com.bcauction.domain.*;
 import com.bcauction.domain.exception.ApplicationException;
 import com.bcauction.domain.exception.DomainException;
+import com.bcauction.domain.repository.IDigitalWorkRepository;
 import com.bcauction.domain.repository.IWalletRepository;
 import com.bcauction.domain.wrapper.AuctionContract;
 import com.bcauction.domain.wrapper.AuctionFactoryContract;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +45,7 @@ public class AuctionContractService implements IAuctionContractService {
 	private String PASSWORD;
 
 	private AuctionFactoryContract auctionFactoryContract;
+	private AuctionContract auctioncontract;
 	private ContractGasProvider contractGasProvider = new DefaultGasProvider();
 	private Credentials credentials;
 
@@ -50,10 +53,12 @@ public class AuctionContractService implements IAuctionContractService {
 	private Web3j web3j;
 
 	private IWalletRepository walletRepository;
+	private IDigitalWorkRepository digitalWorkRepository;
 
 	@Autowired
-	public AuctionContractService(IWalletRepository walletRepository) {
+	public AuctionContractService(IWalletRepository walletRepository, IDigitalWorkRepository digitalWorkRepository) {
 		this.walletRepository = walletRepository;
+		this.digitalWorkRepository = digitalWorkRepository;
 	}
 
 	/**
@@ -66,28 +71,36 @@ public class AuctionContractService implements IAuctionContractService {
 	 */
 	@Override
 	public AuctionInfo 경매정보조회(final String 컨트랙트주소) {
+
 		// TODO
 		try {
 			log.debug("AuctionContractService : " + 컨트랙트주소);
 			credentials = CommonUtil.getCredential(WALLET_RESOURCE, PASSWORD);
 
-			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),
-					contractGasProvider.getGasLimit());
+			auctioncontract = AuctionContract.load(컨트랙트주소, web3j, credentials, contractGasProvider);
 
 			Tuple7<BigInteger, BigInteger, BigInteger, BigInteger, String, BigInteger, Boolean> info;
 			BigInteger value1= auctioncontract.auctionStartTime().send();
 			BigInteger value2 = auctioncontract.auctionEndTime().send();
 			BigInteger value3 = auctioncontract.minValue().send();
-			BigInteger value4 = auctioncontract.digitalWorkId().send();
-			String value5="";
+			BigInteger value4 = auctioncontract.digitalWorkId().sendAsync().get();
+			String value5=auctioncontract.highestBidder().send();
+			log.debug("value5" + value5);
+			if(value5.equals("0x0000000000000000000000000000000000000000")){
+				DigitalWork dw = digitalWorkRepository.조회(value4.longValue());
+				value5=dw.getMemberId()+"";
+			}else {
+				value5 = walletRepository.조회(value5).getOwnerId() + "";
+			}
+
 			BigInteger value6 = auctioncontract.highestBid().send();
 			Boolean value7 = auctioncontract.isValid();
 
 			info = new Tuple7<BigInteger,BigInteger,BigInteger,BigInteger,String,BigInteger,Boolean>(value1, value2, value3, value4, value5, value6, value7);
 			
-			log.debug("info"+info);
+			// log.debug("info"+info);
 
-			AuctionInfo ai = AuctionInfoFactory.생성(컨트랙트주소, 1,info);
+			AuctionInfo ai = AuctionInfoFactory.생성(컨트랙트주소, Long.parseLong(value5), info);
 			return ai;
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -109,8 +122,7 @@ public class AuctionContractService implements IAuctionContractService {
 			log.debug("AuctionContractService - now highestBid : " + 컨트랙트주소);
 			credentials = CommonUtil.getCredential(WALLET_RESOURCE, PASSWORD);
 
-			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),
-					contractGasProvider.getGasLimit());
+			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),contractGasProvider.getGasLimit());
 
 			BigInteger highestBid = auctioncontract.highestBid().send();
 			
@@ -137,8 +149,7 @@ public class AuctionContractService implements IAuctionContractService {
 			log.debug("AuctionContractService - now highestBidder : " + 컨트랙트주소);
 			credentials = CommonUtil.getCredential(WALLET_RESOURCE, PASSWORD);
 
-			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),
-					contractGasProvider.getGasLimit());
+			AuctionContract auctioncontract = load(컨트랙트주소, web3j, credentials, contractGasProvider.getGasPrice(),contractGasProvider.getGasLimit());
 
 			String highestBidder = auctioncontract.highestBidder().send();
 			

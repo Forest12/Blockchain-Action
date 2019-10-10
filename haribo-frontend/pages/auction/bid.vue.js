@@ -14,11 +14,11 @@ var auctionBidView = Vue.component('AuctionBidView', {
                         <div class="card-body">
                             <div class="form-group">
                                 <label id="privateKey"><b>입찰 대상 작품</b></label><br>
-                                {{ work['이름'] }}
+                                {{ work['workName'] }}
                             </div>
                             <div class="form-group">
                                 <label id="privateKey"><b>내 지갑 잔액</b></label><br>
-                                {{ wallet['잔액'] }} ETH
+                                {{ wallet['balance'] }} ETH
                             </div>
                             <div class="form-group">
                                 <label id="privateKey"><b>지갑 개인키</b></label>
@@ -75,9 +75,9 @@ var auctionBidView = Vue.component('AuctionBidView', {
             var scope = this;
 
             var options = {
-                amount: this.input.price,
+                amount: this.input.price * (10**18),
                 contractAddress: this.auction['경매컨트랙트주소'],
-                walletAddress: this.wallet['주소'],
+                walletAddress: scope.wallet['address'],
                 privateKey: this.input.privateKey
             };
             console.log(options);
@@ -86,13 +86,18 @@ var auctionBidView = Vue.component('AuctionBidView', {
             // 컨트랙트 bid 함수를 호출합니다.
             // components/auctionFactory.js의 auction_bid 함수를 호출합니다.
             // TODO auction_bid 함수의 내용을 완성합니다.             
-            auction_bid(options, function(receipt){
+            auction_bid(options,function(receipt){
                 var bidder = scope.sharedStates.user.id;
                 var auctionId = scope.$route.params.id;
                 
                 // 입찰 정보 등록 요청 API를 호출합니다. 
                 auctionService.saveBid(bidder, auctionId, options.amount, function(result){
-                    alert("입찰이 완료되었습니다.");
+                    // alert("입찰이 완료되었습니다.");
+                    swal({
+                        title: "Bid Complete",
+                        text: "입찰이 완료되었습니다.",
+                        icon: "success",
+                    });
                     scope.bidding = false;
                     scope.$router.go(-1);
                 });
@@ -115,7 +120,7 @@ var auctionBidView = Vue.component('AuctionBidView', {
 
         // 내 지갑 정보 조회
         walletService.findById(scope.sharedStates.user.id, function(wallet){
-            wallet['잔액'] = Number(wallet['잔액']) / (10 ** 18);
+            wallet['balance'] = Number(wallet['balance']) / (10 ** 18);
             scope.wallet = wallet;
         });
     }

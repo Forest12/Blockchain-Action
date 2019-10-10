@@ -29,7 +29,7 @@ public class AuctionRepository implements IAuctionRepository
 	@Override
 	public List<Auction> 목록조회()
 	{
-		StringBuilder sbSql =  new StringBuilder("SELECT * FROM Auction WHERE is_vaild=?");
+		StringBuilder sbSql =  new StringBuilder("SELECT * FROM Auction WHERE is_valid=?");
 		try {
 			return this.jdbcTemplate.query(sbSql.toString(),
 			                               new Object[]{ "V" }, (rs, rowNum) -> AuctionFactory.생성(rs));
@@ -73,7 +73,7 @@ public class AuctionRepository implements IAuctionRepository
 			paramMap.put("auction_creator_id", 경매.getAuctionCreatorId());
 			paramMap.put("auction_id", 경매.getAuctionId());
 			paramMap.put("create_time", 경매.getCreateTime());
-			paramMap.put("is_vaild", 경매.getIsVaild());
+			paramMap.put("is_valid", 경매.getIsValid());
 			paramMap.put("start_time", 경매.getStartTime());
 			paramMap.put("end_time", 경매.getEndTime());
 			paramMap.put("lowest_price", 경매.getLowestPrice());
@@ -94,12 +94,12 @@ public class AuctionRepository implements IAuctionRepository
 	public int 수정(final Auction 경매)
 	{
 		StringBuilder sbSql =  new StringBuilder("UPDATE Auction ");
-		sbSql.append("SET is_vaild=? AND end_time=? ");
+		sbSql.append("SET is_valid=? , end_time=? ");
 		sbSql.append("where id=? AND auction_creator_id=? AND auction_id=?");
 		try {
 			return this.jdbcTemplate.update(sbSql.toString(),
 			                                new Object[] {
-					                           경매.getIsVaild(),
+					                           경매.getIsValid(),
 					                           경매.getEndTime(),
 					                           경매.getId(),
 					                           경매.getAuctionCreatorId(),

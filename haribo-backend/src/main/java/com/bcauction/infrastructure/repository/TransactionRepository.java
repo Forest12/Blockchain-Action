@@ -37,6 +37,20 @@ public class TransactionRepository implements ITransactionRepository {
         }
     }
 
+    
+
+    @Override
+    public List<Transaction> 목록조회10() {
+        StringBuilder sbSql =  new StringBuilder("SELECT * FROM Transaction LIMIT 10");
+        try {
+            return this.jdbcTemplate.query(sbSql.toString(),
+                    new Object[]{}, (rs, rowNum) -> TransactionFactory.생성(rs));
+        } catch (Exception e) {
+            throw new RepositoryException(e, e.getMessage());
+        }
+    }
+
+
     @Override
     public Transaction 조회(String hash) {
         StringBuilder sbSql =  new StringBuilder("SELECT * FROM Transaction WHERE hash=?");
@@ -63,6 +77,7 @@ public class TransactionRepository implements ITransactionRepository {
             throw new RepositoryException(e, e.getMessage());
         }
     }
+
 
     @Override
     public long 추가(Transaction Transaction) {

@@ -25,7 +25,7 @@ public class AuctionServiceTest
 		Auction auction = new Auction();
 		auction.setAuctionCreatorId(4);
 		auction.setAuctionId(1);
-		auction.setIsVaild("Y");
+		auction.setIsValid("Y");
 		auction.setCreateTime(LocalDateTime.of(2019, 4,17,7,00,00));
 		auction.setStartTime(LocalDateTime.of(2019, 4,17,12,00,00));
 		auction.setEndTime(LocalDateTime.of(2019, 4,20,23,59,59));

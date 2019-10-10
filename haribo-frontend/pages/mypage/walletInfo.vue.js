@@ -55,7 +55,13 @@ var walletInfoView = Vue.component('walletInfoView', {
                 scope.wallet.chargeNum = response.chargeNum;
                 scope.wallet.balance = response.balance
 
-                alert("코인이 충전 되었습니다.");
+                // alert("코인이 충전 되었습니다.");
+                swal({
+                    title: "Coin Charge",
+                    text: "코인이 충전 되었습니다.",
+                    icon: "success",
+                });
+                
                 scope.fetchWalletInfo();
             })
         },

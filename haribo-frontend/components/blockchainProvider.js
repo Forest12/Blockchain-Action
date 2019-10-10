@@ -14,6 +14,17 @@ const web3 = new Web3(BLOCKCHAIN_URL);
 function fetchLatestBlock() {
     return web3.eth.getBlockNumber();
 }
+function getBlock(BlockNumber) {
+  return web3.eth.getBlock(BlockNumber);
+}
+
+function getTransactionFromBlock(BlockHash, i) {
+  return web3.eth.getTransactionFromBlock(BlockHash, i);
+}
+
+function getTransaction(BlockHash) {
+  return web3.eth.getTransaction(BlockHash);
+}
 
 /*
     javascript 에서 URL 쿼리 스트링을 읽을 수 있게 해주는 함수
@@ -50,6 +61,17 @@ function fetchBlocks(from, end, callback) {
             fetchBlocks(f, end, callback);
         }
     });
+}
+
+function fetchTxesList(transaction, from, end, callback) {
+  web3.eth.getTransaction(transaction.transactions[from])
+  .then(function(block){
+      callback(block);
+      var f = from += 1;
+      if(f <= end) {
+        fetchTxesList(transaction, f, end, callback);
+      }
+  });
 }
 
 // timestamp 포맷을 사람이 읽을 수 있는 형태로 변환한다.

@@ -47,12 +47,22 @@ var registerView = Vue.component('RegisterView', {
                     this.user.name,
                     this.user.password,
                     function(response){
-                        alert("회원가입이 완료되었습니다.");
+                        // alert("회원가입이 완료되었습니다.");
+                        swal({
+                            title: "Register Success",
+                            text: "회원가입이 완료되었습니다.",
+                            icon: "success",
+                        });
                         scope.$router.push('/');
                     }
                 );
             } else {
-                alert('비밀번호가 일치하지 않습니다.');
+                // alert('비밀번호가 일치하지 않습니다.');
+                swal({
+                    title: "Register Fail",
+                    text: "비밀번호가 일치하지 않습니다.",
+                    icon: "error",
+                });
             }
         }
     }

@@ -354,31 +354,47 @@ public class FabricCCService implements IFabricCCService
 	 */
 	@Override
 	public List<FabricAsset> queryHistory(final long 작품id){
-		if(this.hfClient == null || this.channel == null)
+		if(this.hfClient == null || this.channel == null) {
 			try {
 				loadChannel();
 			} catch (Throwable e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-
+		}
 			try {
+				List<FabricAsset> falist = new ArrayList<>();
 				QueryByChaincodeRequest request = hfClient.newQueryProposalRequest();
 				ChaincodeID ccid = ChaincodeID.newBuilder().setName("asset").build();
 				request.setChaincodeID(ccid);
-				request.setFcn("queryHistory");
+				request.setFcn("getAssetHistory");
 				String[] arguments = { 작품id + ""};
 				if (arguments != null) {
 					request.setArgs(arguments);
 				}
 				Collection<ProposalResponse> response = channel.queryByChaincode(request);
 				//Collection<ProposalResponse> response = channel.queryByChaincode("queryHistory",작품id+"");
-				
 				for (ProposalResponse pres : response) {
-					String stringResponse = new String(pres.getChaincodeActionResponsePayload());
-					//Logger.getLogger(response.class.getName()).log(Level.INFO, stringResponse);
-					logger.debug(stringResponse);
+					if (pres.isVerified() && pres.getStatus() == ChaincodeResponse.Status.SUCCESS) {
+						ByteString payload = pres.getProposalResponse().getResponse().getPayload();
+
+						try (JsonReader jsonReader = Json.createReader(new ByteArrayInputStream(payload.toByteArray()))) {
+							// parse response
+							JsonArray arr = jsonReader.readArray();
+							for (int i = 0; i < arr.size(); i++) {
+								JsonObject rec = arr.getJsonObject(i);
+								// cars.put(carRecord.getKey(), carRecord);
+								falist.add(getAssetRecord(rec));
+							}
+							return falist;
+						}
+					}
+
+					// JsonReader parse = Json.createReader(new ByteArrayInputStream(pres.getChaincodeActionResponsePayload()));	
+					// logger.debug(parse.readObject().toString());
+               		// falist.add(getAssetRecord(parse.readObject()));
 				}
+				return falist;
 			} catch (Exception e) {
 				//TODO: handle exception
 				e.printStackTrace();
@@ -386,6 +402,7 @@ public class FabricCCService implements IFabricCCService
 			//Collection<ProposalResponse> response = channel.queryByChaincode("AssetManagement","queryHistory",작품id+"");
 				
 			return null;
+
 	}
 
 	/**

@@ -1,16 +1,16 @@
 var auctionService = {
     // 전체 경매 내역 조회
-    findAll: function(callback){
-        $.get(API_BASE_URL + '/api/auctions', function(data){
+    findAll: function(callback) {
+        $.get(API_BASE_URL + '/api/auctions', function(data) {
             callback(data);
         });
     },
-    findAllByUser: function(userId, callback){
-      $.get(API_BASE_URL + '/api/auctions/owner/' + userId, function(data){
-        callback(data);
-      });
+    findAllByUser: function(userId, callback) {
+        $.get(API_BASE_URL + '/api/auctions/owner/' + userId, function(data) {
+            callback(data);
+        });
     },
-    register: function(data, callback){
+    register: function(data, callback) {
         $.ajax({
             type: "POST",
             url: API_BASE_URL + "/api/auctions",
@@ -19,17 +19,31 @@ var auctionService = {
             success: callback
         });
     },
-    findById: function(id, callback){
+    imgupload: function(img, callback) {
+        $.ajax({
+            type: "POST",
+            timeout: 0,
+            processData: false,
+            mimeType: "multipart/form-data",
+            contentType: false,
+            url: 'https://api.imgur.com/3/image',
+            data: img,
+            headers: { "Authorization": "Client-ID af859ea1e438b12" },
+            success: callback
+        });
+    },
+    findById: function(id, callback) {
         $.get(API_BASE_URL + "/api/auctions/" + id, callback);
     },
     // 경매 내역 저장
-    saveBid: function(bidder, auctionId, bidPrice, callback){
+    saveBid: function(bidder, auctionId, bidPrice, callback) {
         var data = {
-            "경매참여자id": bidder,
-            "경매id": auctionId,
-            "입찰금액": bidPrice,
-            "입찰일시": new Date()
+            "auctionPartId": bidder,
+            "auctionId": auctionId,
+            "bidAmount": bidPrice/(10 ** 18),
+            "bidDate": new Date()
         }
+        console.log(data);
         $.ajax({
             type: "PUT",
             url: API_BASE_URL + "/api/auctions/bid",
@@ -39,7 +53,7 @@ var auctionService = {
         })
     },
     // 경매 취소
-    cancel: function(auctionId, bidderId, callback, whenError){
+    cancel: function(auctionId, bidderId, callback, whenError) {
         $.ajax({
             type: "DELETE",
             url: API_BASE_URL + "/api/auctions/" + auctionId + "/by/" + bidderId,
@@ -48,7 +62,7 @@ var auctionService = {
         });
     },
     // 경매 종료
-    close: function(auctionId, bidderId, callback, whenError){
+    close: function(auctionId, bidderId, callback, whenError) {
         $.ajax({
             type: "PUT",
             url: API_BASE_URL + "/api/auctions/" + auctionId + "/by/" + bidderId,

@@ -18,7 +18,7 @@ public class AuctionFactory
 		경매.setCreateTime(rs.getTimestamp("create_time").toLocalDateTime());
 		경매.setStartTime(rs.getTimestamp("start_time").toLocalDateTime());
 		경매.setEndTime(rs.getTimestamp("end_time").toLocalDateTime());
-		경매.setIsVaild(rs.getString("is_vaild"));
+		경매.setIsValid(rs.getString("is_valid"));
 		경매.setLowestPrice(rs.getBigDecimal("lowest_price").toBigInteger());
 		경매.setTxsAddress(rs.getString("txs_address"));
 

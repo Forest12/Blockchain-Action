@@ -13,13 +13,13 @@ var explorerAuctionDetailView = Vue.component('ExplorerDetailView', {
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th colspan="2"># {{ contractAddress }}</th>
+                                <th colspan="2"># {{ txsAddress }}</th>
                             </tr> 
                         </thead>
                         <tbody>
                             <tr>
                                 <th width="20%">Contract Address</th>
-                                <td>{{ contractAddress }}</td>
+                                <td>{{ txsAddress }}</td>
                             </tr>
                             <tr>
                                 <th width="20%">작품</th>
@@ -28,8 +28,8 @@ var explorerAuctionDetailView = Vue.component('ExplorerDetailView', {
                             <tr>
                                 <th>Status</th>
                                 <td>
-                                    <span class="badge badge-primary" v-if="contract && !contract.ended">Processing</span>
-                                    <span class="badge badge-danger" v-if="contract && contract.ended">Ended</span>
+                                    <span class="badge badge-primary" v-if="contract && !contract.종료">Processing</span>
+                                    <span class="badge badge-danger" v-if="contract && contract.종료">Ended</span>
                                 </td>
                             </tr>
                             <tr>
@@ -60,7 +60,7 @@ var explorerAuctionDetailView = Vue.component('ExplorerDetailView', {
     `,
     data(){
         return {
-            contractAddress: "",
+            txsAddress: "",
             contract: null,
             work: {
                 id: 0
@@ -68,8 +68,23 @@ var explorerAuctionDetailView = Vue.component('ExplorerDetailView', {
         }
     },
     mounted: async function(){
+        var scope = this;
         /**
          * TODO 경매 컨트랙트로부터 경매 정보를 가져옵니다. 
          */
+        scope.txsAddress = scope.$route.params.txsAddress;
+        
+        workService.findByTxs(scope.txsAddress, function(data){
+            console.log(data);
+            var user=""
+            workService.findById(data.작품id, function(work){
+                console.log(work);
+                scope.work={"id": work.id, "이름":work.workName};
+            })
+            userService.findById(data.최고입찰자id, function(user){
+                user=user.username
+            })
+            scope.contract ={"ended":data.종료,"startTime":data.경매시작시간,"endTime":data.경매종료시간,"highestBid":data.최고입찰액,"highestBidder":user}
+        })
     }
 })

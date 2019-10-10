@@ -55,7 +55,7 @@ var walletCreateView = Vue.component('WalletCreateView', {
         createWallet: function(){
             // alert("지갑 생성하는 기능을 완성합니다.");
             var web3 = new Web3(new Web3.providers.HttpProvider(BLOCKCHAIN_URL));
-            var createdWallet = web3.eth.accounts.create()
+            var createdWallet = web3.eth.accounts.create();
             
             this.walletAddress = createdWallet.address;
             this.privateKey = createdWallet.privateKey;
@@ -68,7 +68,12 @@ var walletCreateView = Vue.component('WalletCreateView', {
                 scope.sharedState.user.id,
                 this.walletAddress,
                 function(response){
-                    alert("지갑 주소가 등록되었습니다.");
+                    // alert("지갑 주소가 등록되었습니다.");
+                    swal({
+                        title: "Regist Wallet Address",
+                        text: "지갑 주소가 등록되었습니다.",
+                        icon: "success",
+                    });
 
                     scope.sharedState.user.hasWallet = true;
                     scope.$router.push('/mypage/wallet_info');

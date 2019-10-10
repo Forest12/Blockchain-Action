@@ -25,11 +25,11 @@ var explorerTxDetailView = Vue.component('ExplorerTxDetailView', {
                                     </tr>
                                     <tr>
                                         <th>송신자 주소</th>
-                                        <td><router-link :to="{ name: 'address', params: { address: tx.from }}">{{ tx.from }}</router-link></td>
+                                        <td> <router-link :to="{ name: 'explorer.txa.address', params: { address: tx.from }}">{{ tx.from }}</router-link></td>
                                     </tr>
                                     <tr>
                                         <th>수신자 주소</th>
-                                        <td><router-link :to="{ name: 'address', params: { address: tx.to }}">{{ tx.to }}</router-link></td>
+                                        <td><router-link :to="{ name: 'explorer.txa.address', params: { address: tx.to }}">{{ tx.to }}</router-link></td>
                                     </tr>
                                     <tr>
                                         <th>전송한 이더</th>
@@ -62,7 +62,14 @@ var explorerTxDetailView = Vue.component('ExplorerTxDetailView', {
             isValid: true, 
             tx: {
                 hash: "-",
-                timestamp: "-"
+                timestamp: "undefine",
+                block : 0,
+                from : 0,
+                to : 0,
+                value : 0,
+                gas : 0,
+                gasPrice : 0,
+                input : 0
             }
         }
     },
@@ -70,14 +77,48 @@ var explorerTxDetailView = Vue.component('ExplorerTxDetailView', {
         /**
          *  TODO 트랜잭션 해시로 트랜잭션 상세 정보를 조회합니다.
          */
-        var hash; // 조회할 트랜잭션 해시를 초기화합니다. 
-
+        var scope = this;
+        var hash = scope.$route.params.hash;  // 조회할 트랜잭션 해시를 초기화합니다. 
+        console.log(hash);
         if(hash) {
             /**
              * 트랜잭션 해시값으로 트랜잭션 정보를 가져옵니다. 
              */
+
+
+
+               //DB에서 가져오는 방식. 누락되는 정보가 많아 채용 X
+        txService.find(hash, function(data) {
+            console.log(data);
+            
+            scope.tx.hash = data.hash;
+            scope.tx.block = data.blockNumber;
+            scope.tx.from = data.from;
+            scope.tx.to = data.to;
+            scope.tx.gas = data.gas
+            scope.tx.gasPrice = data.gasPrice
+
+                getTransaction(hash).then(data=>{
+                        if(data){
+                        console.log(data);
+                        scope.tx.value = data.value/ 1000000000000000000;
+                        scope.tx.input = data.input;
+                        scope.tx.gas = data.gas;
+                        scope.tx.gasPrice = data.gasPrice;
+                        getBlock(data.blockHash).then(data=>{
+                            scope.tx.timestamp = timeSince(data.timestamp);
+                        })
+                        console.log(timeSince(data.timestamp));
+                    }else{
+                        scope.tx.value = "undefine";
+                        scope.tx.input = "undefine";
+                        scope.tx.timestamp = "undefine";
+                    }
+                });
+
+            });
         } else {
-            this.isValid = false;
+            //this.isValid = false;
         }
     }
 })

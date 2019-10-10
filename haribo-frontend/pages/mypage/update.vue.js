@@ -56,13 +56,25 @@ var myUpdateView = Vue.component('MyUpdateView', {
         update: function(){
             // 비밀번호가 회원의 비밀번호와 일치하는지 비교한다.
             if(this.user.password !== this.input.password){
-                alert("입력하신 비밀번호가 일치하지 않습니다.");
+                // alert("입력하신 비밀번호가 일치하지 않습니다.");
+                swal({
+                    title: "Password Not Correct",
+                    text: "입력하신 비밀번호가 일치하지 않습니다.",
+                    icon: "warning",
+                });
+                document.getElementById("password").focus();
                 return;
             }
 
             // 이름을 공백으로 입력했는지 확인한다.
             if(this.input.name === "") {
-                alert("이름을 입력해주세요.");
+                // alert("이름을 입력해주세요.");
+                swal({
+                    title: "input Name",
+                    text: "이름을 입력해주세요.",
+                    icon: "warning",
+                });
+                document.getElementById("name").focus();
                 return;
             }
 
@@ -71,7 +83,12 @@ var myUpdateView = Vue.component('MyUpdateView', {
                 "username": this.input.name, // 신규 이름
                 "password": this.user.password
             }, function(data){
-                alert("이름이 변경되었습니다.");
+                // alert("이름이 변경되었습니다.");
+                swal({
+                    title: "Updated Name",
+                    text: "이름이 변경되었습니다.",
+                    icon: "success",
+                });
                 this.$router.go(-1);
             });
         },

@@ -62,7 +62,10 @@ public class EthereumController {
     @GetMapping("/blocks/{id}")
     public Block 블록검색(@PathVariable String id)
     {
+        
         Block 블록 = this.explorerService.블록검색(id);
+
+        System.out.println(블록.toString());
 
         if (블록 == null)
             throw new NotFoundException(id + " 블록 정보를 찾을 수 없습니다.");

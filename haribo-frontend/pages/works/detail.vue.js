@@ -5,7 +5,16 @@ var worksDetailView = Vue.component("WorkDetailView", {
             <v-breadcrumb title="작품 이력 보기" description="등록된 작품의 이력을 볼 수 있습니다."></v-breadcrumb>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-8 mx-auto">
+                     <div class="col-md-8 mx-auto" style="height: 400px;" v-if="load === true">
+                                 <div class="semipolar-spinner" :style="spinnerStyle" style="margin:100px auto;">
+                                        <div class="ring"></div>
+                                         <div class="ring"></div>
+                                           <div class="ring"></div>
+                                            <div class="ring"></div>
+                                             <div class="ring"></div>
+                                            </div>
+                             </div>
+                    <div class="col-md-8 mx-auto" v-if="load === false">
                         <div class="card">
                             <div class="card-body">
                                 <div class="form-group">
@@ -67,7 +76,7 @@ var worksDetailView = Vue.component("WorkDetailView", {
             </div>
         </div>
     `,
-    data(){
+    data() {
         return {
             work: {
                 id: 0,
@@ -83,34 +92,35 @@ var worksDetailView = Vue.component("WorkDetailView", {
                 email: ""
             },
             history: [],
-            sharedStates: store.state
+            sharedStates: store.state,
+            load: true
         }
     },
     methods: {
-        goBack: function(){
+        goBack: function() {
             // 이전 페이지로 이동한다.
             this.$router.go(-1);
         },
-        deleteWork: function(){
+        deleteWork: function() {
             var scope = this;
             workService.delete(
-                this.$route.params.id, 
-                function(response){
+                this.$route.params.id,
+                function(response) {
                     alert("작품이 삭제되었습니다.");
                     scope.$router.push('/artworks');
                 },
-                function(error){
+                function(error) {
                     alert("작품을 삭제할 수 없습니다.");
                 }
             );
         }
     },
-    mounted: function(){
+    mounted: function() {
         var scope = this;
         var workId = this.$route.params.id;
 
         // 작품 상세 정보 조회
-        workService.findById(workId, function(data){
+        workService.findById(workId, function(data) {
             scope.work.id = workId;
             scope.work.name = data["workName"];
             scope.work.description = data["description"];
@@ -118,7 +128,7 @@ var worksDetailView = Vue.component("WorkDetailView", {
             scope.work.status = data["isValid"];
             scope.work.ownerId = data["memberId"];
 
-            userService.findById(scope.work.ownerId, function(user){
+            userService.findById(scope.work.ownerId, function(user) {
                 scope.user.id = user["id"];
                 scope.user.name = user["memberId"];
                 scope.user.email = user["email"];
@@ -126,8 +136,9 @@ var worksDetailView = Vue.component("WorkDetailView", {
         });
 
         // 작품 이력 조회
-        workService.findHistoryById(workId, function(data){
+        workService.findHistoryById(workId, function(data) {
             scope.history = data;
+            scope.load = false;
         });
     }
 })

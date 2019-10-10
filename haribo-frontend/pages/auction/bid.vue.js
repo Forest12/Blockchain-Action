@@ -92,7 +92,12 @@ var auctionBidView = Vue.component('AuctionBidView', {
                 
                 // 입찰 정보 등록 요청 API를 호출합니다. 
                 auctionService.saveBid(bidder, auctionId, options.amount, function(result){
-                    alert("입찰이 완료되었습니다.");
+                    // alert("입찰이 완료되었습니다.");
+                    swal({
+                        title: "Bid Complete",
+                        text: "입찰이 완료되었습니다.",
+                        icon: "success",
+                    });
                     scope.bidding = false;
                     scope.$router.go(-1);
                 });

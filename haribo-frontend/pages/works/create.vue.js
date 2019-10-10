@@ -84,11 +84,21 @@ var worksCreateView = Vue.component("worksCreateView", {
                     "work_url": this.work.img
                 },
                 function() {
-                    alert('작품이 등록되었습니다.');
+                    // alert('작품이 등록되었습니다.');
+                    swal({
+                        title: "Register Success",
+                        text: "작품이 등록되었습니다.",
+                        icon: "success",
+                    });
                     scope.$router.push('/artworks');
                 },
                 function(error) {
-                    alert("입력폼을 모두 입력해주세요.");
+                    // alert("입력폼을 모두 입력해주세요.");
+                    swal({
+                        title: "Register Fail",
+                        text: "입력폼을 모두 입력해주세요.",
+                        icon: "error",
+                    });
                 });
         }
     }

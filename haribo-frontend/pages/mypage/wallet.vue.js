@@ -68,7 +68,12 @@ var walletCreateView = Vue.component('WalletCreateView', {
                 scope.sharedState.user.id,
                 this.walletAddress,
                 function(response){
-                    alert("지갑 주소가 등록되었습니다.");
+                    // alert("지갑 주소가 등록되었습니다.");
+                    swal({
+                        title: "Regist Wallet Address",
+                        text: "지갑 주소가 등록되었습니다.",
+                        icon: "success",
+                    });
 
                     scope.sharedState.user.hasWallet = true;
                     scope.$router.push('/mypage/wallet_info');

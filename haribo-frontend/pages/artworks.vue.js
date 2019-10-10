@@ -15,15 +15,15 @@ var artworksView = Vue.component('artworksView', {
                 <div id="album">
                     <div class="row" class="ddiivv1">
                         <div class="artwork ddiivv2" v-for="item in artworks">
-                            <div class="card">
-                                <div class="card-body">
-                                    <img :src="item['work_url']" style="width:250px"/>
-                                    <h4>{{ item["workName"] }}</h4>
-                                    <p v-if="item['description'] != null">{{ item["description"] }}</p>
-                                    <p v-if="item['description'] == null">-</p>
-                                    <router-link :to="{ name: 'work.detail', params: { id: item['id'] } }" class="btn btn-block btn-secondary">이력보기</router-link>
-                                </div>
-                            </div>
+                           <div class="ddiivv3">
+                                <img :src="item['work_url']" style="width:300px"/>
+                           </div>
+                           <div class="ddiivv4">
+                                <h4 style="padding:5px 0 0 0">{{ item["workName"] }}</h4>
+                                <p style="padding:0;margin:0" v-if="item['description'] != null">{{ item["description"] }}</p>
+                                <p style="padding:0;margin:0" v-if="item['description'] == null">-</p>
+                                <router-link :to="{ name: 'work.detail', params: { id: item['id'] } }" class="btn btn-block btn-secondary">이력보기</router-link>
+                           </div>
                         </div>
                     </div>
                 </div>

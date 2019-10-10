@@ -18,7 +18,14 @@ body {
 .ddiivv2 {    
     display: inline-block;
     width: 300px;
-    margin-bottom: 40px;
+}
+
+.ddiivv4{
+    position: relative;
+    background-color: rgba(0,0,0,0.3);
+    width: 300px;
+    top: -70px;
+    color: white;
 }
 
 a {

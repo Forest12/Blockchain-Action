@@ -41,22 +41,22 @@ public class TxController
 		return 목록;
 	}
 	
-	@RequestMapping(value = "/txfind/{id}", method = RequestMethod.GET)
-	public Transaction 조회(@PathVariable String id) {
-		Transaction 트랜젝션 = this.txService.조회(id);
+	@RequestMapping(value = "/txfind/{hash}", method = RequestMethod.GET)
+	public Transaction 조회(@PathVariable String hash) {
+		Transaction 트랜젝션 = this.txService.조회(hash);
 		if (트랜젝션 == null){
-			logger.error("NOT FOUND AUCTION: ", id); 
-			throw new NotFoundException(id + " 해당 트랜젝션을 찾을 수 없습니다.");
+			logger.error("NOT FOUND AUCTION: ", hash); 
+			throw new NotFoundException(hash + " 해당 트랜젝션을 찾을 수 없습니다.");
 		}
 		return 트랜젝션;
 	}
 
-	@RequestMapping(value = "/txaddress/{id}", method = RequestMethod.GET)
+	@RequestMapping(value = "/txaddress/{address}", method = RequestMethod.GET)
 	public List<Transaction> 주소조회(@PathVariable String address) {
 		List<Transaction> 트랜젝션 = this.txService.주소조회(address);
 		if (트랜젝션 == null){
 			logger.error("NOT FOUND AUCTION: ", address); 
-			throw new NotFoundException(address + " 해당 트랜젝션을 찾을 수 없습니다.");
+			throw new NotFoundException(address + " 해당 주소의 트랜젝션을 찾을 수 없습니다.");
 		}
 		return 트랜젝션;
 	}

@@ -20,7 +20,6 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
                     <div id="transactions" class="col-md-8 mx-auto">
                         <div class="card shadow-sm" v-if="load === false">
                             <div class="card-header">Transactions
-                                <input type="text" style="float:right" placeholder="search.." v-on:keyup="search" v-model="searchTx"></input>
                             </div>
                             <div class="card-body">
     

@@ -132,12 +132,22 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
 
                 auctionService.close(auctionId, bidderId,
                     function(result) {
-                        alert("경매 종료 성공");
+                        // alert("경매 종료 성공");
+                        swal({
+                            title: "Auction Close",
+                            text: "경매 종료 성공",
+                            icon: "success",
+                        });
                         scope.isClosing = true;
                         scope.$router.go(-1);
                     },
                     function(error) {
-                        alert("경매 종료 실패");
+                        // alert("경매 종료 실패");
+                        swal({
+                            title: "Auction Close",
+                            text: "경매 종료 실패",
+                            icon: "error",
+                        });
                         console.log(error);
                     });
             });
@@ -168,11 +178,21 @@ var auctionDetailView = Vue.component('AuctionDetailView', {
                     if (publicKey.address == scope.address) {
                         auction_cancel(options, function(cancel) {
                             auctionService.cancel(auctionId, scope.sharedStates.user.id);
-                            alert("경매가 취소되었습니다.");
+                            // alert("경매가 취소되었습니다.");
+                            swal({
+                                title: "Auction Cancel",
+                                text: "경매가 취소되었습니다.",
+                                icon: "success",
+                            });
                             scope.$router.go(-1);
                         });
                     } else {
-                        alert("경매 본인이 아닙니다.")
+                        // alert("경매 본인이 아닙니다.")
+                        swal({
+                            title: "Auction Cancel",
+                            text: "경매 본인이 아닙니다.",
+                            icon: "error",
+                        });
                     }
                 });
             });

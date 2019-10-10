@@ -106,11 +106,21 @@ var worksDetailView = Vue.component("WorkDetailView", {
             workService.delete(
                 this.$route.params.id,
                 function(response) {
-                    alert("작품이 삭제되었습니다.");
+                    // alert("작품이 삭제되었습니다.");
+                    swal({
+                        title: "Delete Success",
+                        text: "작품이 삭제되었습니다.",
+                        icon: "success",
+                    });
                     scope.$router.push('/artworks');
                 },
                 function(error) {
-                    alert("작품을 삭제할 수 없습니다.");
+                    // alert("작품을 삭제할 수 없습니다.");
+                    swal({
+                        title: "Delete Fail",
+                        text: "작품을 삭제할 수 없습니다.",
+                        icon: "error",
+                    });
                 }
             );
         }

@@ -61,19 +61,37 @@ var myChangePasswordView = Vue.component('MyChangePasswordView', {
         update: function(){
             // 비밀번호가 회원의 비밀번호와 일치하는지 비교한다.
             if(this.user.password !== this.input.oldPassword){
-                alert("입력하신 비밀번호가 일치하지 않습니다.");
+                // alert("입력하신 비밀번호가 일치하지 않습니다.");
+                swal({
+                    title: "Password Not Correct",
+                    text: "입력하신 비밀번호가 일치하지 않습니다.",
+                    icon: "warning",
+                });
+                document.getElementById("oldPassword").focus();
                 return;
             }
 
             // 비밀번호를 공백으로 입력했는지 확인한다.
             if(this.input.newPassword === "") {
-                alert("신규 비밀번호를 입력해주세요.");
+                // alert("신규 비밀번호를 입력해주세요.");
+                swal({
+                    title: "New Password",
+                    text: "신규 비밀번호를 입력해주세요.",
+                    icon: "warning",
+                });
+                document.getElementById("newPassword").focus();
                 return;
             }
 
             // 신규비밀번호와 신규비밀번호 확인이 일치하지 않는 경우를 확인한다.
             if(this.input.newPassword !== this.input.newPasswordConfirm) {
-                alert("신규 비밀번호와 신규 비밀번호 확인이 일치하지 않습니다.");
+                // alert("신규 비밀번호와 신규 비밀번호 확인이 일치하지 않습니다.");
+                swal({
+                    title: "New Password Not Correct",
+                    text: "신규 비밀번호와 신규 비밀번호 확인이 일치하지 않습니다.",
+                    icon: "warning",
+                });
+                document.getElementById("newPasswordConfirm").focus();
                 return;
             }
 
@@ -82,7 +100,12 @@ var myChangePasswordView = Vue.component('MyChangePasswordView', {
                 "username": this.user.name, 
                 "password": this.input.newPassword // 신규 비밀번호
             }, function(data){
-                alert("비밀번호가 변경되었습니다.");
+                // alert("비밀번호가 변경되었습니다.");
+                swal({
+                    title: "Updated New Password",
+                    text: "비밀번호가 변경되었습니다.",
+                    icon: "success",
+                });
                 this.$router.go(-1);
             });
         },

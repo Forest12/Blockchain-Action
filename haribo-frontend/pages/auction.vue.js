@@ -9,21 +9,22 @@ var auctionView = Vue.component('AuctionView', {
                         <router-link :to="{ name: 'auction.regsiter' }" class="btn btn-outline-secondary">경매 생성하기</router-link>
                     </div>
                 </div>
-                <div class="ddiivv1">
+                <div class="row" class="ddiivv1">
                     <div class="auction ddiivv2" v-for="item in auctions">
-                        <div class="card">
-                            <div class="card-body">
-                                <img :src="item['작품정보']['work_url']"/>
-                                <h4>{{ item['작품정보']['workName'] }}</h4>
-                                <p>{{ calculateDate(item['endTime']) }}</p>
-                                <router-link :to="{ name: 'auction.detail', params: { id: item['id'] }}" class="btn btn-block btn-secondary">자세히보기</router-link>
-                            </div>
+                        <div class="ddiivv3">
+                            <img :src="item['작품정보']['work_url']" style="width:300px"/>
+                        </div>
+                        <div class="ddiivv4">
+                            <h4 style="padding:5px 0 0 0">{{ item['작품정보']['workName'] }}</h4>
+                            <p style="padding:0;margin:0">{{ calculateDate(item['endTime']) }}</p>
+                            <router-link :to="{ name: 'auction.detail', params: { id: item['id'] }}" class="btn btn-block btn-secondary">자세히보기</router-link>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    `,
+        `
+        ,
     data() {
         return {
             auctions: []

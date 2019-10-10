@@ -80,6 +80,7 @@ var explorerBlockView = Vue.component('ExplorerBlockView', {
         },
         search:function(){
             console.log(this.searchBk);
+            
         }
     },
     mounted: function(){

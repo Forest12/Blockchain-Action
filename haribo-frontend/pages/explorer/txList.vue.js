@@ -72,6 +72,9 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
     methods:{
         search:function(){
             console.log(this.searchTx);
+            txService.findaddress(this.searchTx, function(res){
+                console.log(res);
+            })
         }
     }
 });

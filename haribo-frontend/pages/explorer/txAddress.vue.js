@@ -19,7 +19,7 @@ var explorerAddressTxListView = Vue.component('ExplorerAddressTxListView', {
                 <div class="row">
                     <div id="transactions" class="col-md-8 mx-auto">
                         <div class="card shadow-sm" v-if="load === false">
-                            <div class="card-header">Transactions</div>
+                            <div class="card-header address">address = {{ address }}</div>
                             <div class="card-body">
     
                                 <div class="row tx-info" v-for="item in transactions">
@@ -42,6 +42,7 @@ var explorerAddressTxListView = Vue.component('ExplorerAddressTxListView', {
     `,
     data(){
         return {
+            address : "-",
             lastReadBlock : 0,
             transactions: [],
             block: {},
@@ -50,9 +51,9 @@ var explorerAddressTxListView = Vue.component('ExplorerAddressTxListView', {
     },
     mounted: function() {
         var scope = this;
-        var address = scope.$route.params.address;  // 조회할 주소를 초기화합니다. 
-        console.log(address);
-            txService.findaddress(address,function(data) {
+        scope.address = scope.$route.params.address;  // 조회할 주소를 초기화합니다. 
+        console.log(scope.address);
+            txService.findaddress(scope.address,function(data) {
                 console.log(data);
                 var x = [];
                 for(var i=0;i<data.length;i++){

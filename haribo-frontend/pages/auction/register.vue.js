@@ -8,7 +8,16 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
             <v-nav></v-nav>
             <v-breadcrumb title="경매 등록하기" description="새로운 경매를 등록합니다."></v-breadcrumb>
             <div class="row">
-                <div class="col-md-6 mx-auto">
+                    <div class="col-md-8 mx-auto" style="height: 400px;" v-if="load === true">
+                           <div class="semipolar-spinner" :style="spinnerStyle" style="margin:100px auto;">
+                                    <div class="ring"></div>
+                                    <div class="ring"></div>
+                                    <div class="ring"></div>
+                                    <div class="ring"></div>
+                                    <div class="ring"></div>
+                                </div>
+                        </div>
+                <div class="col-md-6 mx-auto" v-if="load === false">
                     <div class="card">
                         <div class="card-header">신규 경매 등록하기</div>
                         <div class="card-body">
@@ -82,12 +91,13 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
             </div>
         </div>
     `,
-    data(){
+    data() {
         return {
-            isCreatingContract:false,
+            isCreatingContract: false,
             registered: false,
             sharedStates: store.state,
             artidoverlap: false,
+            load: false,
             // 경매 등록전 입력값
             before: {
                 works: [],
@@ -106,16 +116,16 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
         }
     },
     methods: {
-        goBack: function(){
+        goBack: function() {
             this.$router.go(-1);
         },
         selectArt: function() {
-            
+
             var scope = this;
             console.log(scope.before.selectedWork);
 
             for (let i = 0; i < scope.before.auctions.length; i++) {
-                if(scope.before.auctions[i].auctionId == scope.before.selectedWork) {
+                if (scope.before.auctions[i].auctionId == scope.before.selectedWork) {
                     scope.artidoverlap = true;
                     swal({
                         title: "Already Registerd",
@@ -127,38 +137,37 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                 }
             }
             scope.artidoverlap = false;
-        }
-        ,
-        register: function(){
-           /**
+        },
+        register: function() {
+            /**
              * 컨트랙트를 호출하여 경매를 생성하고
              * 경매 정보 등록 API를 호출합니다. 
              */
-            
-            var scope = this;
 
+            var scope = this;
+            scope.load = true;
             // 1. 내 지갑 주소를 가져옵니다.
-            walletService.findAddressById(this.sharedStates.user.id, function(walletAddress){
-                
+            walletService.findAddressById(this.sharedStates.user.id, function(walletAddress) {
+
                 // 2. 경매 컨트랙트를 블록체인에 생성합니다.
                 // components/auctionFactory.js의 createAuction 함수를 호출합니다.
                 // TODO createAuction 함수의 내용을 완성합니다. 
                 var startD = new Date(scope.before.input.startDate);
                 var endD = new Date(scope.before.input.untilDate);
 
-                if(startD.getTime() > new Date().getTime()) {
+                if (startD.getTime() > new Date().getTime()) {
                     // alert("시작 날짜는 현재 시간보다 이후일 수 없습니다!");
                     swal("Start Date", "시작 날짜는 현재 시간보다 이후일 수 없습니다!", "warning");
                     document.getElementById("startDate").focus();
                     return;
                 }
-                if(endD.getTime() <= new Date().getTime()) {
+                if (endD.getTime() <= new Date().getTime()) {
                     // alert("종료 날짜는 현재 시간보다 이전일 수 없습니다!");
                     swal("End Date", "종료 날짜는 현재 시간보다 이전일 수 없습니다!", "warning");
                     document.getElementById("untilDate").focus();
                     return;
                 }
-                if(scope.artidoverlap) {
+                if (scope.artidoverlap) {
                     // alert("종료 날짜는 현재 시간보다 이전일 수 없습니다!");
                     swal("End Date", "이미 있는 작품입니다", "warning");
                     document.getElementById("work").focus();
@@ -171,10 +180,10 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                     minValue: scope.before.input.minPrice,
                     startTime: new Date(scope.before.input.startDate).getTime(),
                     endTime: new Date(scope.before.input.untilDate).getTime()
-                }, walletAddress, scope.before.input.privateKey, function(log){
+                }, walletAddress, scope.before.input.privateKey, function(log) {
                     console.log(log[0]);
                     var contractAddress = log[0];
-                
+
                     var data = {
                         "auctionCreatorId": scope.sharedStates.user.id,
                         "auctionId": scope.before.selectedWork,
@@ -183,34 +192,35 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                         "lowestPrice": Number(scope.before.input.minPrice),
                         "txsAddress": contractAddress,
                     }
-                    
+
 
                     // 3. 선택한 작업 정보를 가져옵니다.
-                    workService.findById(scope.before.selectedWork, function(result){
+                    workService.findById(scope.before.selectedWork, function(result) {
                         scope.after.work = result;
                     });
-                    
+
                     // 4. 생성한 경매를 등록 요청 합니다.
-                    auctionService.register(data, function(result){
+                    auctionService.register(data, function(result) {
                         console.log(data);
                         alert("경매가 등록되었습니다.");
                         scope.registered = true;
+                        scope.load = false;
                         scope.after.result = result;
                     });
 
                     this.isCreatingContract = false;
-                }); 
+                });
             });
         }
     },
-    mounted: function(){
+    mounted: function() {
         var scope = this;
 
         // 내 작품 목록 가져오기
-        workService.findWorksByOwner(this.sharedStates.user.id, function(result){
+        workService.findWorksByOwner(this.sharedStates.user.id, function(result) {
             scope.before.works = result;
         });
-        auctionService.findAllByUser(this.sharedStates.user.id ,function(result) {
+        auctionService.findAllByUser(this.sharedStates.user.id, function(result) {
             console.log(result);
             scope.before.auctions = result;
         });

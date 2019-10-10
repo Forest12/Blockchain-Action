@@ -18,7 +18,9 @@ var explorerBlockView = Vue.component('ExplorerBlockView', {
                 <div class="col-md-12" v-if="load === false">
                     <div id="blocks" class="col-md-8 mx-auto">
                         <div class="card shadow-sm">
-                            <div class="card-header">Blocks</div>
+                            <div class="card-header">Blocks
+                                <input type="text" style="float:right" placeholder="search.." v-on:keyup="search" v-model="searchBk"></input>
+                            </div>
                             <div class="card-body">
                                 <div class="row block-info" v-for="item in blocks">
                                     <div class="col-md-2">BK</div>
@@ -43,7 +45,8 @@ var explorerBlockView = Vue.component('ExplorerBlockView', {
             lastReadBlock: 0,
             blocks: [],
             blocktemp: [],
-            load:true
+            load:true,
+            searchBk:'',
         }
     },
     methods: {
@@ -74,6 +77,10 @@ var explorerBlockView = Vue.component('ExplorerBlockView', {
             })
             //console.log(scope.blocks);
             scope.blocks = scope.blocktemp;
+        },
+        search:function(){
+            console.log(this.searchBk);
+            
         }
     },
     mounted: function(){

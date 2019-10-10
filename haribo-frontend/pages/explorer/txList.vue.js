@@ -19,7 +19,9 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
                 <div class="row">
                     <div id="transactions" class="col-md-8 mx-auto">
                         <div class="card shadow-sm" v-if="load === false">
-                            <div class="card-header">Transactions</div>
+                            <div class="card-header">Transactions
+                                <input type="text" style="float:right" placeholder="search.." v-on:keyup="search" v-model="searchTx"></input>
+                            </div>
                             <div class="card-body">
     
                                 <div class="row tx-info" v-for="item in transactions">
@@ -46,6 +48,7 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
             transactions: [],
             block: {},
             load:true,
+            searchTx:'',
         };
     },
     mounted: function() {
@@ -65,5 +68,13 @@ var explorerTxListView = Vue.component('ExplorerTxListView', {
                 }
                 scope.load = false;
         });
+    },
+    methods:{
+        search:function(){
+            console.log(this.searchTx);
+            txService.findaddress(this.searchTx, function(res){
+                console.log(res);
+            })
+        }
     }
 });

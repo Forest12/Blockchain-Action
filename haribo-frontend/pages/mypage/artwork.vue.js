@@ -33,11 +33,11 @@ var myArtworkView = Vue.component('MyArtworkView', {
                     <div class="col-md-12 mt-5">
                         <h4>경매 중</h4>
                         <div class="row">
-                            <div class="col-md-3 artwork" v-for="item in auctions" v-if="auctions.length > 0">
+                            <div class="col-md-3 artwork" v-for="item in auctions" v-if="auctions.length != 0">
                                 <div class="card">
                                     <div class="card-body">
                                         <img :src="item['작품정보']['work_url']">
-                                        <h4>{{ item['작품정보']['이름'] }}</h4>
+                                        <h4>{{ item['작품정보']['workName'] }}</h4>
                                         <span class="badge badge-success">경매 진행중</span>
                                         <router-link :to="{ name: 'auction.detail', params: { id: item['id'] }}" class="btn btn-block btn-secondary mt-3">자세히보기</router-link>
                                     </div>
@@ -60,9 +60,7 @@ var myArtworkView = Vue.component('MyArtworkView', {
                 description: "",
                 work_url: "",
             }],
-            auctions: [{
-                '작품정보': []
-            }]
+            auctions: []
         }
     },
     methods: {
@@ -109,10 +107,18 @@ var myArtworkView = Vue.component('MyArtworkView', {
          */
         // 여기에 작성하세요.
         auctionService.findAllByUser(userId, function(data) {
-            scope.auctions['작품정보'] = data;
-            console.log(data)
-            console.log(userId)
-            console.log(scope.auctions['작품정보']);
+            console.log(data);
+            console.log("check");
+            scope.auctions=data;
+            for(var index in scope.auctions){
+                console.log("@@@@@@@@@@@@@@@");
+                workService.findById(scope.auctions[index].auctionId, function(res){
+                    console.log("##########");
+                    console.log(scope.auctions[index])
+                    scope.auctions[index]['작품정보']=res;
+                })
+            }
+            console.log(scope.auctions.length)
         })
 
     }

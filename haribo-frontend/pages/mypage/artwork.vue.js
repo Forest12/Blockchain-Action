@@ -30,24 +30,6 @@ var myArtworkView = Vue.component('MyArtworkView', {
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12 mt-5">
-                        <h4>경매 중</h4>
-                        <div class="row">
-                            <div class="col-md-3 artwork" v-for="item in auctions" v-if="auctions.length > 0">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <img :src="item['작품정보']['work_url']">
-                                        <h4>{{ item['작품정보']['이름'] }}</h4>
-                                        <span class="badge badge-success">경매 진행중</span>
-                                        <router-link :to="{ name: 'auction.detail', params: { id: item['id'] }}" class="btn btn-block btn-secondary mt-3">자세히보기</router-link>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-md-8 mt-3" v-if="auctions.length == 0">
-                                <div class="alert alert-warning">진행중인 경매 목록이 없습니다.</div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -60,9 +42,6 @@ var myArtworkView = Vue.component('MyArtworkView', {
                 description: "",
                 work_url: "",
             }],
-            auctions: [{
-                '작품정보': []
-            }]
         }
     },
     methods: {
@@ -102,18 +81,5 @@ var myArtworkView = Vue.component('MyArtworkView', {
                 scope.artworks = [];
             }
         });
-        /**
-         * TODO 2. 회원의 경매 목록을 가져옵니다.
-         * Backend와 API 연동합니다.
-         * 경매 중인 작품 마다 소유권 이력을 보여줄 수 있어야 합니다.
-         */
-        // 여기에 작성하세요.
-        auctionService.findAllByUser(userId, function(data) {
-            scope.auctions['작품정보'] = data;
-            console.log(data)
-            console.log(userId)
-            console.log(scope.auctions['작품정보']);
-        })
-
     }
 })

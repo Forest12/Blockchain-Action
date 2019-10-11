@@ -158,18 +158,21 @@ var auctionRegisterView = Vue.component('AuctionRegisterView', {
                 if (startD.getTime() > new Date().getTime()) {
                     // alert("시작 날짜는 현재 시간보다 이후일 수 없습니다!");
                     swal("Start Date", "시작 날짜는 현재 시간보다 이후일 수 없습니다!", "warning");
+                    scope.load = false;
                     document.getElementById("startDate").focus();
                     return;
                 }
                 if (endD.getTime() <= new Date().getTime()) {
                     // alert("종료 날짜는 현재 시간보다 이전일 수 없습니다!");
                     swal("End Date", "종료 날짜는 현재 시간보다 이전일 수 없습니다!", "warning");
+                    scope.load = false;
                     document.getElementById("untilDate").focus();
                     return;
                 }
                 if (scope.artidoverlap) {
                     // alert("종료 날짜는 현재 시간보다 이전일 수 없습니다!");
                     swal("End Date", "이미 있는 작품입니다", "warning");
+                    scope.load = false;
                     document.getElementById("work").focus();
                     return;
                 }

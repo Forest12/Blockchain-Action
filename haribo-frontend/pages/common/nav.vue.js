@@ -34,11 +34,12 @@ var navVue = Vue.component("v-nav", {
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> 
     `,
     data() {
         return {
             sharedState: store.state
+            
         }
     },
     methods: {

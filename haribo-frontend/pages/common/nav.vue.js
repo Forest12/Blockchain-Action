@@ -25,8 +25,11 @@ var navVue = Vue.component("v-nav", {
                         <li class="nav-item" v-if="!sharedState.isSigned">
                             <router-link class="nav-link" to="/register">Register</router-link>
                         </li>
+                        <li class="nav-item" v-if="!sharedState.isSigned">
+                            <router-link to="/"></router-link>
+                        </li>
                         <li class="nav-item" v-if="sharedState.isSigned">
-                            <router-link class="nav-link" to="/logout">Logout</router-link>
+                            <router-link class="nav-link" to="/"><a v-on:click="logout">Logout</a></router-link>
                         </li>
                     </ul>
                 </div>
@@ -36,6 +39,13 @@ var navVue = Vue.component("v-nav", {
     data() {
         return {
             sharedState: store.state
+        }
+    },
+    methods: {
+        logout: function() {
+            this.sharedState.isSigned = false;
+            this.sharedState.user.id=null;
+            this.sharedState.user.hasWallet=false;  
         }
     }
 })
